@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3r471fjt4lkh"]
+
+[ext_resource type="Script" uid="uid://sgbdd7y6m01l" path="res://source/components/character_controller_component/character_controller_component.gd" id="1_xc086"]
+[ext_resource type="Script" uid="uid://deauoqii4kgyd" path="res://source/components/character_controller_component/head_bobber.gd" id="2_eacg1"]
+[ext_resource type="Shader" uid="uid://bxyx6aoejdt64" path="res://source/components/character_controller_component/vignette.gdshader" id="2_qlgyb"]
+[ext_resource type="Script" uid="uid://ckhcdkk3oga2e" path="res://source/components/character_controller_component/head_tilter.gd" id="3_u8f24"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_05wr3"]
+shader = ExtResource("2_qlgyb")
+shader_parameter/inner_radius = 0.25
+shader_parameter/outer_radius = 1.5
+shader_parameter/vignette_strength = 1.0
+shader_parameter/dither_strength = 0.03
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[node name="CharacterControllerComponent" type="Node3D"]
+script = ExtResource("1_xc086")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+doppler_tracking = 2
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vignette" type="ColorRect" parent="Head/Camera3D"]
+visible = false
+material = SubResource("ShaderMaterial_05wr3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeadBobber" type="Node3D" parent="Head"]
+script = ExtResource("2_eacg1")
+
+[node name="HeadTilter" type="Node3D" parent="Head"]
+script = ExtResource("3_u8f24")

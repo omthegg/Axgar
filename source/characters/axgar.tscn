@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmrf7tw51eawy"]
+
+[ext_resource type="PackedScene" uid="uid://c3r471fjt4lkh" path="res://source/components/character_controller_component/character_controller_component.tscn" id="2_mce8r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bytds"]
+radius = 0.3
+height = 1.8
+
+[node name="Axgar" type="CharacterBody3D"]
+
+[node name="CharacterControllerComponent" parent="." instance=ExtResource("2_mce8r")]
+camera_height = 0.7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_bytds")

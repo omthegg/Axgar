@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://s82qvl267jmd"]
+
+[node name="ProceduralHuman" type="Node3D"]
+
+[node name="TorsoUp" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1.25, 0)
+polygon = PackedVector2Array(0, 0, 0, 0.165, 0.175, 0.165, 0.15, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 16
+
+[node name="TorsoUp2" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1.25, 0)
+polygon = PackedVector2Array(0, 0.165, 0, 0.25, 0.24, 0.25, 0.175, 0.165)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 16
+
+[node name="TorsoDown" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 1, 0)
+polygon = PackedVector2Array(0, 0, 0, 0.25, 0.15, 0.25, 0.175, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 16
+
+[node name="ArmDown" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.210749, 1, 0)
+polygon = PackedVector2Array(0, 0, 0, 0.275, 0.04, 0.235, 0.025, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 16
+
+[node name="ArmUp" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211248, 1.25, 0)
+polygon = PackedVector2Array(0, 0, 0, 0.25, 0.04, 0.24, 0.04, 0.035)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 16
