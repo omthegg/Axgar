@@ -1,0 +1,13 @@
+Skeleton3D
+CSGPolygon3D
+CollisionShape3D
+MeshInstance3D
+RigidBody3D
+ColorRect
+Node3D
+AnimationPlayer
+CharacterControllerComponent
+Node
+CSGBox3D
+Camera3D
+CharacterBody3D

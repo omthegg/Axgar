@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="QuakeMapFile" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://c8pks7jaap0mx" path="res://addons/func_godot/src/import/quake_map_file.gd" id="1_xiipk"]
+
+[resource]
+script = ExtResource("1_xiipk")
+revision = 1
+map_data = "// Game: Generic
+// Format: Standard
+// entity 0
+{
+\"classname\" \"worldspawn\"
+// brush 0
+{
+( -240 224 16 ) ( -240 -240 16 ) ( -240 -240 -16 ) __TB_empty 0 0 0 1 1
+( -240 -240 16 ) ( 240 -240 16 ) ( 240 -240 -16 ) __TB_empty 0 0 0 1 1
+( 240 -240 -16 ) ( 240 224 -16 ) ( -240 224 -16 ) __TB_empty 0 0 0 1 1
+( -240 224 16 ) ( 240 224 16 ) ( 240 -240 16 ) __TB_empty 0 0 0 1 1
+( 240 224 -16 ) ( 240 224 16 ) ( -240 224 16 ) __TB_empty 0 0 0 1 1
+( 240 -240 16 ) ( 240 224 16 ) ( 240 224 -16 ) __TB_empty 0 0 0 1 1
+}
+// brush 1
+{
+( -240 224 160 ) ( -240 -240 160 ) ( -240 -240 128 ) __TB_empty 0 -16 0 1 1
+( -240 -240 160 ) ( 240 -240 160 ) ( 240 -240 128 ) __TB_empty 0 -16 0 1 1
+( 240 -240 128 ) ( 240 224 128 ) ( -240 224 128 ) __TB_empty 0 0 0 1 1
+( -240 224 160 ) ( 240 224 160 ) ( 240 -240 160 ) __TB_empty 0 0 0 1 1
+( 240 224 128 ) ( 240 224 160 ) ( -240 224 160 ) __TB_empty 0 -16 0 1 1
+( 240 -240 160 ) ( 240 224 160 ) ( 240 224 128 ) __TB_empty 0 -16 0 1 1
+}
+}
+"
