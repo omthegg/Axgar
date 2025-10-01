@@ -1,7 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://3xx2ls0a1fxi"]
+[gd_scene load_steps=14 format=3 uid="uid://3xx2ls0a1fxi"]
 
 [ext_resource type="Texture2D" uid="uid://b13r532xrbka8" path="res://icon.svg" id="1_842kn"]
 [ext_resource type="PackedScene" uid="uid://dmrf7tw51eawy" path="res://source/characters/axgar.tscn" id="2_ft8hw"]
+[ext_resource type="Texture2D" uid="uid://g8wth5gvfjdt" path="res://textures/asphalt025c/Asphalt025C_Color.png" id="3_synrt"]
+[ext_resource type="Texture2D" uid="uid://cninwxhl01ei5" path="res://textures/asphalt025c/Asphalt025C_Roughness.png" id="4_3exnk"]
+[ext_resource type="Texture2D" uid="uid://cc6u0ebt8nuly" path="res://textures/asphalt025c/Asphalt025C_AmbientOcclusion.png" id="4_fsqeu"]
+[ext_resource type="Texture2D" uid="uid://dkqi6wcn0yre" path="res://textures/asphalt025c/Asphalt025C_NormalGL.png" id="5_6l7bi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vuko1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -15,10 +19,6 @@ background_mode = 2
 sky = SubResource("Sky_w2ym6")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbs44"]
-albedo_texture = ExtResource("1_842kn")
-texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gw4e"]
 albedo_texture = ExtResource("1_842kn")
@@ -36,6 +36,16 @@ height = 1.1
 height = 1.1
 radius = 0.3
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k64hh"]
+albedo_texture = ExtResource("3_synrt")
+roughness_texture = ExtResource("4_3exnk")
+normal_texture = ExtResource("5_6l7bi")
+ao_texture = ExtResource("4_fsqeu")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
 [node name="TestLevel" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -44,12 +54,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_maniq")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-material_override = SubResource("StandardMaterial3D_vbs44")
-cast_shadow = 0
-use_collision = true
-size = Vector3(50, 1, 50)
 
 [node name="Axgar" parent="." instance=ExtResource("2_ft8hw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
@@ -62,3 +66,8 @@ mesh = SubResource("CylinderMesh_rrg64")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("CylinderShape3D_xgjwj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(50, 1, 50)
+material = SubResource("StandardMaterial3D_k64hh")

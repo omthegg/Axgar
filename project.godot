@@ -12,21 +12,16 @@ config_version=5
 
 config/name="Axgar"
 run/main_scene="res://source/levels/test_level/test_level.tscn"
-config/features=PackedStringArray("4.4", "Forward Plus")
-run/max_fps=60
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://source/autoload/global.gd"
 
-[display]
-
-window/vsync/vsync_mode=0
-
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")
+enabled=PackedStringArray()
 
 [func_godot]
 
@@ -67,6 +62,7 @@ run={
 
 [physics]
 
+3d/physics_engine="Jolt Physics"
 3d/default_gravity=15.0
 
 [rendering]
