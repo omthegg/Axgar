@@ -25,7 +25,7 @@ func _ready() -> void:
 	head.position.y = camera_height
 	camera.fov = fov
 	head_bobber.camera = camera
-	head_tilter.head = head
+	head_tilter.camera = camera
 	head_tilter.character_controller = self
 
 
@@ -60,7 +60,7 @@ func _physics_process(delta:float) -> void:
 	for i in character.get_slide_collision_count():
 			var collision = character.get_slide_collision(i)
 			if collision.get_collider() is RigidBody3D:
-				collision.get_collider().apply_force(collision.get_normal() * -50)
+				collision.get_collider().apply_force(collision.get_normal() * -300)
 
 
 

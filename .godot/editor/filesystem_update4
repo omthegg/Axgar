@@ -1,2 +1,5 @@
 res://source/levels/test_level/test_level.tscn
 res://source/components/character_controller_component/vignette.gdshader
+res://source/environment/sky1.gdshader
+res://source/components/environment_controller/environment_controller.tscn
+res://source/components/environment_controller/sky1.tres

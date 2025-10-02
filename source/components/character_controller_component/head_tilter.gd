@@ -1,6 +1,6 @@
 extends Node3D
 
-var head:Node3D
+var camera:Node3D
 var character_controller:CharacterControllerComponent
 
 var max_tilt_angle:float = 0.3
@@ -19,7 +19,7 @@ func head_tilt(delta:float) -> void:
 	elif character_controller.input_dir.x < 0:
 		target_tilt_angle = max_tilt_angle
 	
-	head.rotation_degrees.z = lerp_angle(head.rotation_degrees.z, target_tilt_angle, 15.0*delta)
+	camera.rotation_degrees.z = lerp_angle(camera.rotation_degrees.z, target_tilt_angle, 15.0*delta)
 	#else:
 	#	target_tilt_angle = 0.0
 	#	head.rotation_degrees.z = 0.0
