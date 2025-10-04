@@ -1,8 +1,8 @@
+MeshInstance3D
 Sprite3D
 SpotLight3D
 Decal
 AnimatedSprite3D
-MeshInstance3D
 GPUParticles3D
 CSGBox3D
 OmniLight3D
@@ -12,4 +12,3 @@ CollisionShape3D
 RigidBody3D
 ColorRect
 Node3D
-AnimationPlayer

@@ -1,7 +1,8 @@
-[gd_scene load_steps=80 format=3 uid="uid://b66n0ydg70jl3"]
+[gd_scene load_steps=89 format=3 uid="uid://b66n0ydg70jl3"]
 
 [ext_resource type="Script" uid="uid://ckeq3oisu5rjl" path="res://source/fire/fire.gd" id="1_1u3jo"]
 [ext_resource type="Texture2D" uid="uid://b5hcchdrpc7jq" path="res://textures/fireball.png" id="1_58205"]
+[ext_resource type="Shader" uid="uid://d256i1wc04i13" path="res://source/fire/fire1.gdshader" id="3_t5jo8"]
 
 [sub_resource type="Gradient" id="Gradient_pu62u"]
 offsets = PackedFloat32Array(0, 0.38271606, 1)
@@ -757,11 +758,44 @@ animations = [{
 "speed": 22.0
 }]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1u3jo"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t5jo8"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_1u3jo")
+
+[sub_resource type="Gradient" id="Gradient_t5jo8"]
+offsets = PackedFloat32Array(0, 0.41954023, 1)
+colors = PackedColorArray(1, 0.91238403, 0.61328125, 1, 1, 0.5625, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cmcdr"]
+gradient = SubResource("Gradient_t5jo8")
+width = 64
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_t5jo8"]
+noise_type = 0
+frequency = 0.9
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cmcdr"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_t5jo8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cmcdr"]
+render_priority = 0
+shader = ExtResource("3_t5jo8")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_cmcdr")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_cmcdr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t5jo8"]
+size = Vector2(2, 2)
+
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_1u3jo")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-visible = false
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_pu62u")
 draw_pass_1 = SubResource("QuadMesh_58205")
@@ -823,6 +857,13 @@ animation = &"fire"
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 billboard = 2
 double_sided = false
 texture_filter = 2
+texture = SubResource("NoiseTexture2D_t5jo8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("ShaderMaterial_cmcdr")
+mesh = SubResource("QuadMesh_t5jo8")

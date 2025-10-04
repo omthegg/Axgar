@@ -7,3 +7,5 @@ res://source/fire/fire.tscn
 res://source/fire/fire.gd
 res://source/components/character_controller_component/character_controller_component.tscn
 res://source/components/character_controller_component/character_controller_component.gd
+res://source/components/environment_controller/environment_controller.gd
+res://source/fire/fire1.gdshader
