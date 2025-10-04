@@ -20,6 +20,6 @@ func _physics_process(delta: float) -> void:
 	looking_position.y = $MeshInstance3D.global_position.y
 	#$MeshInstance3D.look_at(looking_position)
 	
-	var shader_noise:FastNoiseLite = $MeshInstance3D.material_override.get_shader_parameter("noise_texture").noise
+	var shader_noise:FastNoiseLite = $MeshInstance3D2.material_override.get_shader_parameter("noise_texture").noise
 	#shader_noise.seed = int(time * 10)
 	shader_noise.offset.y += 100.0 * delta

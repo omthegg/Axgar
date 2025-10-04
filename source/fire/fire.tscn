@@ -1,8 +1,10 @@
-[gd_scene load_steps=89 format=3 uid="uid://b66n0ydg70jl3"]
+[gd_scene load_steps=98 format=3 uid="uid://b66n0ydg70jl3"]
 
 [ext_resource type="Script" uid="uid://ckeq3oisu5rjl" path="res://source/fire/fire.gd" id="1_1u3jo"]
 [ext_resource type="Texture2D" uid="uid://b5hcchdrpc7jq" path="res://textures/fireball.png" id="1_58205"]
 [ext_resource type="Shader" uid="uid://d256i1wc04i13" path="res://source/fire/fire1.gdshader" id="3_t5jo8"]
+[ext_resource type="Shader" uid="uid://dtxp3j2garesa" path="res://source/fire/fire2.gdshader" id="4_cmcdr"]
+[ext_resource type="Shader" uid="uid://bskw204pwqo1n" path="res://source/fire/fire3.gdshader" id="5_o7ta1"]
 
 [sub_resource type="Gradient" id="Gradient_pu62u"]
 offsets = PackedFloat32Array(0, 0.38271606, 1)
@@ -791,6 +793,42 @@ shader_parameter/gradient_texture = SubResource("GradientTexture1D_cmcdr")
 
 [sub_resource type="QuadMesh" id="QuadMesh_t5jo8"]
 size = Vector2(2, 2)
+orientation = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7ta1"]
+shader = ExtResource("4_cmcdr")
+shader_parameter/time = 0.0
+shader_parameter/resolution = Vector2(1024, 1024)
+
+[sub_resource type="Gradient" id="Gradient_o7ta1"]
+offsets = PackedFloat32Array(0, 0.41954023, 1)
+colors = PackedColorArray(1, 0.91238403, 0.61328125, 1, 1, 0.5625, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eej2k"]
+gradient = SubResource("Gradient_o7ta1")
+width = 64
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o7ta1"]
+noise_type = 0
+frequency = 0.9
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eej2k"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_o7ta1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eej2k"]
+render_priority = 0
+shader = ExtResource("5_o7ta1")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_eej2k")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_eej2k")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cmcdr"]
+top_radius = 1.0
+bottom_radius = 1.0
+radial_segments = 8
+cap_top = false
+cap_bottom = false
 
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_1u3jo")
@@ -865,5 +903,20 @@ texture = SubResource("NoiseTexture2D_t5jo8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 material_override = SubResource("ShaderMaterial_cmcdr")
 mesh = SubResource("QuadMesh_t5jo8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_o7ta1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("ShaderMaterial_eej2k")
+mesh = SubResource("CylinderMesh_cmcdr")

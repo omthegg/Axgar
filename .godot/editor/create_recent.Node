@@ -1,4 +1,6 @@
 MeshInstance3D
+ColorRect
+Sprite2D
 Sprite3D
 SpotLight3D
 Decal
@@ -10,5 +12,3 @@ Skeleton3D
 CSGPolygon3D
 CollisionShape3D
 RigidBody3D
-ColorRect
-Node3D
