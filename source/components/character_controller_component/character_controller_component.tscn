@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3r471fjt4lkh"]
+[gd_scene load_steps=7 format=3 uid="uid://c3r471fjt4lkh"]
 
 [ext_resource type="Script" uid="uid://sgbdd7y6m01l" path="res://source/components/character_controller_component/character_controller_component.gd" id="1_xc086"]
 [ext_resource type="Script" uid="uid://deauoqii4kgyd" path="res://source/components/character_controller_component/head_bobber.gd" id="2_eacg1"]
 [ext_resource type="Shader" uid="uid://bxyx6aoejdt64" path="res://source/components/character_controller_component/vignette.gdshader" id="2_qlgyb"]
+[ext_resource type="PackedScene" uid="uid://4l335lekpeu" path="res://source/components/flashlight_component/flashlight_component.tscn" id="3_jwx70"]
 [ext_resource type="Script" uid="uid://ckhcdkk3oga2e" path="res://source/components/character_controller_component/head_tilter.gd" id="3_u8f24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_05wr3"]
@@ -37,6 +38,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FlashlightComponent" parent="Head/Camera3D" instance=ExtResource("3_jwx70")]
 
 [node name="HeadBobber" type="Node3D" parent="Head"]
 script = ExtResource("2_eacg1")

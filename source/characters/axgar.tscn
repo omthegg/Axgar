@@ -7,9 +7,11 @@ radius = 0.3
 height = 1.8
 
 [node name="Axgar" type="CharacterBody3D"]
+floor_constant_speed = true
 
 [node name="CharacterControllerComponent" parent="." instance=ExtResource("2_mce8r")]
 camera_height = 0.7
+has_flashlight = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_bytds")

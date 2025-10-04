@@ -10,6 +10,7 @@ sky = ExtResource("2_ioude")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.1
+adjustment_saturation = 1.1
 
 [node name="EnvironmentController" type="Node3D"]
 script = ExtResource("1_jrywv")

@@ -8,12 +8,14 @@ class_name CharacterControllerComponent
 @export var mass:int = 75
 @export var jump_speed:float = 5
 @export var fov:int = 80
+@export var has_flashlight:bool = false
 
 @onready var character:CharacterBody3D = get_parent()
 @onready var head:Node3D = $Head
 @onready var camera:Camera3D = $Head/Camera3D
 @onready var head_bobber:Node3D = $Head/HeadBobber
 @onready var head_tilter:Node3D = $Head/HeadTilter
+@onready var flashlight_component:Node3D = $Head/Camera3D/FlashlightComponent
 
 var speed:float = walking_speed
 
@@ -27,6 +29,8 @@ func _ready() -> void:
 	head_bobber.camera = camera
 	head_tilter.camera = camera
 	head_tilter.character_controller = self
+	
+	flashlight_component.visible = has_flashlight
 
 
 func _physics_process(delta:float) -> void:
@@ -58,9 +62,13 @@ func _physics_process(delta:float) -> void:
 	character.move_and_slide()
 	
 	for i in character.get_slide_collision_count():
-			var collision = character.get_slide_collision(i)
-			if collision.get_collider() is RigidBody3D:
-				collision.get_collider().apply_force(collision.get_normal() * -300)
+		var collision = character.get_slide_collision(i)
+		#print(collision.get_normal())
+		if collision.get_normal().y > 0.5:
+			continue
+		
+		if collision.get_collider() is RigidBody3D:
+			collision.get_collider().apply_force(collision.get_normal() * -300)
 
 
 
