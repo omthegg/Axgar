@@ -3,6 +3,6 @@ res://source/components/character_controller_component/vignette.gdshader
 res://source/components/environment_controller/sky1.tres
 res://source/fire/fire1.gdshader
 res://source/fire/fire2.gdshader
+res://source/fire/fire3.gdshader
 res://source/environment/sky1.gdshader
 res://source/fire/fire.gd
-res://source/fire/fire3.gdshader

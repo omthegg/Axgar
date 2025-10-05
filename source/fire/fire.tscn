@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://b66n0ydg70jl3"]
+[gd_scene load_steps=104 format=3 uid="uid://b66n0ydg70jl3"]
 
 [ext_resource type="Script" uid="uid://ckeq3oisu5rjl" path="res://source/fire/fire.gd" id="1_1u3jo"]
 [ext_resource type="Texture2D" uid="uid://b5hcchdrpc7jq" path="res://textures/fireball.png" id="1_58205"]
@@ -795,14 +795,43 @@ shader_parameter/gradient_texture = SubResource("GradientTexture1D_cmcdr")
 size = Vector2(2, 2)
 orientation = 0
 
+[sub_resource type="Gradient" id="Gradient_eej2k"]
+offsets = PackedFloat32Array(0, 0.41954023, 1)
+colors = PackedColorArray(1, 0.91238403, 0.61328125, 1, 1, 0.5625, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v22so"]
+gradient = SubResource("Gradient_eej2k")
+width = 64
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4mws5"]
+noise_type = 0
+frequency = 0.9
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_525hi"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_4mws5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uduv2"]
+render_priority = 0
+shader = ExtResource("5_o7ta1")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_525hi")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_v22so")
+
+[sub_resource type="QuadMesh" id="QuadMesh_o7ta1"]
+size = Vector2(2, 2)
+subdivide_width = 10
+subdivide_depth = 10
+orientation = 0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7ta1"]
 shader = ExtResource("4_cmcdr")
 shader_parameter/time = 0.0
 shader_parameter/resolution = Vector2(1024, 1024)
 
 [sub_resource type="Gradient" id="Gradient_o7ta1"]
-offsets = PackedFloat32Array(0, 0.41954023, 1)
-colors = PackedColorArray(1, 0.91238403, 0.61328125, 1, 1, 0.5625, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.90229887, 1)
+colors = PackedColorArray(1, 0.8928833, 0.47265625, 1, 1, 0.5625, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_eej2k"]
 gradient = SubResource("Gradient_o7ta1")
@@ -907,6 +936,12 @@ visible = false
 material_override = SubResource("ShaderMaterial_cmcdr")
 mesh = SubResource("QuadMesh_t5jo8")
 
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_uduv2")
+mesh = SubResource("QuadMesh_o7ta1")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_o7ta1")
@@ -920,3 +955,10 @@ grow_vertical = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 material_override = SubResource("ShaderMaterial_eej2k")
 mesh = SubResource("CylinderMesh_cmcdr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+visible = false
+light_color = Color(1, 0.7734375, 0, 1)
+light_energy = 2.0
+light_size = 1.0
