@@ -8,6 +8,14 @@ func _ready() -> void:
 	$AnimatedSprite3D2.play("fire")
 	$AnimatedSprite3D3.play("fire")
 	$AnimatedSprite3D4.play("fire")
+	
+	var i:int = 0
+	for x in 10:
+		for z in 10:
+			var t:Transform3D = Transform3D(Basis(), Vector3(x/2.0, position.y, z/2.0))
+			t.origin += Vector3(randf_range(-0.25, 0.25), 0.0, randf_range(-0.25, 0.25))
+			$MultiMeshInstance3D.multimesh.set_instance_transform(i, t)
+			i += 1
 	#$Sprite3D.modulate = Color.ORANGE
 
 

@@ -33,6 +33,8 @@ void fragment() {
 void vertex()
 {
 	//VERTEX.y += 1.0;
+	float height = VERTEX.y + 1.0;
+	//VERTEX.y += sin(height * cos(VERTEX.x * VERTEX.z) * TIME)/8.0;
 	VERTEX.xz *= (VERTEX.y - 3.0)/4.0;
 	VERTEX.x += sin(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;
 	VERTEX.z += cos(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;

@@ -1,5 +1,8 @@
-OmniLight3D
 MeshInstance3D
+MultiMeshInstance3D
+CSGBox3D
+ReflectionProbe
+OmniLight3D
 ColorRect
 Sprite2D
 Sprite3D
@@ -7,8 +10,5 @@ SpotLight3D
 Decal
 AnimatedSprite3D
 GPUParticles3D
-CSGBox3D
 Skeleton3D
 CSGPolygon3D
-CollisionShape3D
-RigidBody3D

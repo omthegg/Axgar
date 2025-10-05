@@ -9,7 +9,7 @@ background_color = Color(0.030044556, 0.03521423, 0.04296875, 1)
 sky = ExtResource("2_ioude")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.1
+ambient_light_energy = 0.05
 glow_bloom = 0.2
 
 [node name="EnvironmentController" type="Node3D"]
