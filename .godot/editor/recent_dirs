@@ -1,6 +1,8 @@
+res://source/fire
+res://fonts
+res://source/scene_manager
 res://source/components/flashlight_component
 res://textures
-res://source/fire
 res://source/components/environment_controller
 res://source/environment
 res://source/procedural_models/procedural_human

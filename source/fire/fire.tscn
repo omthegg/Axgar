@@ -1,10 +1,11 @@
-[gd_scene load_steps=113 format=3 uid="uid://b66n0ydg70jl3"]
+[gd_scene load_steps=119 format=3 uid="uid://b66n0ydg70jl3"]
 
 [ext_resource type="Script" uid="uid://ckeq3oisu5rjl" path="res://source/fire/fire.gd" id="1_1u3jo"]
 [ext_resource type="Texture2D" uid="uid://b5hcchdrpc7jq" path="res://textures/fireball.png" id="1_58205"]
 [ext_resource type="Shader" uid="uid://d256i1wc04i13" path="res://source/fire/fire1.gdshader" id="3_t5jo8"]
 [ext_resource type="Shader" uid="uid://dtxp3j2garesa" path="res://source/fire/fire2.gdshader" id="4_cmcdr"]
 [ext_resource type="Shader" uid="uid://bskw204pwqo1n" path="res://source/fire/fire3.gdshader" id="5_o7ta1"]
+[ext_resource type="Shader" uid="uid://whi1alt7fmsc" path="res://source/fire/fire4.gdshader" id="6_eej2k"]
 
 [sub_resource type="Gradient" id="Gradient_pu62u"]
 offsets = PackedFloat32Array(0, 0.38271606, 1)
@@ -859,7 +860,40 @@ radial_segments = 8
 cap_top = false
 cap_bottom = false
 
-[sub_resource type="Shader" id="Shader_o7ta1"]
+[sub_resource type="Gradient" id="Gradient_v22so"]
+offsets = PackedFloat32Array(0.15882353, 0.7705882)
+colors = PackedColorArray(1, 0.8901961, 0.09803922, 1, 0.96862745, 0.36078432, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4mws5"]
+gradient = SubResource("Gradient_v22so")
+width = 32
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_525hi"]
+noise_type = 0
+frequency = 0.9
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uduv2"]
+width = 32
+height = 32
+noise = SubResource("FastNoiseLite_525hi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_px0f0"]
+render_priority = 0
+shader = ExtResource("6_eej2k")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_uduv2")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_4mws5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_eej2k"]
+material = SubResource("ShaderMaterial_px0f0")
+size = Vector2(0.5, 1)
+
+[sub_resource type="MultiMesh" id="MultiMesh_o7ta1"]
+transform_format = 1
+instance_count = 100
+mesh = SubResource("QuadMesh_eej2k")
+buffer = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.3509977e-38, 0, -2.6469735e-08, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, -6.3108872e-30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1e-45, -5.6882085e+26, 3.0967e-41, -5.688303e+26, 3.0967e-41, -5.688492e+26, 3.0967e-41, 1.642358e-39, 0, 2.463e-42, 0, 4e-45, 0, 1.3e-44, 0, 7e-45, 0, 1.7e-44, 0, 1e-44, 0, 1e-44, 0, 1.1e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 1.632017e-39, 0, 0, 0, 4e-45, 0, 1.3e-44, 0, 7e-45, 0, 1.7e-44, 0, 1e-44, 0, 1e-44, 0, 1.1e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5.113e-42, 0, -2.1035781e+26, 3.0967e-41, -1.8065177e+26, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 1.6e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.36e-43, 0, 0, 0, 5.7e-44, 0, 0, -5.6889936e+26, 3.0967e-41, 0, 0, 0, 4.5e-44, 0, 0, 4e-45, 0, 1e-45, 1.6e-43, 0, 0, 0, 3.390625, 0, 1.875, 0, 0, 0, 0, 3.59e-43, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1e-45, 0, 1.47e-43, 0, 1.64e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.5e-44, 1.18e-43, 0, 0, 0, 0, nan, 1.56e-43, 0, 0, 0, 9.5e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.5e-44, 0, 0, 0, 4.5e-44, 0, 0, -5.729795e+26, 3.0967e-41, 0, 0, 0, 1.63e-43, 0, 0, 4e-45, 0, 1e-45, 1.35e-43, 0, 0, 0, 3.390625, 0, 1.875, 0, 0, 0, 0, 3.59e-43, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1e-45, 0, 1.15e-43, 0, 1.33e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, nan, nan, 0, 0, 0, 0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 1.635497e-39, 0, 0, 0, 4e-45, 0, 1.3e-44, 0, 7e-45, 0, 1.7e-44, 0, 1e-44, 0, 1e-44, 0, 1.1e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.504e-42, 0, -3.0237497e+25, 3.0967e-41, -5.729783e+26, 3.0967e-41, 0, 0, 0, 0, 0, 0, -269994, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 1e-45, 0, 3e-45, 1.7e-43, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 1.54e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 1e-45, 1.47e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.18e-43, 0, 0, 0, 0, 0, 0, 0, 1.53e-43, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 7.3432e-41, 7.13215e-40, 0, 0, 0, 0, 0, 1.56e-43, 7.1783e-41, 7.13213e-40, 0, 0, 0, 0, 1e-45, 0, -1, nan, 4e-45, 0, 2.28e-43, 0, 0, 0, 4e-45, 0, 1.36e-43, 1.54e-43, 0, 0, 1.56e-43, 1.6e-43, 7.19e-43, 0, -1.8811075e+26, 3.0967e-41, 5.303537e+23, 4.5754e-41, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.35e-43, 6.4e-44, 0, 0, 0, 0, nan, nan, 0, 0, nan, nan, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 1e-45, 3.56e-43, 0, -1.7014638e+38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.1533e-41, nan, nan, nan, nan, nan, 0, 0, nan, nan, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, nan, nan, 0, 0, nan, nan, 0, 0, 0, 0, -2.1511781e+25, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, nan, nan, 0, 0, 0, -1.7014118e+38, 3.004e-42, 0, 6.95e-43, 0, 6.61e-43, 0, 5.3037617e+23, 4.5754e-41, 5.01397e+35, 3.0967e-41, 0, 0, 0, 0, -8.070716e+25, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 1e-45, 0, 3e-45, 4.5e-44, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 1.42e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 1.46e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.56e-43, 0, 0, 0, 0, 0, 1.18e-43, 0, 0, 1e-45, 1.61e-43, 1.43e-43, 1.56e-43, 0, 0, 9.2194e-41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.46e-43, 1.36e-43, 0, 0, 0, 1.56e-43, 0, 0, 1.324e-42, 0, -2.0065719e+26, 3.0967e-41, 5.3036926e+23, 4.5754e-41, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.6e-43, 1.53e-43, 0, 0, 0, 0, 1.63e-43, 1.56e-43, 0, 0, 1e-45, 1.15e-43, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 1e-45, 3.56e-43, 0, 3.59e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.1533e-41, 1.56e-43, nan, nan, 4.8e-44, 1.63e-43, 0, 0, 0, 1.61e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.63e-43, 4.5e-44, 0, 0, 4.5e-44, 1.18e-43, 0, 0, 0, 0, -5.689755e+26, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, nan, nan, 0, 0, 0, -1.7014118e+38, nan, nan, 6.07e-43, 0, -1.802846e+26, 3.0967e-41, 5.303508e+23, 4.5754e-41, -1.8121209e-06, 3.0967e-41, 0, 0, 9.1831e-41, 0, 0, nan, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1e-45, 0, 1.9999999, 1.0842021e-19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.48e-43, 0, -1.8906644e+26, 3.0967e-41, -2.7264819e+26, 3.0967e-41, 0, 0, 1e-45, 0, 0, 1.5e-44, 0, 0, 2e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="Shader" id="Shader_eej2k"]
 code = "shader_type spatial;
 render_mode unshaded, cull_disabled;
 
@@ -881,7 +915,7 @@ vec2 rotateUV(vec2 uv, vec2 pivot, float rotation) {
 
 
 void fragment() {
-	vec4 noise = texture(noise_texture, UV + vec2(0.0, TIME * 2.0));
+	vec4 noise = texture(noise_texture, UV + vec2(0.0, TIME / 5.0));
 	vec4 gradient = texture(gradient_texture, rotateUV(UV, vec2(0.0, 0.0), radians(90.0)));
 	ALBEDO = noise.xyz * gradient.xyz;
 	//ALPHA = noise.x * 3.0;
@@ -894,56 +928,50 @@ void fragment() {
 
 void vertex()
 {
+	/*
+	// Y billboard
 	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(
 			vec4(normalize(cross(vec3(0.0, 1.0, 0.0), MAIN_CAM_INV_VIEW_MATRIX[2].xyz)), 0.0),
 			vec4(0.0, 1.0, 0.0, 0.0),
 			vec4(normalize(cross(MAIN_CAM_INV_VIEW_MATRIX[0].xyz, vec3(0.0, 1.0, 0.0))), 0.0),
 			MODEL_MATRIX[3]);
 	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
-	
+	*/
+
+
 	//VERTEX.y += 1.0;
-	float height = VERTEX.y + 0.5;
+	//float height = VERTEX.y + 0.5;
 	//VERTEX.y += sin(height * cos(VERTEX.x * VERTEX.z) * TIME)/8.0;
-	VERTEX.xz *= (VERTEX.y - 3.0)/4.0;
-	VERTEX.x += height * sin(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;
-	VERTEX.z += height * cos(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;
+	//VERTEX.xz *= (VERTEX.y - 3.0)/4.0;
+	//VERTEX.x += height * sin(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;
+	//VERTEX.z += height * cos(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;
 }"
 
-[sub_resource type="Gradient" id="Gradient_v22so"]
-offsets = PackedFloat32Array(0.15882353, 0.7705882, 1)
-colors = PackedColorArray(1, 0.8901961, 0.09803922, 1, 0.96862745, 0.36078432, 0, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_4mws5"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.96862745, 0.36078432, 0, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4mws5"]
-gradient = SubResource("Gradient_v22so")
-width = 32
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_525hi"]
+gradient = SubResource("Gradient_4mws5")
+width = 64
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_525hi"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eej2k"]
 noise_type = 0
 frequency = 0.9
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uduv2"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_v22so"]
 width = 32
 height = 32
-noise = SubResource("FastNoiseLite_525hi")
+noise = SubResource("FastNoiseLite_eej2k")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_px0f0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mws5"]
 render_priority = 0
-shader = SubResource("Shader_o7ta1")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_uduv2")
-shader_parameter/gradient_texture = SubResource("GradientTexture1D_4mws5")
-
-[sub_resource type="QuadMesh" id="QuadMesh_eej2k"]
-material = SubResource("ShaderMaterial_px0f0")
-size = Vector2(0.5, 1)
-
-[sub_resource type="MultiMesh" id="MultiMesh_o7ta1"]
-transform_format = 1
-instance_count = 100
-mesh = SubResource("QuadMesh_eej2k")
-buffer = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.3509977e-38, 0, -2.6469735e-08, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, -6.3108872e-30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1e-45, -5.6882085e+26, 3.0967e-41, -5.688303e+26, 3.0967e-41, -5.688492e+26, 3.0967e-41, 1.642358e-39, 0, 2.463e-42, 0, 4e-45, 0, 1.3e-44, 0, 7e-45, 0, 1.7e-44, 0, 1e-44, 0, 1e-44, 0, 1.1e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 1.632017e-39, 0, 0, 0, 4e-45, 0, 1.3e-44, 0, 7e-45, 0, 1.7e-44, 0, 1e-44, 0, 1e-44, 0, 1.1e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5.113e-42, 0, -2.1035781e+26, 3.0967e-41, -1.8065177e+26, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 1.6e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.36e-43, 0, 0, 0, 5.7e-44, 0, 0, -5.6889936e+26, 3.0967e-41, 0, 0, 0, 4.5e-44, 0, 0, 4e-45, 0, 1e-45, 1.6e-43, 0, 0, 0, 3.390625, 0, 1.875, 0, 0, 0, 0, 3.59e-43, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1e-45, 0, 1.47e-43, 0, 1.64e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.5e-44, 1.18e-43, 0, 0, 0, 0, nan, 1.56e-43, 0, 0, 0, 9.5e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.5e-44, 0, 0, 0, 4.5e-44, 0, 0, -5.729795e+26, 3.0967e-41, 0, 0, 0, 1.63e-43, 0, 0, 4e-45, 0, 1e-45, 1.35e-43, 0, 0, 0, 3.390625, 0, 1.875, 0, 0, 0, 0, 3.59e-43, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1e-45, 0, 1.15e-43, 0, 1.33e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, nan, nan, 0, 0, 0, 0, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, 1.635497e-39, 0, 0, 0, 4e-45, 0, 1.3e-44, 0, 7e-45, 0, 1.7e-44, 0, 1e-44, 0, 1e-44, 0, 1.1e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.504e-42, 0, -3.0237497e+25, 3.0967e-41, -5.729783e+26, 3.0967e-41, 0, 0, 0, 0, 0, 0, -269994, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 1e-45, 0, 3e-45, 1.7e-43, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 1.54e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 1e-45, 1.47e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.18e-43, 0, 0, 0, 0, 0, 0, 0, 1.53e-43, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 7.3432e-41, 7.13215e-40, 0, 0, 0, 0, 0, 1.56e-43, 7.1783e-41, 7.13213e-40, 0, 0, 0, 0, 1e-45, 0, -1, nan, 4e-45, 0, 2.28e-43, 0, 0, 0, 4e-45, 0, 1.36e-43, 1.54e-43, 0, 0, 1.56e-43, 1.6e-43, 7.19e-43, 0, -1.8811075e+26, 3.0967e-41, 5.303537e+23, 4.5754e-41, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.35e-43, 6.4e-44, 0, 0, 0, 0, nan, nan, 0, 0, nan, nan, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 1e-45, 3.56e-43, 0, -1.7014638e+38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.1533e-41, nan, nan, nan, nan, nan, 0, 0, nan, nan, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, nan, nan, 0, 0, nan, nan, 0, 0, 0, 0, -2.1511781e+25, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, nan, nan, 0, 0, 0, -1.7014118e+38, 3.004e-42, 0, 6.95e-43, 0, 6.61e-43, 0, 5.3037617e+23, 4.5754e-41, 5.01397e+35, 3.0967e-41, 0, 0, 0, 0, -8.070716e+25, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 1e-45, 0, 3e-45, 4.5e-44, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 1.42e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 1.46e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.56e-43, 0, 0, 0, 0, 0, 1.18e-43, 0, 0, 1e-45, 1.61e-43, 1.43e-43, 1.56e-43, 0, 0, 9.2194e-41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.46e-43, 1.36e-43, 0, 0, 0, 1.56e-43, 0, 0, 1.324e-42, 0, -2.0065719e+26, 3.0967e-41, 5.3036926e+23, 4.5754e-41, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.6e-43, 1.53e-43, 0, 0, 0, 0, 1.63e-43, 1.56e-43, 0, 0, 1e-45, 1.15e-43, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 1e-45, 3.56e-43, 0, 3.59e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.1533e-41, 1.56e-43, nan, nan, 4.8e-44, 1.63e-43, 0, 0, 0, 1.61e-43, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.63e-43, 4.5e-44, 0, 0, 4.5e-44, 1.18e-43, 0, 0, 0, 0, -5.689755e+26, 3.0967e-41, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3e-45, 0, nan, nan, 0, 0, 0, -1.7014118e+38, nan, nan, 6.07e-43, 0, -1.802846e+26, 3.0967e-41, 5.303508e+23, 4.5754e-41, -1.8121209e-06, 3.0967e-41, 0, 0, 9.1831e-41, 0, 0, nan, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1e-45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1e-45, 0, 1.9999999, 1.0842021e-19, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.48e-43, 0, -1.8906644e+26, 3.0967e-41, -2.7264819e+26, 3.0967e-41, 0, 0, 1e-45, 0, 0, 1.5e-44, 0, 0, 2e-44, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader = SubResource("Shader_eej2k")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_v22so")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_525hi")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o7ta1"]
-size = Vector2(10, 10)
+size = Vector2(5, 5)
 
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_1u3jo")
@@ -1054,5 +1082,7 @@ light_size = 1.0
 multimesh = SubResource("MultiMesh_o7ta1")
 
 [node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.05, 2.5)
 visible = false
+material_override = SubResource("ShaderMaterial_4mws5")
 mesh = SubResource("PlaneMesh_o7ta1")

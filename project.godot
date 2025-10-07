@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Axgar"
-run/main_scene="res://source/levels/test_level/test_level.tscn"
+run/main_scene="uid://b8ob5nucifa7i"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,6 +26,10 @@ enabled=PackedStringArray()
 [func_godot]
 
 default_map_settings="res://addons/func_godot/func_godot_default_map_settings.tres"
+
+[gui]
+
+theme/custom_font="uid://dhrs3k82t33bh"
 
 [input]
 

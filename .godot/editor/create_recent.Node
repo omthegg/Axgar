@@ -1,3 +1,8 @@
+Label
+Control
+CanvasLayer
+CanvasGroup
+Label3D
 MeshInstance3D
 MultiMeshInstance3D
 CSGBox3D
@@ -8,7 +13,3 @@ Sprite2D
 Sprite3D
 SpotLight3D
 Decal
-AnimatedSprite3D
-GPUParticles3D
-Skeleton3D
-CSGPolygon3D

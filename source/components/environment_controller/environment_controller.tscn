@@ -1,16 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://do8fee4yywcpu"]
+[gd_scene load_steps=3 format=3 uid="uid://do8fee4yywcpu"]
 
 [ext_resource type="Script" uid="uid://cxuxngslwrlut" path="res://source/components/environment_controller/environment_controller.gd" id="1_jrywv"]
-[ext_resource type="Sky" uid="uid://bt5mvwg71olfr" path="res://source/components/environment_controller/sky1.tres" id="2_ioude"]
 
 [sub_resource type="Environment" id="Environment_ioude"]
 background_mode = 1
 background_color = Color(0.030044556, 0.03521423, 0.04296875, 1)
-sky = ExtResource("2_ioude")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05
-glow_bloom = 0.2
 
 [node name="EnvironmentController" type="Node3D"]
 script = ExtResource("1_jrywv")
