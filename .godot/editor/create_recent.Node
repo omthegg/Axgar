@@ -1,6 +1,8 @@
-Label
+TextEdit
+LineEdit
 Control
 CanvasLayer
+Label
 CanvasGroup
 Label3D
 MeshInstance3D
@@ -11,5 +13,3 @@ OmniLight3D
 ColorRect
 Sprite2D
 Sprite3D
-SpotLight3D
-Decal

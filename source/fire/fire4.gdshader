@@ -25,7 +25,7 @@ void fragment() {
 	//ALPHA = noise.x * 3.0;
 	if (noise.x < 0.3)
 	{
-		ALPHA = 0.0;
+		//ALPHA = 0.0;
 	}
 }
 
@@ -40,11 +40,13 @@ void vertex()
 			MODEL_MATRIX[3]);
 	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
 	
-
+	
 	//VERTEX.y += 1.0;
 	float height = VERTEX.y + 0.5;
+	vec3 world_vertex = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	float randomness = world_vertex.x + world_vertex.z;
 	//VERTEX.y += sin(height * cos(VERTEX.x * VERTEX.z) * TIME)/8.0;
 	VERTEX.xz *= (VERTEX.y - 3.0)/4.0;
-	VERTEX.x += height * sin(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;
-	VERTEX.z += height * cos(float(VERTEX.y + 1.0) * TIME * 8.0)/20.0;
+	VERTEX.x += height * sin(float(VERTEX.y + 1.0) * TIME * 8.0 + randomness)/20.0;
+	VERTEX.z += height * cos(float(VERTEX.y + 1.0) * TIME * 8.0 + randomness)/20.0;
 }

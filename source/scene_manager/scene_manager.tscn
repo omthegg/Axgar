@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8ob5nucifa7i"]
+[gd_scene load_steps=4 format=3 uid="uid://b8ob5nucifa7i"]
 
 [ext_resource type="PackedScene" uid="uid://3xx2ls0a1fxi" path="res://source/levels/test_level/test_level.tscn" id="1_ivaf7"]
 [ext_resource type="Script" uid="uid://fir3cuhmwrg4" path="res://source/scene_manager/scene_manager.gd" id="1_y51ae"]
+[ext_resource type="PackedScene" uid="uid://bjra8vcf7k5gt" path="res://source/console/console.tscn" id="3_ikhl4"]
 
 [node name="SceneManager" type="Node3D"]
 script = ExtResource("1_y51ae")
@@ -49,3 +50,8 @@ offset_top = 0.24799919
 offset_right = -0.38401794
 offset_bottom = 0.048000336
 text = "Primitives: "
+
+[node name="ConsoleCanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Console" parent="ConsoleCanvasLayer" instance=ExtResource("3_ikhl4")]
