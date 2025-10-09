@@ -1,5 +1,6 @@
-res://source/console
 res://source/fire
+res://source/debug_info
+res://source/console
 res://fonts
 res://source/scene_manager
 res://source/components/flashlight_component

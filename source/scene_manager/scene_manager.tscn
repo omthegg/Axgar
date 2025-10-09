@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8ob5nucifa7i"]
+[gd_scene load_steps=5 format=3 uid="uid://b8ob5nucifa7i"]
 
 [ext_resource type="PackedScene" uid="uid://3xx2ls0a1fxi" path="res://source/levels/test_level/test_level.tscn" id="1_ivaf7"]
 [ext_resource type="Script" uid="uid://fir3cuhmwrg4" path="res://source/scene_manager/scene_manager.gd" id="1_y51ae"]
+[ext_resource type="PackedScene" uid="uid://cfnrscvrx0ci1" path="res://source/debug_info/debug_info.tscn" id="3_7eoyu"]
 [ext_resource type="PackedScene" uid="uid://bjra8vcf7k5gt" path="res://source/console/console.tscn" id="3_ikhl4"]
 
 [node name="SceneManager" type="Node3D"]
@@ -11,45 +12,7 @@ script = ExtResource("1_y51ae")
 
 [node name="DebugCanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="DebugCanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="FPSLabel" type="Label" parent="DebugCanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.16700001
-anchor_bottom = 0.025
-offset_right = -0.38401794
-offset_bottom = -0.20000076
-theme_override_font_sizes/font_size = 16
-text = "FPS: "
-
-[node name="DrawCallsLabel" type="Label" parent="DebugCanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.025
-anchor_right = 0.16700001
-anchor_bottom = 0.049000002
-offset_top = -0.20000076
-offset_right = -0.38401794
-offset_bottom = 0.24799919
-text = "Draw calls: "
-
-[node name="PrimitivesLabel" type="Label" parent="DebugCanvasLayer/Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.049000002
-anchor_right = 0.16700001
-anchor_bottom = 0.074
-offset_top = 0.24799919
-offset_right = -0.38401794
-offset_bottom = 0.048000336
-text = "Primitives: "
+[node name="DebugInfo" parent="DebugCanvasLayer" instance=ExtResource("3_7eoyu")]
 
 [node name="ConsoleCanvasLayer" type="CanvasLayer" parent="."]
 visible = false

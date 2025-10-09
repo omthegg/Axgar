@@ -8,6 +8,8 @@ background_color = Color(0.030044556, 0.03521423, 0.04296875, 1)
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05
+tonemap_exposure = 2.0
+glow_bloom = 0.5
 
 [node name="EnvironmentController" type="Node3D"]
 script = ExtResource("1_jrywv")

@@ -10,11 +10,11 @@ func _ready() -> void:
 	$AnimatedSprite3D4.play("fire")
 	
 	var i:int = 0
-	for x in 10:
-		for z in 10:
+	for x in 20:
+		for z in 20:
 			var b:Basis = Basis()
 			var t:Transform3D = Transform3D(b, Vector3(x/2.0, position.y, z/2.0))
-			t.origin += Vector3(randf_range(-0.25, 0.25), 0.0, randf_range(-0.25, 0.25))
+			t.origin += Vector3(randf_range(-0.125, 0.125), 0.0, randf_range(-0.125, 0.125))
 			#var d:float = deg_to_rad(20.0)
 			#t = t.rotated_local(Vector3(1.0, 0.0, 0.0), randf_range(-d, d))
 			$MultiMeshInstance3D.multimesh.set_instance_transform(i, t)

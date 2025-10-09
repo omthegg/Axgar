@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://3xx2ls0a1fxi"]
+[gd_scene load_steps=14 format=3 uid="uid://3xx2ls0a1fxi"]
 
 [ext_resource type="Texture2D" uid="uid://b13r532xrbka8" path="res://icon.svg" id="1_842kn"]
 [ext_resource type="PackedScene" uid="uid://dmrf7tw51eawy" path="res://source/characters/axgar.tscn" id="2_ft8hw"]
 [ext_resource type="Texture2D" uid="uid://g8wth5gvfjdt" path="res://textures/Asphalt025C.png" id="3_y5moh"]
 [ext_resource type="Texture2D" uid="uid://ce4f0602qljsw" path="res://textures/Bricks082A.jpg" id="4_3exnk"]
 [ext_resource type="PackedScene" uid="uid://do8fee4yywcpu" path="res://source/components/environment_controller/environment_controller.tscn" id="6_6l7bi"]
-[ext_resource type="FontFile" uid="uid://dhrs3k82t33bh" path="res://fonts/unifont-17.0.01.otf" id="7_pophn"]
 [ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire.tscn" id="7_y5moh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gw4e"]
@@ -108,12 +107,3 @@ fire_flicker = true
 
 [node name="Fire" parent="." instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -13)
-
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
-billboard = 1
-double_sided = false
-texture_filter = 2
-text = "Hello there"
-font = ExtResource("7_pophn")
-outline_size = 0

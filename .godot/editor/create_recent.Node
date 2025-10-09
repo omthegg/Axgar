@@ -1,3 +1,4 @@
+OmniLight3D
 TextEdit
 LineEdit
 Control
@@ -9,7 +10,5 @@ MeshInstance3D
 MultiMeshInstance3D
 CSGBox3D
 ReflectionProbe
-OmniLight3D
 ColorRect
 Sprite2D
-Sprite3D
