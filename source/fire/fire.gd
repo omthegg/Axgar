@@ -1,38 +1,26 @@
+@tool
 extends Node3D
 
-var time:float = 0.0
-var noise:FastNoiseLite = FastNoiseLite.new()
+@export_tool_button("Apply") var apply_action:Callable = apply
+@export var rect:Rect2 = Rect2(0.0, 0.0, 5.0, 5.0)
+@export var amount:int = 100
+
+@onready var multimesh_instance:MultiMeshInstance3D = $MultiMeshInstance3D
 
 func _ready() -> void:
-	$AnimatedSprite3D.play("fire")
-	$AnimatedSprite3D2.play("fire")
-	$AnimatedSprite3D3.play("fire")
-	$AnimatedSprite3D4.play("fire")
-	
-	var i:int = 0
-	for x in 20:
-		for z in 20:
-			var b:Basis = Basis()
-			var t:Transform3D = Transform3D(b, Vector3(x/2.0, position.y, z/2.0))
-			t.origin += Vector3(randf_range(-0.125, 0.125), 0.0, randf_range(-0.125, 0.125))
-			#var d:float = deg_to_rad(20.0)
-			#t = t.rotated_local(Vector3(1.0, 0.0, 0.0), randf_range(-d, d))
-			$MultiMeshInstance3D.multimesh.set_instance_transform(i, t)
-			var camera_position:Vector3 = get_tree().root.get_camera_3d().global_position # + Vector3(0.0, -2.0, 0.0)
-			$MultiMeshInstance3D.multimesh.mesh.material.set_shader_parameter("player_position", camera_position)
-			i += 1
-	#$Sprite3D.modulate = Color.ORANGE
+	apply()
 
 
-func _physics_process(delta: float) -> void:
-	time += delta
+func apply() -> void:
+	var min_x:float = rect.position.x
+	var min_z:float = rect.position.y
+	var max_x:float = min_x + rect.size.x
+	var max_z:float = min_z + rect.size.y
 	
-	$Sprite3D.texture.noise.seed = int(time * 10)
+	multimesh_instance.multimesh.instance_count = amount
 	
-	var looking_position:Vector3 = get_tree().root.get_camera_3d().global_position
-	looking_position.y = $MeshInstance3D.global_position.y
-	#$MeshInstance3D.look_at(looking_position)
-	
-	#var shader_noise:FastNoiseLite = $MeshInstance3D2.material_override.get_shader_parameter("noise_texture").noise
-	#shader_noise.seed = int(time * 10)
-	#shader_noise.offset.y += 100.0 * delta
+	for i in multimesh_instance.multimesh.instance_count:
+		var b:Basis = Basis()
+		var o:Vector3 = Vector3(randf_range(min_x, max_x), global_position.y, randf_range(min_z, max_z))
+		var t:Transform3D = Transform3D(b, o)
+		multimesh_instance.multimesh.set_instance_transform(i, t)

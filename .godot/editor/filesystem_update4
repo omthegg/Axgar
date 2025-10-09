@@ -8,3 +8,5 @@ res://source/environment/sky1.gdshader
 res://source/fire/fire5.gdshader
 res://source/scene_manager/scene_manager.gd
 res://source/levels/test_level/test_level.tscn
+res://source/fire/fire.tscn
+res://source/fire/fire.gd
