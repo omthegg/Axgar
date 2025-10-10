@@ -107,7 +107,17 @@ fire_flicker = true
 
 [node name="Fire" parent="." instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -16)
+use_custom_seed = false
+custom_seed = 0
 
 [node name="Fire2" parent="." instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -16)
 amount = 200
+use_custom_seed = false
+custom_seed = 0
+
+[node name="Fire3" parent="." instance=ExtResource("7_y5moh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -16)
+amount = 300
+use_custom_seed = false
+custom_seed = 0

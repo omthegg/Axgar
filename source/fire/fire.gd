@@ -4,6 +4,8 @@ extends Node3D
 @export_tool_button("Apply", "MultiMeshInstance3D") var apply_action:Callable = apply
 @export var rect:Rect2 = Rect2(0.0, 0.0, 5.0, 5.0)
 @export var amount:int = 100
+@export var use_custom_seed:bool = false
+@export var custom_seed:int = 0
 
 @onready var multimesh_instance:MultiMeshInstance3D = $MultiMeshInstance3D
 
@@ -13,6 +15,9 @@ func _ready() -> void:
 
 
 func apply() -> void:
+	if use_custom_seed:
+		seed(custom_seed)
+	
 	var min_x:float = rect.position.x
 	var min_z:float = rect.position.y
 	var max_x:float = min_x + rect.size.x
