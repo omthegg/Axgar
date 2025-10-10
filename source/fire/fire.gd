@@ -1,7 +1,7 @@
 @tool
 extends Node3D
 
-@export_tool_button("Apply") var apply_action:Callable = apply
+@export_tool_button("Apply", "MultiMeshInstance3D") var apply_action:Callable = apply
 @export var rect:Rect2 = Rect2(0.0, 0.0, 5.0, 5.0)
 @export var amount:int = 100
 
@@ -9,6 +9,7 @@ extends Node3D
 
 func _ready() -> void:
 	apply()
+	multimesh_instance.multimesh = multimesh_instance.multimesh.duplicate()
 
 
 func apply() -> void:
