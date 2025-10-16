@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://3xx2ls0a1fxi"]
+[gd_scene load_steps=16 format=3 uid="uid://3xx2ls0a1fxi"]
 
 [ext_resource type="Texture2D" uid="uid://b13r532xrbka8" path="res://icon.svg" id="1_842kn"]
 [ext_resource type="PackedScene" uid="uid://dmrf7tw51eawy" path="res://source/characters/axgar.tscn" id="2_ft8hw"]
 [ext_resource type="Texture2D" uid="uid://g8wth5gvfjdt" path="res://textures/Asphalt025C.png" id="3_y5moh"]
 [ext_resource type="Texture2D" uid="uid://ce4f0602qljsw" path="res://textures/Bricks082A.jpg" id="4_3exnk"]
 [ext_resource type="PackedScene" uid="uid://do8fee4yywcpu" path="res://source/components/environment_controller/environment_controller.tscn" id="6_6l7bi"]
+[ext_resource type="PackedScene" uid="uid://dpphyc52dgy46" path="res://models/venlil/venlil-test.glb" id="7_pophn"]
 [ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire.tscn" id="7_y5moh"]
+[ext_resource type="PackedScene" uid="uid://ccag5hjymdcja" path="res://source/rain/rain.tscn" id="8_pophn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gw4e"]
 albedo_texture = ExtResource("1_842kn")
@@ -73,9 +75,15 @@ size = Vector3(50, 1, 50)
 material = SubResource("StandardMaterial3D_k64hh")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 3.5)
 use_collision = true
-size = Vector3(1, 3, 6)
+size = Vector3(1, 3, 18)
+material = SubResource("StandardMaterial3D_synrt")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 3.5)
+use_collision = true
+size = Vector3(19, 1, 18)
 material = SubResource("StandardMaterial3D_synrt")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
@@ -121,3 +129,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -16)
 amount = 300
 use_custom_seed = false
 custom_seed = 0
+
+[node name="venlil-test" parent="." instance=ExtResource("7_pophn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3)
+
+[node name="Rain" parent="." instance=ExtResource("8_pophn")]
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 3.5)
+size = Vector3(19, 1, 18)

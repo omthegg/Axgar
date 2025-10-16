@@ -1,3 +1,6 @@
+StaticBody3D
+GPUParticlesCollisionBox3D
+GPUParticles3D
 CharacterControllerComponent
 OmniLight3D
 TextEdit
@@ -10,6 +13,3 @@ Label3D
 MeshInstance3D
 MultiMeshInstance3D
 CSGBox3D
-ReflectionProbe
-ColorRect
-Sprite2D
