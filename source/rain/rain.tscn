@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://jxc4bivosbbb" path="res://source/rain/rain.gd" id="1_26j8h"]
 
 [sub_resource type="Gradient" id="Gradient_26j8h"]
-colors = PackedColorArray(0.03137255, 0.03529412, 0.043137256, 1, 0.3448639, 0.35621136, 0.37890625, 1)
+colors = PackedColorArray(0.03137255, 0.03529412, 0.043137256, 1, 0.16653442, 0.17742918, 0.19921875, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_f77d6"]
 gradient = SubResource("Gradient_26j8h")
@@ -19,14 +19,11 @@ collision_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
 texture_filter = 2
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
+billboard_mode = 2
 
 [sub_resource type="QuadMesh" id="QuadMesh_26j8h"]
 material = SubResource("StandardMaterial3D_dopfv")
-size = Vector2(0.1, 0.1)
+size = Vector2(0.03, 0.8)
 
 [node name="Rain" type="Node3D"]
 script = ExtResource("1_26j8h")
@@ -35,7 +32,7 @@ script = ExtResource("1_26j8h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 cast_shadow = 0
 extra_cull_margin = 1000.0
-amount = 64
+amount = 512
 lifetime = 2.0
 preprocess = 2.0
 speed_scale = 1.1
