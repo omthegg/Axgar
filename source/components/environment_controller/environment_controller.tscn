@@ -4,15 +4,29 @@
 
 [sub_resource type="Environment" id="Environment_ioude"]
 background_mode = 1
-background_color = Color(0.030044556, 0.03521423, 0.04296875, 1)
+background_color = Color(0.03137255, 0.03529412, 0.043137256, 1)
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05
 tonemap_exposure = 2.0
-glow_bloom = 0.5
+adjustment_enabled = true
 
 [node name="EnvironmentController" type="Node3D"]
 script = ExtResource("1_jrywv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ioude")
+
+[node name="FireFlickerRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FireFlickerLight" type="OmniLight3D" parent="."]
+visible = false
+light_specular = 0.0
+omni_range = 100.0
+omni_attenuation = 0.0

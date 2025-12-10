@@ -44,9 +44,12 @@ void vertex()
 	//VERTEX.y += 1.0;
 	float height = VERTEX.y + 0.5;
 	vec3 world_vertex = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	float randomness = world_vertex.x + world_vertex.z;
+	//float randomness = world_vertex.x + world_vertex.z;
+	float randomness = texture(noise_texture, vec2(world_vertex.x, world_vertex.z)).x * 1000.0;
+	//float randomness = fract(sin(world_vertex.x + world_vertex.z) * 23949.23949);
 	//VERTEX.y += sin(height * cos(VERTEX.x * VERTEX.z) * TIME)/8.0;
 	VERTEX.xz *= (VERTEX.y - 3.0)/4.0;
 	VERTEX.x += height * sin(float(VERTEX.y + 1.0) * TIME * 8.0 + randomness)/20.0;
 	VERTEX.z += height * cos(float(VERTEX.y + 1.0) * TIME * 8.0 + randomness)/20.0;
+	VERTEX.y += height * sin(float(VERTEX.y + 1.0) * TIME * 8.0 + randomness)/20.0;
 }

@@ -1,8 +1,9 @@
+OmniLight3D
+ColorRect
 StaticBody3D
 GPUParticlesCollisionBox3D
 GPUParticles3D
 CharacterControllerComponent
-OmniLight3D
 TextEdit
 LineEdit
 Control
@@ -11,5 +12,3 @@ Label
 CanvasGroup
 Label3D
 MeshInstance3D
-MultiMeshInstance3D
-CSGBox3D

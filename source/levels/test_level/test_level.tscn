@@ -28,10 +28,8 @@ height = 1.1
 radius = 0.3
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_synrt"]
-load_path = "res://.godot/imported/Asphalt025C_AmbientOcclusion.png-dbb7a5df688f7d4364cb8458ceb54ddc.s3tc.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3exnk"]
-load_path = "res://.godot/imported/Asphalt025C_NormalGL.png-e51a7496e713e3eb549d9adb0ba726b4.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k64hh"]
 albedo_texture = ExtResource("3_y5moh")
@@ -52,7 +50,7 @@ texture_filter = 2
 [node name="TestLevel" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.9999994, 0, 0, 0, 0.49999982, 0.86602587, 0, -0.8660252, 0.5000002, 0, 0, 0)
 visible = false
 shadow_enabled = true
 
@@ -115,20 +113,14 @@ fire_flicker = true
 
 [node name="Fire" parent="." instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -16)
-use_custom_seed = false
-custom_seed = 0
 
 [node name="Fire2" parent="." instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -16)
 amount = 200
-use_custom_seed = false
-custom_seed = 0
 
 [node name="Fire3" parent="." instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -16)
 amount = 300
-use_custom_seed = false
-custom_seed = 0
 
 [node name="venlil-test" parent="." instance=ExtResource("7_pophn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3)
