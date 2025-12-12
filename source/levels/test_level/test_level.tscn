@@ -130,3 +130,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -3)
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 4, 3.5)
 size = Vector3(19, 1, 18)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.5, 0.5, 12.5)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 4, 2, 4, 7, 0)
+depth = 2.0
+material = SubResource("StandardMaterial3D_synrt")

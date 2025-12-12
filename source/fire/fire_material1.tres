@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b05uhn2n6absi"]
+
+[ext_resource type="Shader" uid="uid://whi1alt7fmsc" path="res://source/fire/fire4.gdshader" id="1_tcd30"]
+[ext_resource type="Texture2D" uid="uid://bsgon6oxrnxnt" path="res://source/fire/gradient_texture1.tres" id="2_sjr5r"]
+[ext_resource type="Texture2D" uid="uid://cdxon6mrtsncs" path="res://source/fire/noise_texture1.tres" id="3_g3gqd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tcd30")
+shader_parameter/noise_texture = ExtResource("3_g3gqd")
+shader_parameter/gradient_texture = ExtResource("2_sjr5r")
