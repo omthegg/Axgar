@@ -1,12 +1,12 @@
 res://source/fire/fire.tscn
 res://source/components/character_controller_component/vignette.gdshader
-res://source/fire/fire4.gdshader
+res://source/fire/fire6.gdshader
 res://source/environment/sky1.gdshader
 res://source/fire/fire1.gdshader
 res://source/fire/fire2.gdshader
 res://source/fire/fire3.gdshader
+res://source/fire/fire4.gdshader
 res://source/fire/fire5.gdshader
 res://models/venlil/venlil_body_regular.gdshader
 res://source/components/environment_controller/fire_flicker.gdshader
-res://source/fire/fire6.gdshader
-res://source/levels/test_level/test_level.tscn
+res://source/fire/noise_texture2.tres
