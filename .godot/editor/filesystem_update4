@@ -10,5 +10,4 @@ res://source/fire/fire4.gdshader
 res://source/fire/fire5.gdshader
 res://models/venlil/venlil_body_regular.gdshader
 res://source/components/environment_controller/fire_flicker.gdshader
-res://source/components/environment_controller/environment_controller.tscn
-res://source/components/environment_controller/environment_controller.gd
+res://source/fire/fire.tscn

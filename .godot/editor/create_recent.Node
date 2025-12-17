@@ -1,6 +1,10 @@
+Camera3D
+SubViewport
+Sprite3D
+MeshInstance3D
+OmniLight3D
 Sprite2D
 CSGPolygon3D
-OmniLight3D
 ColorRect
 StaticBody3D
 GPUParticlesCollisionBox3D
@@ -9,7 +13,3 @@ CharacterControllerComponent
 TextEdit
 LineEdit
 Control
-CanvasLayer
-Label
-CanvasGroup
-Label3D
