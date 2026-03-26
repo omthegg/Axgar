@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://buvhqk4tglnl1"]
+
+[ext_resource type="PackedScene" uid="uid://3hm6qxp4x5eo" path="res://models/venlil/venlil.glb" id="1_5ter2"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kny53"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ter2"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xfv5o"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5ter2"]
+graph_offset = Vector2(-325.3299, 99.31779)
+nodes/output/position = Vector2(493.33334, 213.33333)
+nodes/run/node = SubResource("AnimationNodeAnimation_xfv5o")
+nodes/run/position = Vector2(-80, 373.33334)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_kny53")
+nodes/Blend2/position = Vector2(200, 200)
+nodes/idle/node = SubResource("AnimationNodeAnimation_5ter2")
+nodes/idle/position = Vector2(-53.333332, 160)
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"idle", &"Blend2", 1, &"run"]
+
+[node name="VenlilTemplate" type="Node3D" unique_id=835283008]
+
+[node name="Venlil" parent="." unique_id=953485397 instance=ExtResource("1_5ter2")]
+
+[node name="Skeleton3D" parent="Venlil/Armature" parent_id_path=PackedInt32Array(953485397, 1540429850) index="0" unique_id=517687291]
+bones/2/rotation = Quaternion(0.028020484, -0.02299912, 0.9963751, -0.07695968)
+bones/3/rotation = Quaternion(0.102847524, -0.019446742, -0.0005319269, 0.9945069)
+bones/5/rotation = Quaternion(0.7006688, 0.08013336, 0.70886964, -0.012070906)
+bones/6/rotation = Quaternion(-0.08671469, 0.005374138, 0.19418569, 0.97710985)
+bones/7/rotation = Quaternion(0.01135199, -0.0061836476, -0.5627295, 0.82654005)
+bones/8/rotation = Quaternion(-0.30864707, 6.991123e-17, -6.7223354e-17, 0.95117664)
+bones/9/rotation = Quaternion(0.24110788, 5.3536674e-17, -1.1506396e-23, 0.9704983)
+bones/10/rotation = Quaternion(0.06575356, 1.3218996e-17, 1.1407688e-23, 0.9978359)
+bones/11/rotation = Quaternion(-0.028020484, -0.022999125, 0.9963751, 0.07695968)
+bones/12/rotation = Quaternion(0.10284751, 0.019446746, 0.00053192227, 0.9945069)
+bones/14/rotation = Quaternion(-0.7006688, 0.08013336, 0.70886964, 0.012070906)
+bones/15/rotation = Quaternion(-0.08671469, -0.005374138, -0.19418569, 0.97710985)
+bones/16/rotation = Quaternion(0.011352158, 0.0061833994, 0.5627295, 0.82654005)
+
+[node name="Hand_L_2" parent="Venlil/Armature/Skeleton3D" index="1" unique_id=989029385]
+transform = Transform3D(-0.9882392, 0.13778216, 0.0663323, -0.122366376, -0.97266996, 0.19733112, 0.091708146, 0.1868934, 0.9780901, 0.22668315, 0.4099568, -0.0095959455)
+
+[node name="Arm2_L_2" parent="Venlil/Armature/Skeleton3D" index="2" unique_id=1972526703]
+transform = Transform3D(-0.9843167, 0.16390577, 0.06524006, -0.14746061, -0.96743834, 0.20571518, 0.09683362, 0.19286844, 0.9764349, 0.19010496, 0.625856, -0.05263759)
+
+[node name="Arm1_L_2" parent="Venlil/Armature/Skeleton3D" index="3" unique_id=667257912]
+transform = Transform3D(-0.98658466, 0.1520725, 0.059377827, -0.15248227, -0.9883034, -0.0024041608, 0.05831772, -0.011425957, 0.99823266, 0.155, 0.854, -0.049999982)
+
+[node name="Foot_L_2" parent="Venlil/Armature/Skeleton3D" index="4" unique_id=2041143661]
+transform = Transform3D(0.03187038, -3.7252903e-09, 0.99949175, 0.8061912, -0.5910967, -0.025706638, 0.59079653, 0.8066009, -0.018838491, 0.09799996, -0.18699995, -0.08200001)
+
+[node name="Leg2_L_2" parent="Venlil/Armature/Skeleton3D" index="5" unique_id=221666524]
+transform = Transform3D(-0.011303071, -0.041451782, 0.99907637, -0.25364035, -0.96634406, -0.042963237, 0.96723264, -0.25389192, 0.0004087883, 0.11399998, 0.18600011, 0.015999982)
+
+[node name="Leg1_L_2" parent="Venlil/Armature/Skeleton3D" index="6" unique_id=315046824]
+transform = Transform3D(-0.017835021, 0.12940727, 0.9914311, 0.13410878, -0.9823189, 0.13063043, 0.99080616, 0.13528939, 0.00016501546, 0.07, 0.52000004, -0.03)
+
+[node name="Tail3_2" parent="Venlil/Armature/Skeleton3D" index="7" unique_id=34513174]
+transform = Transform3D(1, 2.111823e-16, 2.1903103e-16, -2.2147352e-16, 0.99884236, 0.04810117, -2.086194e-16, -0.048101038, 0.9988424, 5.952005e-17, 0.91341484, -0.29594544)
+
+[node name="Tail2_2" parent="Venlil/Armature/Skeleton3D" index="8" unique_id=1580405702]
+transform = Transform3D(1, 1.8235283e-16, 2.1846815e-16, -2.1846821e-16, 0.9838934, 0.17875585, -1.8235277e-16, -0.17875573, 0.98389345, 1.9402431e-17, 0.6969583, -0.2566192)
+
+[node name="Tail1_2" parent="Venlil/Armature/Skeleton3D" index="9" unique_id=982524502]
+transform = Transform3D(1, 8.4726773e-17, 1.7449244e-16, -1.7449244e-16, 0.78584415, 0.6184245, -8.4726773e-17, -0.6184244, 0.78584427, 0, 0.517, -0.114999995)
+
+[node name="Hand_R_2" parent="Venlil/Armature/Skeleton3D" index="10" unique_id=1528267759]
+transform = Transform3D(-0.9882392, -0.13778217, -0.06633231, 0.12236639, -0.97266996, 0.19733107, -0.09170816, 0.18689336, 0.9780901, -0.22668317, 0.4099568, -0.00959596)
+
+[node name="Arm2_R_2" parent="Venlil/Armature/Skeleton3D" index="11" unique_id=829348697]
+transform = Transform3D(-0.9843167, -0.16390578, -0.06524007, 0.14746062, -0.96743834, 0.20571513, -0.09683363, 0.1928684, 0.9764349, -0.19010496, 0.625856, -0.052637592)
+
+[node name="Arm1_R_2" parent="Venlil/Armature/Skeleton3D" index="12" unique_id=536844191]
+transform = Transform3D(-0.98658466, -0.1520725, -0.059377827, 0.15248227, -0.9883034, -0.0024041682, -0.05831772, -0.0114259645, 0.99823266, -0.155, 0.854, -0.049999982)
+
+[node name="Foot_R_2" parent="Venlil/Armature/Skeleton3D" index="13" unique_id=965103660]
+transform = Transform3D(0.031869777, 3.7252903e-09, -0.99949175, -0.8061911, -0.5910967, -0.025706153, -0.5907965, 0.8066009, -0.018838137, -0.09799996, -0.18699995, -0.08200001)
+
+[node name="Leg2_R_2" parent="Venlil/Armature/Skeleton3D" index="14" unique_id=722811050]
+transform = Transform3D(-0.011303071, 0.041451782, -0.99907637, 0.25364035, -0.96634406, -0.042963237, -0.96723264, -0.25389192, 0.0004087883, -0.11399998, 0.18600011, 0.015999982)
+
+[node name="Leg1_R_2" parent="Venlil/Armature/Skeleton3D" index="15" unique_id=1307690315]
+transform = Transform3D(-0.017835021, -0.12940727, -0.9914311, -0.13410878, -0.9823189, 0.13063043, -0.99080616, 0.13528939, 0.00016501546, -0.07, 0.52000004, -0.03)
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1462497566]
+root_node = NodePath("../Venlil")
+tree_root = SubResource("AnimationNodeBlendTree_5ter2")
+anim_player = NodePath("../Venlil/AnimationPlayer")
+parameters/Blend2/blend_amount = 0.0
+
+[editable path="Venlil"]

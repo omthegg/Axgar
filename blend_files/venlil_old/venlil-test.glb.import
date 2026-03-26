@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dpphyc52dgy46"
-path="res://.godot/imported/venlil-test.glb-560437f4f99ad0d4917f3d475304c639.scn"
+path="res://.godot/imported/venlil-test.glb-888fd9660662c53f6f8ee8e54599e466.scn"
 
 [deps]
 
-source_file="res://models/venlil/venlil-test.glb"
-dest_files=["res://.godot/imported/venlil-test.glb-560437f4f99ad0d4917f3d475304c639.scn"]
+source_file="res://blend_files/venlil_old/venlil-test.glb"
+dest_files=["res://.godot/imported/venlil-test.glb-888fd9660662c53f6f8ee8e54599e466.scn"]
 
 [params]
 
