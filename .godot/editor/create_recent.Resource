@@ -1,1 +1,1 @@
-FuncGodotFGDFile
+StandardMaterial3D
