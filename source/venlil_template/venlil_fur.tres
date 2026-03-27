@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cmm35fibc51co"]
+
+[ext_resource type="Texture2D" uid="uid://brfka2r8cqmvb" path="res://source/venlil_template/venlil_fur_noise_texture.tres" id="1_g8rqk"]
+
+[resource]
+resource_local_to_scene = true
+albedo_texture = ExtResource("1_g8rqk")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+texture_filter = 2

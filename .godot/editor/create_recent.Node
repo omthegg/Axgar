@@ -1,3 +1,5 @@
+res://source/components/character_controller_component/character_controller_component.gd
+CharacterBody3D
 AnimationTree
 Camera3D
 SubViewport
@@ -11,5 +13,3 @@ StaticBody3D
 GPUParticlesCollisionBox3D
 GPUParticles3D
 CharacterControllerComponent
-TextEdit
-LineEdit
