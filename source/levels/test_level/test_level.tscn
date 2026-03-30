@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://ce4f0602qljsw" path="res://textures/Bricks082A.jpg" id="4_3exnk"]
 [ext_resource type="PackedScene" uid="uid://do8fee4yywcpu" path="res://source/components/environment_controller/environment_controller.tscn" id="6_6l7bi"]
 [ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire.tscn" id="7_y5moh"]
-[ext_resource type="PackedScene" uid="uid://buvhqk4tglnl1" path="res://source/venlil_template/venlil_template.tscn" id="8_bvpvu"]
 [ext_resource type="PackedScene" uid="uid://bhr4bq72qti1x" path="res://source/characters/hushang.tscn" id="8_guw1o"]
 [ext_resource type="PackedScene" uid="uid://ccag5hjymdcja" path="res://source/rain/rain.tscn" id="8_pophn"]
 [ext_resource type="Texture2D" uid="uid://bpelu7tyeeuxq" path="res://textures/checkerboard.png" id="9_bvpvu"]
+[ext_resource type="PackedScene" uid="uid://d3huekngl3n0l" path="res://source/characters/maani.tscn" id="9_guw1o"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_synrt"]
 
@@ -140,9 +140,6 @@ amount = 300
 
 [node name="Rain" parent="." unique_id=1408634114 instance=ExtResource("8_pophn")]
 
-[node name="VenlilTemplate" parent="." unique_id=835283008 instance=ExtResource("8_bvpvu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.49999976, -4)
-
 [node name="Hushang" parent="." unique_id=655263559 instance=ExtResource("8_guw1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
@@ -151,3 +148,6 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11, 
 visible = false
 material_override = SubResource("StandardMaterial3D_guw1o")
 mesh = SubResource("QuadMesh_pophn")
+
+[node name="Maani" parent="." unique_id=407006829 instance=ExtResource("9_guw1o")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5, 0.5, -2.5)

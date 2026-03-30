@@ -9,6 +9,8 @@ extends Node3D
 
 func _ready() -> void:
 	$Venlil/Armature/Skeleton3D/Head_2/Head.material_override.albedo_color = fur_color
+	if character_controller:
+		position.z += 0.1
 
 
 func _physics_process(_delta: float) -> void:

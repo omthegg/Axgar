@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d3huekngl3n0l"]
+
+[ext_resource type="Script" uid="uid://bq2fqn7plyjoy" path="res://source/characters/character.gd" id="1_y3yl7"]
+[ext_resource type="PackedScene" uid="uid://buvhqk4tglnl1" path="res://source/venlil_template/venlil_template.tscn" id="2_7dbcl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y3yl7"]
+radius = 0.25
+height = 1.5
+
+[node name="Maani" type="CharacterBody3D" unique_id=407006829]
+script = ExtResource("1_y3yl7")
+metadata/_custom_type_script = "uid://bq2fqn7plyjoy"
+
+[node name="VenlilTemplate" parent="." unique_id=835283008 instance=ExtResource("2_7dbcl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1086705563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_y3yl7")
