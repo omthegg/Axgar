@@ -1,6 +1,6 @@
 extends Node
 
-var mouse_sensitivity:float = 0.003
+var mouse_sensitivity:float = 0.005
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):

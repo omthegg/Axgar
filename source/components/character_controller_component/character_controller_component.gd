@@ -3,24 +3,17 @@ extends Node3D
 class_name CharacterControllerComponent
 
 @export var camera_height:float = 0.0
-@export var walking_speed:float = 5.0
-@export var running_speed:float = 9.0
-@export var mass:int = 75
-@export var jump_speed:float = 5
 @export var fov:int = 80
 @export var has_flashlight:bool = false
 
-@onready var character:CharacterBody3D = get_parent()
+@onready var character:Character = get_parent()
 @onready var head:Node3D = $Head
 @onready var camera:Camera3D = $Head/Camera3D
 @onready var head_bobber:Node3D = $Head/HeadBobber
 @onready var head_tilter:Node3D = $Head/HeadTilter
 @onready var flashlight_component:Node3D = $Head/Camera3D/FlashlightComponent
 
-var speed:float = walking_speed
-
 var input_dir:Vector2
-var direction:Vector3
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -33,43 +26,16 @@ func _ready() -> void:
 	flashlight_component.visible = has_flashlight
 
 
-func _physics_process(delta:float) -> void:
-	# Add the gravity.
-	# In a vaccum, all objects fall at the same speed.
-	if not character.is_on_floor():
-		character.velocity += character.get_gravity() * delta
-	
+func _physics_process(_delta:float) -> void:
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and character.is_on_floor():
-		character.velocity.y = jump_speed
+	if Input.is_action_just_pressed("jump"):
+		character.jump()
 	
 	input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	direction = (character.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	character.direction = (character.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	# Running
-	if Input.is_action_pressed("run") and input_dir.y < 0:
-		speed = running_speed
-	else:
-		speed = walking_speed
-	
-	#if direction:
-	character.velocity.x = lerpf(character.velocity.x, direction.x * speed, 15.0 * delta)
-	character.velocity.z = lerpf(character.velocity.z, direction.z * speed, 15.0 * delta)
-	#else:
-	#	character.velocity.x = move_toward(character.velocity.x, 0, speed)
-	#	character.velocity.z = move_toward(character.velocity.z, 0, speed)
-	
-	character.move_and_slide()
-	
-	for i in character.get_slide_collision_count():
-		var collision = character.get_slide_collision(i)
-		#print(collision.get_normal())
-		if collision.get_normal().y > 0.5:
-			continue
-		
-		if collision.get_collider() is RigidBody3D:
-			collision.get_collider().apply_force(collision.get_normal() * -300)
-
+	character.running = (Input.is_action_pressed("run") and input_dir.y < 0)
 
 
 func _input(event) -> void:

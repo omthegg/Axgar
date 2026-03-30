@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bhr4bq72qti1x"]
 
+[ext_resource type="Script" uid="uid://bq2fqn7plyjoy" path="res://source/characters/character.gd" id="1_0rjh7"]
 [ext_resource type="PackedScene" uid="uid://c3r471fjt4lkh" path="res://source/components/character_controller_component/character_controller_component.tscn" id="1_xvb54"]
 [ext_resource type="PackedScene" uid="uid://buvhqk4tglnl1" path="res://source/venlil_template/venlil_template.tscn" id="2_oajnn"]
 
@@ -7,7 +8,9 @@
 radius = 0.3
 height = 1.5
 
-[node name="Hushang" type="CharacterBody3D" unique_id=655263559]
+[node name="Hushang" type="CharacterBody3D" unique_id=1304320328]
+script = ExtResource("1_0rjh7")
+metadata/_custom_type_script = "uid://bq2fqn7plyjoy"
 
 [node name="CharacterControllerComponent" parent="." unique_id=1537724458 instance=ExtResource("1_xvb54")]
 camera_height = 1.4

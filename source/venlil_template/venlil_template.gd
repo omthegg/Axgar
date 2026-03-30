@@ -2,7 +2,7 @@ extends Node3D
 
 @export var fur_color:Color = Color.WHITE
 @export_range(1.0, 2.0, 0.01) var size:float = 1.0
-@export var character:CharacterBody3D
+@export var character:Character
 @export var character_controller:CharacterControllerComponent
 
 @onready var animation_tree:AnimationTree = $AnimationTree
@@ -21,7 +21,7 @@ func animate() -> void:
 	if !character_controller:
 		return
 	
-	var ratio:float = character.velocity.length()/character_controller.running_speed
+	var ratio:float = character.velocity.length()/character.run_speed
 	animation_tree["parameters/walk_speed/blend_amount"] = ratio
 	if animation_tree["parameters/walk_speed/blend_amount"] > 1.0:
 		animation_tree["parameters/walk_speed/blend_amount"] = 1.0
