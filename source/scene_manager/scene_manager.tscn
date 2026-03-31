@@ -1,20 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8ob5nucifa7i"]
+[gd_scene format=3 uid="uid://b8ob5nucifa7i"]
 
 [ext_resource type="PackedScene" uid="uid://3xx2ls0a1fxi" path="res://source/levels/test_level/test_level.tscn" id="1_ivaf7"]
 [ext_resource type="Script" uid="uid://fir3cuhmwrg4" path="res://source/scene_manager/scene_manager.gd" id="1_y51ae"]
 [ext_resource type="PackedScene" uid="uid://cfnrscvrx0ci1" path="res://source/debug_info/debug_info.tscn" id="3_7eoyu"]
 [ext_resource type="PackedScene" uid="uid://bjra8vcf7k5gt" path="res://source/console/console.tscn" id="3_ikhl4"]
 
-[node name="SceneManager" type="Node3D"]
+[node name="SceneManager" type="Node3D" unique_id=574918504]
 script = ExtResource("1_y51ae")
 
-[node name="TestLevel" parent="." instance=ExtResource("1_ivaf7")]
+[node name="TestLevel" parent="." unique_id=1168807897 instance=ExtResource("1_ivaf7")]
 
-[node name="DebugCanvasLayer" type="CanvasLayer" parent="."]
+[node name="DebugCanvasLayer" type="CanvasLayer" parent="." unique_id=458206844]
 
-[node name="DebugInfo" parent="DebugCanvasLayer" instance=ExtResource("3_7eoyu")]
+[node name="DebugInfo" parent="DebugCanvasLayer" unique_id=617837605 instance=ExtResource("3_7eoyu")]
 
-[node name="ConsoleCanvasLayer" type="CanvasLayer" parent="."]
+[node name="ConsoleCanvasLayer" type="CanvasLayer" parent="." unique_id=1381099497]
 visible = false
 
-[node name="Console" parent="ConsoleCanvasLayer" instance=ExtResource("3_ikhl4")]
+[node name="Console" parent="ConsoleCanvasLayer" unique_id=1689745594 instance=ExtResource("3_ikhl4")]

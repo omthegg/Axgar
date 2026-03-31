@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dnikrqx27hpjt"]
+
+[ext_resource type="Script" uid="uid://bamgtjx8asvj2" path="res://source/components/navigator/navigator.gd" id="1_mdltl"]
+
+[node name="Navigator" type="Node3D" unique_id=1673768870]
+script = ExtResource("1_mdltl")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1813256079]
+
+[node name="TargetLooker" type="Node3D" parent="." unique_id=1598731238]

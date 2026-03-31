@@ -20,8 +20,6 @@ func _physics_process(_delta: float) -> void:
 func animate() -> void:
 	if !character:
 		return
-	if !character_controller:
-		return
 	
 	var ratio:float = character.velocity.length()/character.run_speed
 	animation_tree["parameters/walk_speed/blend_amount"] = ratio

@@ -5,6 +5,7 @@ extends Node3D
 @onready var console_canvas_layer:CanvasLayer = $ConsoleCanvasLayer
 @onready var console_line_edit:LineEdit = $ConsoleCanvasLayer/Console/LineEdit
 
+@onready var hushang:Character = $TestLevel/Hushang
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):

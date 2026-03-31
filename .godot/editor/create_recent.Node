@@ -1,7 +1,8 @@
-res://source/characters/character.gd
+Node3D
+NavigationAgent3D
+NavigationRegion3D
 CharacterBody3D
 CCDIK3D
-Node3D
 TwoBoneIK3D
 MeshInstance3D
 AnimationTree
@@ -11,5 +12,3 @@ Sprite3D
 OmniLight3D
 Sprite2D
 CSGPolygon3D
-ColorRect
-StaticBody3D
