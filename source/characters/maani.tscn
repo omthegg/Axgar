@@ -10,6 +10,7 @@ height = 1.5
 
 [node name="Maani" type="CharacterBody3D" unique_id=407006829]
 script = ExtResource("1_y3yl7")
+preset = "venlil"
 metadata/_custom_type_script = "uid://bq2fqn7plyjoy"
 
 [node name="VenlilTemplate" parent="." unique_id=835283008 node_paths=PackedStringArray("character") instance=ExtResource("2_7dbcl")]

@@ -1,3 +1,5 @@
+OccluderInstance3D
+CSGPolygon3D
 Node3D
 NavigationAgent3D
 NavigationRegion3D
@@ -11,4 +13,3 @@ SubViewport
 Sprite3D
 OmniLight3D
 Sprite2D
-CSGPolygon3D

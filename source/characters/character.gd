@@ -1,6 +1,10 @@
 extends CharacterBody3D
 class_name Character
 
+
+## venlil: walk_speed = 3.0, run_speed = 6.0, mass = 50.0, jump_speed = 5.0
+@export_enum("venlil", "human", "custom") var preset:String = "custom"
+
 @export var walk_speed:float = 5.0
 @export var run_speed:float = 9.0
 @export var mass:float = 75.0
@@ -10,6 +14,11 @@ var speed:float = walk_speed
 var running:bool = false
 var direction:Vector3 = Vector3.ZERO
 var ko_meter:float = 0.0 ## If this reacher 10.0, the character gets KO'ed
+
+func _ready() -> void:
+	floor_constant_speed = true
+	manage_preset()
+
 
 func _physics_process(delta: float) -> void:
 	manage_ko(delta)
@@ -52,3 +61,18 @@ func jump() -> void:
 		return
 	
 	velocity.y = jump_speed
+
+
+func manage_preset() -> void:
+	match preset:
+		"venlil":
+			walk_speed = 3.0
+			run_speed = 6.0
+			mass = 50.0
+			jump_speed = 4.0
+		
+		"human":
+			walk_speed = 4.0
+			run_speed = 7.0
+			mass = 75.0
+			jump_speed = 5.0

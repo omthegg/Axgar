@@ -17,7 +17,7 @@ var fire_noise:FastNoiseLite = FastNoiseLite.new()
 
 func _ready() -> void:
 	world_environment.environment.ambient_light_source = Environment.AmbientSource.AMBIENT_SOURCE_DISABLED
-	fire_flicker_light.light_color = Color.ORANGE
+	fire_flicker_light.light_color = Color.DARK_ORANGE
 	if !fire_flicker:
 		ambient_light.show()
 
@@ -33,5 +33,5 @@ func _process(delta: float) -> void:
 
 
 func animate_fire_flicker() -> void:
-	var light_energy:float = 0.05 + abs(fire_noise.get_noise_1d(time * 50.0))/7.0
+	var light_energy:float = 0.1 + abs(fire_noise.get_noise_1d(time * 50.0))/7.0
 	fire_flicker_light.light_energy = light_energy

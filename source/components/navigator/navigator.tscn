@@ -6,5 +6,6 @@
 script = ExtResource("1_mdltl")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1813256079]
+debug_enabled = true
 
 [node name="TargetLooker" type="Node3D" parent="." unique_id=1598731238]

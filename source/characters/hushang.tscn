@@ -10,6 +10,7 @@ height = 1.5
 
 [node name="Hushang" type="CharacterBody3D" unique_id=1304320328]
 script = ExtResource("1_0rjh7")
+preset = "venlil"
 metadata/_custom_type_script = "uid://bq2fqn7plyjoy"
 
 [node name="CharacterControllerComponent" parent="." unique_id=1537724458 instance=ExtResource("1_xvb54")]
