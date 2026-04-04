@@ -1,14 +1,23 @@
+@tool
 extends Node3D
 
-@export var fur_color:Color = Color.WHITE
-@export_range(1.0, 2.0, 0.01) var size:float = 1.0
+@export var fur_color:Color = Color.WHITE:
+	set(value):
+		fur_color = value
+		configure_model()
+
+@export_range(0.5, 2.0, 0.01) var size:float = 1.0:
+	set(value):
+		size = value
+		configure_model()
+
 @export var character:Character
 @export var character_controller:CharacterControllerComponent
 
 @onready var animation_tree:AnimationTree = $AnimationTree
 
 func _ready() -> void:
-	$Venlil/Armature/Skeleton3D/Head_2/Head.material_override.albedo_color = fur_color
+	configure_model()
 	if character_controller:
 		position.z += 0.1
 
@@ -25,3 +34,8 @@ func animate() -> void:
 	animation_tree["parameters/walk_speed/blend_amount"] = ratio
 	if animation_tree["parameters/walk_speed/blend_amount"] > 1.0:
 		animation_tree["parameters/walk_speed/blend_amount"] = 1.0
+
+
+func configure_model() -> void:
+	$Venlil/Armature/Skeleton3D/Head_2/Head.material_override.albedo_color = fur_color
+	$Venlil.scale = Vector3.ONE * size

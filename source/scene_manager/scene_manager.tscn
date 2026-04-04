@@ -8,7 +8,7 @@
 [node name="SceneManager" type="Node3D" unique_id=574918504]
 script = ExtResource("1_y51ae")
 
-[node name="TestLevel" parent="." unique_id=1168807897 instance=ExtResource("1_ivaf7")]
+[node name="TestLevel" parent="." unique_id=953601541 instance=ExtResource("1_ivaf7")]
 
 [node name="DebugCanvasLayer" type="CanvasLayer" parent="." unique_id=458206844]
 
