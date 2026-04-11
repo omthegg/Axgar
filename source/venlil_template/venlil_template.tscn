@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b5xgtfha0evud" path="res://source/venlil_template/venlil_template.gd" id="1_xfv5o"]
 [ext_resource type="Texture2D" uid="uid://brfka2r8cqmvb" path="res://source/venlil_template/venlil_fur_noise_texture.tres" id="3_xfv5o"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfv5o"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymgaj"]
 resource_local_to_scene = true
 albedo_texture = ExtResource("3_xfv5o")
 uv1_scale = Vector3(2, 2, 2)
@@ -35,116 +35,116 @@ script = ExtResource("1_xfv5o")
 
 [node name="Venlil" parent="." unique_id=953485397 instance=ExtResource("1_5ter2")]
 
-[node name="Skeleton3D" parent="Venlil/Armature" parent_id_path=PackedInt32Array(953485397, 1063560642) index="0" unique_id=1896274650]
-bones/2/rotation = Quaternion(0.027980363, -0.022921748, 0.996183, -0.07944331)
+[node name="Skeleton3D" parent="Venlil/Armature" parent_id_path=PackedInt32Array(953485397, 977857830) index="0" unique_id=1471118745]
+bones/2/rotation = Quaternion(0.02822083, -0.023388468, 0.9972518, -0.06438528)
 bones/3/rotation = Quaternion(0.102847524, -0.019446742, -0.0005319269, 0.9945069)
 bones/5/rotation = Quaternion(0.7006688, 0.08013336, 0.70886964, -0.012070906)
 bones/6/rotation = Quaternion(-0.08671469, 0.005374138, 0.19418569, 0.97710985)
 bones/7/rotation = Quaternion(0.01135199, -0.0061836476, -0.5627295, 0.82654005)
 bones/8/rotation = Quaternion(-0.30864707, 6.991123e-17, -6.7223354e-17, 0.95117664)
 bones/9/rotation = Quaternion(0.24110788, 5.3536674e-17, -1.1506396e-23, 0.9704983)
-bones/10/rotation = Quaternion(0.06010775, 1.7659598e-17, 1.2971005e-23, 0.99819195)
-bones/11/rotation = Quaternion(-0.027980363, -0.02292175, 0.996183, 0.07944328)
+bones/10/rotation = Quaternion(0.09454191, 1.3218354e-17, 1.4354646e-23, 0.99552095)
+bones/11/rotation = Quaternion(-0.028219584, -0.023386015, 0.9972468, 0.06446502)
 bones/12/rotation = Quaternion(0.10284751, 0.019446746, 0.00053192227, 0.9945069)
 bones/14/rotation = Quaternion(-0.7006688, 0.08013336, 0.70886964, 0.012070906)
 bones/15/rotation = Quaternion(-0.08671469, -0.005374138, -0.19418569, 0.97710985)
 bones/16/rotation = Quaternion(0.011352158, 0.0061833994, 0.5627295, 0.82654005)
 
-[node name="Head" parent="Venlil/Armature/Skeleton3D/Head_2" parent_id_path=PackedInt32Array(953485397, 345971106) index="0" unique_id=786245770]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Head_m" parent="Venlil/Armature/Skeleton3D/Head" parent_id_path=PackedInt32Array(953485397, 1739297707) index="0" unique_id=718732854]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Hand_L_2" parent="Venlil/Armature/Skeleton3D" index="1" unique_id=599892005]
-transform = Transform3D(-0.9876168, 0.14262931, 0.06534776, -0.12729137, -0.97197074, 0.19765928, 0.09170815, 0.18689337, 0.9780901, 0.22889587, 0.41031983, -0.00959596)
+[node name="Hand_L" parent="Venlil/Armature/Skeleton3D" index="1" unique_id=1153881149]
+transform = Transform3D(-0.9910111, 0.1132051, 0.071288384, -0.097401515, -0.97583556, 0.19559523, 0.091708146, 0.18689339, 0.97809017, 0.21546045, 0.40829012, -0.009595957)
 
-[node name="Hand_L" parent="Venlil/Armature/Skeleton3D/Hand_L_2" index="0" unique_id=864297084]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Hand_L_m" parent="Venlil/Armature/Skeleton3D/Hand_L" index="0" unique_id=1146423174]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Arm2_L_2" parent="Venlil/Armature/Skeleton3D" index="2" unique_id=1604431557]
-transform = Transform3D(-0.9835692, 0.16872652, 0.06421374, -0.15236571, -0.96660894, 0.20603779, 0.096833624, 0.19286841, 0.9764349, 0.19124185, 0.6260339, -0.052637596)
+[node name="Arm2_L" parent="Venlil/Armature/Skeleton3D" index="2" unique_id=1682677477]
+transform = Transform3D(-0.9877228, 0.13945235, 0.07040796, -0.12258669, -0.97126454, 0.20400417, 0.09683362, 0.19286843, 0.97643495, 0.18433942, 0.62504315, -0.052637596)
 
-[node name="Arm2_L" parent="Venlil/Armature/Skeleton3D/Arm2_L_2" index="0" unique_id=1709939103]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Arm2_L_m" parent="Venlil/Armature/Skeleton3D/Arm2_L" index="0" unique_id=1171454767]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Arm1_L_2" parent="Venlil/Armature/Skeleton3D" index="3" unique_id=646806809]
-transform = Transform3D(-0.98581207, 0.15699741, 0.059389077, -0.1573986, -0.98753273, -0.0021081306, 0.058317725, -0.011425979, 0.99823266, 0.155, 0.854, -0.049999982)
+[node name="Arm1_L" parent="Venlil/Armature/Skeleton3D" index="3" unique_id=1948475444]
+transform = Transform3D(-0.9901166, 0.12709658, 0.059298288, -0.12754954, -0.9918245, -0.0039010681, 0.058317713, -0.011425987, 0.9982327, 0.155, 0.854, -0.049999982)
 
-[node name="Arm1_L" parent="Venlil/Armature/Skeleton3D/Arm1_L_2" index="0" unique_id=1957620059]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Arm1_L_m" parent="Venlil/Armature/Skeleton3D/Arm1_L" index="0" unique_id=1737684932]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Foot_L_2" parent="Venlil/Armature/Skeleton3D" index="4" unique_id=2045614468]
+[node name="Foot_L" parent="Venlil/Armature/Skeleton3D" index="4" unique_id=1189586729]
 transform = Transform3D(0.03187038, -3.7252903e-09, 0.99949175, 0.8061912, -0.5910967, -0.025706638, 0.59079653, 0.8066009, -0.018838491, 0.09799996, -0.18699995, -0.08200001)
 
-[node name="Foot_L" parent="Venlil/Armature/Skeleton3D/Foot_L_2" index="0" unique_id=2055214166]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Foot_L_m" parent="Venlil/Armature/Skeleton3D/Foot_L" index="0" unique_id=1289443595]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Leg2_L_2" parent="Venlil/Armature/Skeleton3D" index="5" unique_id=1162471955]
+[node name="Leg2_L" parent="Venlil/Armature/Skeleton3D" index="5" unique_id=1291000593]
 transform = Transform3D(-0.011303071, -0.041451782, 0.99907637, -0.25364035, -0.96634406, -0.042963237, 0.96723264, -0.25389192, 0.0004087883, 0.11399998, 0.18600011, 0.015999982)
 
-[node name="Leg2_L" parent="Venlil/Armature/Skeleton3D/Leg2_L_2" index="0" unique_id=352154464]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Leg2_L_m" parent="Venlil/Armature/Skeleton3D/Leg2_L" index="0" unique_id=1535220464]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Leg1_L_2" parent="Venlil/Armature/Skeleton3D" index="6" unique_id=927185334]
+[node name="Leg1_L" parent="Venlil/Armature/Skeleton3D" index="6" unique_id=1437461523]
 transform = Transform3D(-0.017835021, 0.12940727, 0.9914311, 0.13410878, -0.9823189, 0.13063043, 0.99080616, 0.13528939, 0.00016501546, 0.07, 0.52000004, -0.03)
 
-[node name="Leg1_L" parent="Venlil/Armature/Skeleton3D/Leg1_L_2" index="0" unique_id=324643740]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Leg1_L_m" parent="Venlil/Armature/Skeleton3D/Leg1_L" index="0" unique_id=1655604572]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Tail3_2" parent="Venlil/Armature/Skeleton3D" index="7" unique_id=1163684368]
-transform = Transform3D(1, 2.0937385e-16, 2.3026286e-16, -2.2268152e-16, 0.9982342, 0.059398822, -2.1741977e-16, -0.05939869, 0.99823433, 5.952005e-17, 0.91341484, -0.29594544)
+[node name="Tail3" parent="Venlil/Armature/Skeleton3D" index="7" unique_id=642391653]
+transform = Transform3D(1, 2.2271612e-16, 2.0655552e-16, -2.2071361e-16, 0.9999534, -0.009644657, -2.0869395e-16, 0.009644777, 0.9999535, 5.952005e-17, 0.91341484, -0.29594544)
 
-[node name="Tail3" parent="Venlil/Armature/Skeleton3D/Tail3_2" index="0" unique_id=269710865]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Tail3_m" parent="Venlil/Armature/Skeleton3D/Tail3" index="0" unique_id=1688703420]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Tail2_2" parent="Venlil/Armature/Skeleton3D" index="8" unique_id=2140915177]
+[node name="Tail2" parent="Venlil/Armature/Skeleton3D" index="8" unique_id=1411098218]
 transform = Transform3D(1, 1.8235283e-16, 2.1846815e-16, -2.1846821e-16, 0.9838934, 0.17875585, -1.8235277e-16, -0.17875573, 0.98389345, 1.9402431e-17, 0.6969583, -0.2566192)
 
-[node name="Tail2" parent="Venlil/Armature/Skeleton3D/Tail2_2" index="0" unique_id=101276228]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Tail2_m" parent="Venlil/Armature/Skeleton3D/Tail2" index="0" unique_id=1282523614]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Tail1_2" parent="Venlil/Armature/Skeleton3D" index="9" unique_id=93363492]
+[node name="Tail1" parent="Venlil/Armature/Skeleton3D" index="9" unique_id=1806750187]
 transform = Transform3D(1, 8.4726773e-17, 1.7449244e-16, -1.7449244e-16, 0.78584415, 0.6184245, -8.4726773e-17, -0.6184244, 0.78584427, 0, 0.517, -0.114999995)
 
-[node name="Tail1" parent="Venlil/Armature/Skeleton3D/Tail1_2" index="0" unique_id=56612483]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Tail1_m" parent="Venlil/Armature/Skeleton3D/Tail1" index="0" unique_id=1355589062]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Hand_R_2" parent="Venlil/Armature/Skeleton3D" index="10" unique_id=1255784142]
-transform = Transform3D(-0.987617, -0.14262928, -0.06534779, 0.12729134, -0.971971, 0.19765928, -0.09170816, 0.18689334, 0.9780901, -0.22889584, 0.41031966, -0.009595968)
+[node name="Hand_R" parent="Venlil/Armature/Skeleton3D" index="10" unique_id=1911993960]
+transform = Transform3D(-0.9909957, -0.113361135, -0.071257144, 0.09756001, -0.97581744, 0.19560659, -0.09170817, 0.18689333, 0.9780901, -0.21553172, 0.40829974, -0.009595972)
 
-[node name="Hand_R" parent="Venlil/Armature/Skeleton3D/Hand_R_2" index="0" unique_id=882494659]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Hand_R_m" parent="Venlil/Armature/Skeleton3D/Hand_R" index="0" unique_id=1396282847]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Arm2_R_2" parent="Venlil/Armature/Skeleton3D" index="11" unique_id=450492421]
-transform = Transform3D(-0.98356944, -0.1687265, -0.06421377, 0.15236568, -0.9666092, 0.20603779, -0.09683363, 0.19286838, 0.9764349, -0.19124183, 0.6260338, -0.052637596)
+[node name="Arm2_R" parent="Venlil/Armature/Skeleton3D" index="11" unique_id=1286426002]
+transform = Transform3D(-0.9877034, -0.13960767, -0.070375375, 0.122744665, -0.9712422, 0.20401539, -0.09683363, 0.19286837, 0.9764349, -0.18437603, 0.6250478, -0.052637596)
 
-[node name="Arm2_R" parent="Venlil/Armature/Skeleton3D/Arm2_R_2" index="0" unique_id=1475060230]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Arm2_R_m" parent="Venlil/Armature/Skeleton3D/Arm2_R" index="0" unique_id=1280406983]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Arm1_R_2" parent="Venlil/Armature/Skeleton3D" index="12" unique_id=1435963184]
-transform = Transform3D(-0.9858123, -0.15699737, -0.05938908, 0.15739855, -0.987533, -0.0021081418, -0.058317725, -0.011425979, 0.99823266, -0.155, 0.854, -0.049999982)
+[node name="Arm1_R" parent="Venlil/Armature/Skeleton3D" index="12" unique_id=1112498183]
+transform = Transform3D(-0.99009645, -0.12725517, -0.059298933, 0.12770788, -0.9918042, -0.0038915947, -0.05831773, -0.011425991, 0.99823266, -0.155, 0.854, -0.049999982)
 
-[node name="Arm1_R" parent="Venlil/Armature/Skeleton3D/Arm1_R_2" index="0" unique_id=804113775]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Arm1_R_m" parent="Venlil/Armature/Skeleton3D/Arm1_R" index="0" unique_id=168372852]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Foot_R_2" parent="Venlil/Armature/Skeleton3D" index="13" unique_id=1383622965]
+[node name="Foot_R" parent="Venlil/Armature/Skeleton3D" index="13" unique_id=832673067]
 transform = Transform3D(0.031869777, 3.7252903e-09, -0.99949175, -0.8061911, -0.5910967, -0.025706153, -0.5907965, 0.8066009, -0.018838137, -0.09799996, -0.18699995, -0.08200001)
 
-[node name="Foot_R" parent="Venlil/Armature/Skeleton3D/Foot_R_2" index="0" unique_id=1976968281]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Foot_R_m" parent="Venlil/Armature/Skeleton3D/Foot_R" index="0" unique_id=16274200]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Leg2_R_2" parent="Venlil/Armature/Skeleton3D" index="14" unique_id=1967732447]
+[node name="Leg2_R" parent="Venlil/Armature/Skeleton3D" index="14" unique_id=1781432783]
 transform = Transform3D(-0.011303071, 0.041451782, -0.99907637, 0.25364035, -0.96634406, -0.042963237, -0.96723264, -0.25389192, 0.0004087883, -0.11399998, 0.18600011, 0.015999982)
 
-[node name="Leg2_R" parent="Venlil/Armature/Skeleton3D/Leg2_R_2" index="0" unique_id=1597153550]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Leg2_R_m" parent="Venlil/Armature/Skeleton3D/Leg2_R" index="0" unique_id=1872759148]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Leg1_R_2" parent="Venlil/Armature/Skeleton3D" index="15" unique_id=1173152388]
+[node name="Leg1_R" parent="Venlil/Armature/Skeleton3D" index="15" unique_id=832093194]
 transform = Transform3D(-0.017835021, -0.12940727, -0.9914311, -0.13410878, -0.9823189, 0.13063043, -0.99080616, 0.13528939, 0.00016501546, -0.07, 0.52000004, -0.03)
 
-[node name="Leg1_R" parent="Venlil/Armature/Skeleton3D/Leg1_R_2" index="0" unique_id=512597579]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Leg1_R_m" parent="Venlil/Armature/Skeleton3D/Leg1_R" index="0" unique_id=214061349]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
-[node name="Torso" parent="Venlil/Armature/Skeleton3D/Torso_2" parent_id_path=PackedInt32Array(953485397, 822696385) index="0" unique_id=1102094068]
-material_override = SubResource("StandardMaterial3D_xfv5o")
+[node name="Torso_m" parent="Venlil/Armature/Skeleton3D/Torso" parent_id_path=PackedInt32Array(953485397, 340953643) index="0" unique_id=1934332468]
+material_override = SubResource("StandardMaterial3D_ymgaj")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1462497566]
 root_node = NodePath("../Venlil")

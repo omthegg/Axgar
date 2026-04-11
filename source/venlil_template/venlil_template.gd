@@ -19,7 +19,7 @@ extends Node3D
 func _ready() -> void:
 	configure_model()
 	if character_controller:
-		position.z += 0.1
+		position.z = 0.1
 
 
 func _physics_process(_delta: float) -> void:
@@ -37,5 +37,5 @@ func animate() -> void:
 
 
 func configure_model() -> void:
-	$Venlil/Armature/Skeleton3D/Head_2/Head.material_override.albedo_color = fur_color
+	$Venlil/Armature/Skeleton3D/Head/Head_m.material_override.albedo_color = fur_color
 	$Venlil.scale = Vector3.ONE * size

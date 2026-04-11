@@ -21,7 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_xvb54")
 
 [node name="VenlilTemplate" parent="." unique_id=835283008 node_paths=PackedStringArray("character", "character_controller") instance=ExtResource("2_oajnn")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-fur_color = Color(0.4947917, 0.4947917, 0.4947917, 1)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.1)
+fur_color = Color(0.5130209, 0.5130209, 0.5130209, 1)
 character = NodePath("..")
 character_controller = NodePath("../CharacterControllerComponent")

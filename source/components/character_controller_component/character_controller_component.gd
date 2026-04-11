@@ -3,7 +3,7 @@ extends Node3D
 class_name CharacterControllerComponent
 
 @export var camera_height:float = 0.0
-@export var fov:int = 80
+@export var fov:int = 90
 @export var has_flashlight:bool = false
 
 @onready var character:Character = get_parent()
