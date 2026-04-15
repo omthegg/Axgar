@@ -15,6 +15,7 @@ metadata/_custom_type_script = "uid://bq2fqn7plyjoy"
 
 [node name="VenlilTemplate" parent="." unique_id=835283008 node_paths=PackedStringArray("character") instance=ExtResource("2_7dbcl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+is_exterminator = true
 character = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1086705563]

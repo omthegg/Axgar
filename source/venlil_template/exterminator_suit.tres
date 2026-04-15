@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dy4vt4wvbxbov"]
+
+[ext_resource type="Texture2D" uid="uid://ysd8qrmfqruq" path="res://textures/exterminator_suit.jpg" id="1_anhq3"]
+
+[resource]
+albedo_texture = ExtResource("1_anhq3")
+metallic = 0.5
+uv1_scale = Vector3(2, 2, 2)
+uv1_offset = Vector3(0.5, 0, 0)
+uv1_triplanar = true
+texture_filter = 2
