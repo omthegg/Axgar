@@ -98,6 +98,11 @@ fullscreen={
 ]
 }
 
+[layer_names]
+
+3d_render/layer_1="World"
+3d_render/layer_2="Viewmodel"
+
 [navigation]
 
 3d/default_cell_size=0.05
