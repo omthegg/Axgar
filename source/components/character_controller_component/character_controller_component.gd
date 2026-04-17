@@ -16,7 +16,9 @@ class_name CharacterControllerComponent
 var input_dir:Vector2
 
 func _ready() -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if character.get("size"):
+		camera_height = 1.3 * character.size
+	
 	head.position.y = camera_height
 	camera.fov = fov
 	#head_bobber.camera = camera
@@ -24,9 +26,15 @@ func _ready() -> void:
 	head_tilter.character_controller = self
 	
 	flashlight_component.visible = has_flashlight
+	
+	if character.is_player:
+		camera.make_current()
 
 
 func _physics_process(_delta:float) -> void:
+	if !character.is_player:
+		return
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
 		character.jump()
@@ -39,6 +47,9 @@ func _physics_process(_delta:float) -> void:
 
 
 func _input(event) -> void:
+	if !character.is_player:
+		return
+	
 	if event is InputEventMouseMotion:
 		character.rotate_y(-event.relative.x*Global.mouse_sensitivity)
 		head.rotate_x(-event.relative.y*Global.mouse_sensitivity)

@@ -5,6 +5,7 @@ class_name Character
 ## venlil: walk_speed = 3.0, run_speed = 6.0, mass = 50.0, jump_speed = 5.0
 @export_enum("venlil", "human", "custom") var preset:String = "custom"
 
+@export var is_player:bool = false
 @export var walk_speed:float = 5.0
 @export var run_speed:float = 9.0
 @export var mass:float = 75.0

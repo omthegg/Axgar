@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dweh0lqp4vbx7" path="res://textures/Grass001.jpg" id="2_pophn"]
 [ext_resource type="Texture2D" uid="uid://g8wth5gvfjdt" path="res://textures/Asphalt025C.png" id="3_y5moh"]
 [ext_resource type="Texture2D" uid="uid://ce4f0602qljsw" path="res://textures/Bricks082A.jpg" id="4_3exnk"]
+[ext_resource type="PackedScene" uid="uid://buvhqk4tglnl1" path="res://source/venlil_template/venlil_template.tscn" id="4_pophn"]
 [ext_resource type="PackedScene" uid="uid://do8fee4yywcpu" path="res://source/components/environment_controller/environment_controller.tscn" id="6_6l7bi"]
 [ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire.tscn" id="7_y5moh"]
 [ext_resource type="PackedScene" uid="uid://ccag5hjymdcja" path="res://source/rain/rain.tscn" id="8_pophn"]
@@ -147,6 +148,10 @@ use_collision = true
 polygon = PackedVector2Array(-12, 0, 0, 7.5, 2, 7.5, 2, 0)
 depth = 2.0
 material = SubResource("StandardMaterial3D_synrt")
+
+[node name="VenlilTemplate" parent="NavigationRegion3D" unique_id=295057403 instance=ExtResource("4_pophn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.1)
+is_player = true
 
 [node name="EnvironmentController" parent="." unique_id=1595475654 instance=ExtResource("6_6l7bi")]
 fire_flicker = true

@@ -19,7 +19,7 @@ extends Character
 		size = value
 		configure_model()
 
-@export var character_controller:CharacterControllerComponent
+@onready var character_controller:CharacterControllerComponent = $CharacterControllerComponent
 
 @onready var animation_tree:AnimationTree = $AnimationTree
 
@@ -48,17 +48,16 @@ var exterminator_material:StandardMaterial3D = preload("res://source/venlil_temp
 
 
 func _ready() -> void:
+	super()
 	if is_exterminator:
 		set_materials(exterminator_material)
 	#else:
 	#	set_materials(fur_material)
 	
 	configure_model()
-	if character_controller:
-		position.z = 0.1
 
 
-func _physics_process(_delta: float) -> void:
+func _process(_delta: float) -> void:
 	animate()
 
 

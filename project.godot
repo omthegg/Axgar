@@ -101,7 +101,8 @@ fullscreen={
 [layer_names]
 
 3d_render/layer_1="World"
-3d_render/layer_2="Player 3rd-person model"
+3d_render/layer_2="Player viewmodel"
+3d_render/layer_3="Player 3rd-person model"
 
 [navigation]
 
