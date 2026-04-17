@@ -1,5 +1,5 @@
 @tool
-extends Node3D
+extends Character
 
 @export var is_exterminator:bool = false:
 	set(value):
@@ -19,7 +19,6 @@ extends Node3D
 		size = value
 		configure_model()
 
-@export var character:Character
 @export var character_controller:CharacterControllerComponent
 
 @onready var animation_tree:AnimationTree = $AnimationTree
@@ -64,10 +63,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func animate() -> void:
-	if !character:
-		return
-	
-	var ratio:float = character.velocity.length()/character.run_speed
+	var ratio:float = velocity.length()/run_speed
 	animation_tree["parameters/walk_speed/blend_amount"] = ratio
 	if animation_tree["parameters/walk_speed/blend_amount"] > 1.0:
 		animation_tree["parameters/walk_speed/blend_amount"] = 1.0
@@ -78,6 +74,8 @@ func configure_model() -> void:
 		$Venlil/Armature/Skeleton3D/Head/Head_m.material_override.albedo_color = fur_color
 	
 	$Venlil.scale = Vector3.ONE * size
+	$CollisionShape3D.scale = Vector3.ONE * size
+	$CollisionShape3D.position.y = 0.75 * size
 
 
 func set_materials(material:Material) -> void:

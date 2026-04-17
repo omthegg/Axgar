@@ -1,3 +1,5 @@
+CollisionShape3D
+Character
 Camera3D
 SubViewport
 SubViewportContainer
@@ -11,5 +13,3 @@ FABRIK3D
 OccluderInstance3D
 CSGPolygon3D
 NavigationAgent3D
-NavigationRegion3D
-CharacterBody3D
