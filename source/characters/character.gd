@@ -5,7 +5,21 @@ class_name Character
 ## venlil: walk_speed = 3.0, run_speed = 6.0, mass = 50.0, jump_speed = 5.0
 @export_enum("venlil", "human", "custom") var preset:String = "custom"
 
-@export var is_player:bool = false
+@export var is_player:bool = false:
+	set(value):
+		is_player = value
+		if !is_player:
+			return
+		
+		var cc:Node3D = get_node_or_null("CharacterControllerComponent")
+		if !cc:
+			return
+		
+		if !cc.camera:
+			return
+		
+		cc.camera.make_current()
+
 @export var walk_speed:float = 5.0
 @export var run_speed:float = 9.0
 @export var mass:float = 75.0

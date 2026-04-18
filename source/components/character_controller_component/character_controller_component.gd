@@ -27,8 +27,8 @@ func _ready() -> void:
 	
 	flashlight_component.visible = has_flashlight
 	
-	if character.is_player:
-		camera.make_current()
+	#if character.is_player:
+	#	camera.make_current()
 
 
 func _physics_process(_delta:float) -> void:

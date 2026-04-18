@@ -20,6 +20,7 @@ script = ExtResource("1_xc086")
 [node name="Head" type="Node3D" parent="." unique_id=1612634824]
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=415665129]
+cull_mask = 1048571
 doppler_tracking = 2
 
 [node name="ColorRect" type="ColorRect" parent="Head/Camera3D" unique_id=1560655109]
