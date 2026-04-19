@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dr8g8pk7na8w7" path="res://models/venlil/venlil_arms.glb" id="3_kgiqe"]
 [ext_resource type="PackedScene" uid="uid://ddqsdxcn6q713" path="res://models/pistol/pistol.glb" id="6_qcdkb"]
 [ext_resource type="Material" uid="uid://cmm35fibc51co" path="res://source/venlil_template/venlil_fur.tres" id="6_wf1hf"]
+[ext_resource type="Script" uid="uid://c6feu3bd8uwhi" path="res://source/components/viewmodel_animator/viewmodel_animator.gd" id="7_qcdkb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xfv5o"]
 resource_local_to_scene = true
@@ -55,7 +56,7 @@ cull_mask = 1048569
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Venlil/Armature" parent_id_path=PackedInt32Array(953485397, 1927860449) index="0" unique_id=1520887729]
-bones/2/rotation = Quaternion(0.028227257, -0.023400746, 0.9972771, -0.063984804)
+bones/2/rotation = Quaternion(0.028187992, -0.023324003, 0.9971172, -0.06647462)
 bones/3/rotation = Quaternion(0.10284752, -0.01944661, -0.0005319369, 0.99450696)
 bones/4/rotation = Quaternion(-0.004306432, 0.0001048796, -0.012955035, 0.99990684)
 bones/5/rotation = Quaternion(0.7006688, 0.08013336, 0.70886964, -0.012070906)
@@ -63,8 +64,8 @@ bones/6/rotation = Quaternion(-0.08671469, 0.005374138, 0.19418569, 0.97710985)
 bones/7/rotation = Quaternion(0.01135199, -0.0061836476, -0.5627295, 0.82654005)
 bones/8/rotation = Quaternion(-0.30864707, 6.991123e-17, -6.7223354e-17, 0.95117664)
 bones/9/rotation = Quaternion(0.24110788, 5.3536674e-17, -1.1506396e-23, 0.9704983)
-bones/10/rotation = Quaternion(0.09652781, 2.1631645e-17, 9.679719e-24, 0.9953303)
-bones/11/rotation = Quaternion(-0.028227257, -0.02340075, 0.9972771, 0.063984804)
+bones/10/rotation = Quaternion(0.08979946, 2.1633794e-17, 8.318662e-24, 0.9959599)
+bones/11/rotation = Quaternion(-0.028187992, -0.023324005, 0.9971172, 0.0664746)
 bones/12/rotation = Quaternion(0.10284752, 0.01944661, 0.0005319369, 0.99450696)
 bones/13/rotation = Quaternion(-0.0043064267, -0.000104876715, 0.012955041, 0.99990684)
 bones/14/rotation = Quaternion(-0.7006688, 0.08013336, 0.70886964, 0.012070906)
@@ -75,19 +76,19 @@ bones/16/rotation = Quaternion(0.011352158, 0.0061833994, 0.5627295, 0.82654005)
 material_override = ExtResource("6_wf1hf")
 
 [node name="Hand_L" parent="Venlil/Armature/Skeleton3D" index="1" unique_id=519344852]
-transform = Transform3D(-0.99108934, 0.11242145, 0.07144559, -0.09660572, -0.9759263, 0.19553801, 0.09170833, 0.18689343, 0.9780902, 0.2151026, 0.69124156, -0.009595931)
+transform = Transform3D(-0.9905946, 0.11729271, 0.07046841, -0.10155286, -0.9753528, 0.19589227, 0.091708325, 0.18689343, 0.97809017, 0.21732745, 0.69154716, -0.009595931)
 
 [node name="Hand_L_m" parent="Venlil/Armature/Skeleton3D/Hand_L" index="0" unique_id=403062367]
 material_override = ExtResource("6_wf1hf")
 
 [node name="Arm2_L" parent="Venlil/Armature/Skeleton3D" index="2" unique_id=1541281704]
-transform = Transform3D(-0.9878211, 0.13867234, 0.07057174, -0.12179353, -0.9713761, 0.20394763, 0.09683361, 0.19286846, 0.9764349, 0.18415566, 0.90801954, -0.052637585)
+transform = Transform3D(-0.9872006, 0.14352055, 0.069552585, -0.12672403, -0.97067165, 0.20429742, 0.0968336, 0.19286846, 0.9764348, 0.18529856, 0.90816796, -0.052637585)
 
 [node name="Arm2_L_m" parent="Venlil/Armature/Skeleton3D/Arm2_L" index="0" unique_id=143536327]
 material_override = ExtResource("6_wf1hf")
 
 [node name="Arm1_L" parent="Venlil/Armature/Skeleton3D" index="3" unique_id=1857491150]
-transform = Transform3D(-0.9902189, 0.12630007, 0.059295375, -0.12675445, -0.9919262, -0.0039485656, 0.058317974, -0.01142589, 0.9982326, 0.155, 1.137, -0.049999982)
+transform = Transform3D(-0.9895736, 0.13125102, 0.059314355, -0.13169685, -0.9912832, -0.0036524646, 0.05831797, -0.01142589, 0.99823254, 0.155, 1.137, -0.049999982)
 
 [node name="Arm1_L_m" parent="Venlil/Armature/Skeleton3D/Arm1_L" index="0" unique_id=231928784]
 material_override = ExtResource("6_wf1hf")
@@ -111,7 +112,7 @@ transform = Transform3D(-0.017835021, 0.12940727, 0.9914311, 0.13410878, -0.9823
 material_override = ExtResource("6_wf1hf")
 
 [node name="Tail3" parent="Venlil/Armature/Skeleton3D" index="7" unique_id=935685807]
-transform = Transform3D(1, 2.2511028e-16, 2.2241838e-16, -2.2205678e-16, 0.99990696, -0.013634443, -2.2546696e-16, 0.0136345625, 0.9999071, 5.952005e-17, 1.1964148, -0.29594544)
+transform = Transform3D(1, 2.2237537e-16, 2.2541945e-16, -2.2234845e-16, 0.9999999, -0.0001193881, -2.2544602e-16, 0.00011949241, 0.99999994, 5.952005e-17, 1.1964148, -0.29594544)
 
 [node name="Tail3_m" parent="Venlil/Armature/Skeleton3D/Tail3" index="0" unique_id=892877539]
 material_override = ExtResource("6_wf1hf")
@@ -129,19 +130,19 @@ transform = Transform3D(1, 8.4726773e-17, 1.7449244e-16, -1.7449244e-16, 0.78584
 material_override = ExtResource("6_wf1hf")
 
 [node name="Hand_R" parent="Venlil/Armature/Skeleton3D" index="10" unique_id=1190401965]
-transform = Transform3D(-0.99108934, -0.11242144, -0.0714456, 0.09660571, -0.9759263, 0.19553803, -0.091708325, 0.18689343, 0.9780902, -0.2151026, 0.69124156, -0.009595931)
+transform = Transform3D(-0.9905946, -0.11729268, -0.07046842, 0.10155281, -0.97535276, 0.19589229, -0.09170832, 0.18689343, 0.97809017, -0.21732743, 0.69154716, -0.009595931)
 
 [node name="Hand_R_m" parent="Venlil/Armature/Skeleton3D/Hand_R" index="0" unique_id=351585780]
 material_override = ExtResource("6_wf1hf")
 
 [node name="Arm2_R" parent="Venlil/Armature/Skeleton3D" index="11" unique_id=1397420420]
-transform = Transform3D(-0.9878211, -0.13867234, -0.07057174, 0.12179353, -0.9713761, 0.20394763, -0.09683361, 0.19286846, 0.9764349, -0.18415566, 0.90801954, -0.052637585)
+transform = Transform3D(-0.9872006, -0.14352052, -0.069552585, 0.126724, -0.97067165, 0.20429742, -0.0968336, 0.19286846, 0.9764348, -0.18529855, 0.90816796, -0.052637585)
 
 [node name="Arm2_R_m" parent="Venlil/Armature/Skeleton3D/Arm2_R" index="0" unique_id=1233948517]
 material_override = ExtResource("6_wf1hf")
 
 [node name="Arm1_R" parent="Venlil/Armature/Skeleton3D" index="12" unique_id=1834603580]
-transform = Transform3D(-0.9902189, -0.12630007, -0.059295375, 0.12675445, -0.9919262, -0.003948573, -0.058317974, -0.0114258975, 0.9982326, -0.155, 1.137, -0.049999982)
+transform = Transform3D(-0.9895736, -0.13125099, -0.05931435, 0.13169682, -0.9912832, -0.0036524683, -0.058317974, -0.011425894, 0.99823254, -0.155, 1.137, -0.049999982)
 
 [node name="Arm1_R_m" parent="Venlil/Armature/Skeleton3D/Arm1_R" index="0" unique_id=1959321188]
 material_override = ExtResource("6_wf1hf")
@@ -254,6 +255,13 @@ transform = Transform3D(-1, 4.8894435e-08, -9.313226e-10, -1.0244548e-08, -2.980
 
 [node name="Pistol" parent="SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/BoneAttachment3D/pistol" index="0" unique_id=1195441860]
 layers = 2
+
+[node name="ViewmodelAnimator" type="Node3D" parent="." unique_id=2040525839 node_paths=PackedStringArray("character", "arms")]
+script = ExtResource("7_qcdkb")
+character = NodePath("..")
+arms = NodePath("../SubViewportContainer/SubViewport/Camera3D/venlil_arms")
+arms_default_position = Vector3(0, -1.25, 0)
+metadata/_custom_type_script = "uid://c6feu3bd8uwhi"
 
 [editable path="CharacterControllerComponent"]
 [editable path="Venlil"]

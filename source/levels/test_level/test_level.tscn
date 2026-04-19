@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://3xx2ls0a1fxi"]
 
 [ext_resource type="Script" uid="uid://8ifaqgdfxbnl" path="res://source/levels/test_level/test_level.gd" id="1_bvpvu"]
+[ext_resource type="Texture2D" uid="uid://ct26kx0u7par" path="res://textures/Asphalt026C.jpg" id="2_bvpvu"]
 [ext_resource type="Texture2D" uid="uid://dweh0lqp4vbx7" path="res://textures/Grass001.jpg" id="2_pophn"]
-[ext_resource type="Texture2D" uid="uid://g8wth5gvfjdt" path="res://textures/Asphalt025C.png" id="3_y5moh"]
 [ext_resource type="Texture2D" uid="uid://ce4f0602qljsw" path="res://textures/Bricks082A.jpg" id="4_3exnk"]
 [ext_resource type="PackedScene" uid="uid://buvhqk4tglnl1" path="res://source/venlil_template/venlil_template.tscn" id="4_pophn"]
 [ext_resource type="PackedScene" uid="uid://do8fee4yywcpu" path="res://source/components/environment_controller/environment_controller.tscn" id="6_6l7bi"]
@@ -25,7 +25,7 @@ agent_max_climb = 0.05
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3exnk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k64hh"]
-albedo_texture = ExtResource("3_y5moh")
+albedo_texture = ExtResource("2_bvpvu")
 normal_texture = SubResource("CompressedTexture2D_3exnk")
 ao_texture = SubResource("CompressedTexture2D_synrt")
 uv1_scale = Vector3(0.5, 0.5, 0.5)

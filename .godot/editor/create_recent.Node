@@ -1,3 +1,4 @@
+ViewmodelAnimator
 BoneAttachment3D
 Camera3D
 SubViewport
@@ -12,4 +13,3 @@ ReflectionProbe
 Node3D
 CCDIK3D
 TwoBoneIK3D
-FABRIK3D
