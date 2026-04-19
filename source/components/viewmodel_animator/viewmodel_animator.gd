@@ -35,9 +35,12 @@ func hand_bob(delta:float) -> void:
 		hb_y_value = speed * hb_amount * sin(hb_time * 2 * hb_time_m)
 		
 		#print(hb_x_value, hb_y_value)
+	else:
+		hb_x_value = 0.0
+		hb_y_value = 0.0
 		
-		arms.position.x = lerpf(arms.position.x, 
-		hb_x_value + arms_default_position.x, 10.0*delta)
-		
-		arms.position.y = lerpf(arms.position.y,
-		hb_y_value + arms_default_position.y, 10.0*delta)
+	arms.position.x = lerpf(arms.position.x, 
+	hb_x_value + arms_default_position.x, 10.0*delta)
+	
+	arms.position.y = lerpf(arms.position.y,
+	hb_y_value + arms_default_position.y, 10.0*delta)
