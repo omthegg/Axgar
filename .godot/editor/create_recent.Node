@@ -1,11 +1,12 @@
+BoneAttachment3D
+Camera3D
+SubViewport
+SubViewportContainer
 MeshInstance3D
 RemoteTransform3D
-SubViewport
-Camera3D
 CSGCombiner3D
 CollisionShape3D
 Character
-SubViewportContainer
 Label
 ReflectionProbe
 Node3D

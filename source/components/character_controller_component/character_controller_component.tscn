@@ -22,6 +22,7 @@ script = ExtResource("1_xc086")
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=415665129]
 cull_mask = 1048571
 doppler_tracking = 2
+fov = 90.0
 
 [node name="ColorRect" type="ColorRect" parent="Head/Camera3D" unique_id=1560655109]
 visible = false

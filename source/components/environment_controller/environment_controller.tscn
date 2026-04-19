@@ -27,6 +27,7 @@ grow_vertical = 2
 
 [node name="FireFlickerLight" type="OmniLight3D" parent="." unique_id=1782305370]
 visible = false
+layers = 7
 light_specular = 0.0
 omni_range = 100.0
 omni_attenuation = 0.0

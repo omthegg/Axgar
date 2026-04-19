@@ -44,15 +44,16 @@ extends Character
 ]
 
 @onready var fp_body_parts:Array = [
-	$CharacterControllerComponent/Head/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Hand_L/Hand_L_vm,
-	$CharacterControllerComponent/Head/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm2_L/Arm2_L_vm,
-	$CharacterControllerComponent/Head/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm1_L/Arm1_L_vm,
-	$CharacterControllerComponent/Head/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Hand_R/Hand_R_vm,
-	$CharacterControllerComponent/Head/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm2_R/Arm2_R_vm,
-	$CharacterControllerComponent/Head/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm1_R/Arm1_R_vm
+	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Hand_L/Hand_L_vm,
+	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm2_L/Arm2_L_vm,
+	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm1_L/Arm1_L_vm,
+	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Hand_R/Hand_R_vm,
+	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm2_R/Arm2_R_vm,
+	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm1_R/Arm1_R_vm
 ]
 
-@onready var arms:Node3D = $CharacterControllerComponent/Head/Camera3D/venlil_arms
+@onready var arms:Node3D = $SubViewportContainer/SubViewport/Camera3D/venlil_arms
+@onready var viewmodel_camera:Camera3D = $SubViewportContainer/SubViewport/Camera3D
 
 var fur_material:StandardMaterial3D = preload("res://source/venlil_template/venlil_fur.tres")
 var exterminator_material:StandardMaterial3D = preload("res://source/venlil_template/exterminator_suit.tres")
@@ -69,7 +70,11 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+	
 	animate()
+	viewmodel_camera.global_transform = character_controller.camera.global_transform
 
 
 func animate() -> void:
@@ -92,12 +97,12 @@ func set_materials(material:Material) -> void:
 	for body_part:MeshInstance3D in tp_body_parts:
 		body_part.material_override = material
 	
-	var fp_material:Material = material.duplicate()
-	fp_material.use_z_clip_scale = true
-	fp_material.z_clip_scale = 0.5
+	#var fp_material:Material = material.duplicate()
+	#fp_material.use_z_clip_scale = true
+	#fp_material.z_clip_scale = 0.5
 	
 	for body_part:MeshInstance3D in fp_body_parts:
-		body_part.material_override = fp_material
+		body_part.material_override = material
 	
 	#print(fp_material.z_clip_scale)
 
@@ -105,7 +110,7 @@ func set_materials(material:Material) -> void:
 # I only made these into separate functions because I couldn't
 # think of a good name for the function
 func make_models_first_person() -> void:
-	arms.show()
+	#arms.show()
 	for body_part:MeshInstance3D in tp_body_parts:
 		body_part.set_layer_mask_value(1, false)
 		body_part.set_layer_mask_value(3, true)

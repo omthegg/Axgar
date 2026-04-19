@@ -20,6 +20,10 @@ func _input(event: InputEvent) -> void:
 func set_player(character:Character) -> void:
 	character.is_player = true
 	character.make_models_first_person()
+	
+	if character.get("character_controller"):
+		character.character_controller.camera.make_current()
+	
 	if player:
 		player.is_player = false
 		player.make_models_third_person()
