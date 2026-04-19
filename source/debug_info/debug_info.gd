@@ -13,7 +13,8 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	fps_label.text = "FPS: " + str(int(Engine.get_frames_per_second()))
+	#fps_label.text = "FPS: " + str(int(Engine.get_frames_per_second()))
+	var fps_text:String = "FPS: " + str(int(Engine.get_frames_per_second()))
 	var draw_calls:float = Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME)
 	var draw_calls_text:String = "Draw calls: " + str(int(draw_calls))
 	#draw_calls_label.text = "Draw calls: " + str(int(draw_calls))
@@ -26,5 +27,5 @@ func _process(_delta: float) -> void:
 	var process_time:float = Performance.get_monitor(Performance.TIME_PROCESS)
 	var process_time_text:String = "Process time: " + str(process_time*1000.0) + "ms"
 	#process_time_label.text = "Process time: " + str(process_time*1000.0) + "ms"
-	label.text = (draw_calls_text + "\n" + primitives_text
-	 + "\n" + vram_text + "\n" + process_time_text)
+	label.text = (fps_text + "\n" + draw_calls_text + "\n"
+	 + primitives_text + "\n" + vram_text + "\n" + process_time_text)
