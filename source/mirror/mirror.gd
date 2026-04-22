@@ -12,22 +12,24 @@ extends Node3D
 			return
 		
 		mesh_instance.mesh.size = size
+		subviewport.size = size * Vector2(512, 512)
 
 
 func _ready() -> void:
 	mesh_instance.mesh.size = size
-	#subviewport.size = size * Vector2(512, 512)
+	subviewport.size = size * Vector2(512, 512)
 
 
 func _process(_delta: float) -> void:
-	var main_cam:Camera3D = get_tree().root.get_camera_3d()
-	if main_cam:
-		#camera.global_transform = (global_transform.affine_inverse() * main_cam.global_transform)
-		var relative_transform:Transform3D = global_transform.affine_inverse() * main_cam.global_transform
-		relative_transform = relative_transform.scaled(Vector3(-1.0, 1.0, 1.0))
-		camera.global_transform = global_transform * relative_transform
-	
-	$Ball.global_transform = camera.global_transform
+	camera.global_transform = global_transform
+#	var main_cam:Camera3D = get_tree().root.get_camera_3d()
+#	if main_cam:
+#		#camera.global_transform = (global_transform.affine_inverse() * main_cam.global_transform)
+#		var relative_transform:Transform3D = global_transform.affine_inverse() * main_cam.global_transform
+#		relative_transform = relative_transform.scaled(Vector3(-1.0, 1.0, 1.0))
+#		camera.global_transform = global_transform * relative_transform
+#	
+#	$Ball.global_transform = camera.global_transform
 
 #var main_cam:Camera3D = Global.player_camera
 #	if other_portal and main_cam:

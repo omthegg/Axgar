@@ -58,6 +58,9 @@ extends Character
 var fur_material:StandardMaterial3D = preload("res://source/venlil_template/venlil_fur.tres")
 var exterminator_material:StandardMaterial3D = preload("res://source/venlil_template/exterminator_suit.tres")
 
+enum Items {EMPTY, PISTOL, FLAMER}
+var current_item:Items = Items.PISTOL
+
 
 func _ready() -> void:
 	super()
@@ -79,9 +82,9 @@ func _process(_delta: float) -> void:
 
 func animate() -> void:
 	var ratio:float = velocity.length()/run_speed
-	animation_tree["parameters/walk_speed/blend_amount"] = ratio
-	if animation_tree["parameters/walk_speed/blend_amount"] > 1.0:
-		animation_tree["parameters/walk_speed/blend_amount"] = 1.0
+	animation_tree["parameters/WalkSpeed/blend_amount"] = ratio
+	if animation_tree["parameters/WalkSpeed/blend_amount"] > 1.0:
+		animation_tree["parameters/WalkSpeed/blend_amount"] = 1.0
 
 
 func configure_model() -> void:

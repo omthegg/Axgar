@@ -38,7 +38,7 @@ func hand_bob(delta:float) -> void:
 	else:
 		hb_x_value = 0.0
 		hb_y_value = 0.0
-		
+	
 	arms.position.x = lerpf(arms.position.x, 
 	hb_x_value + arms_default_position.x, 10.0*delta)
 	
