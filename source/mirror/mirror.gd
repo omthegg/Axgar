@@ -12,11 +12,13 @@ extends Node3D
 			return
 		
 		mesh_instance.mesh.size = size
+		subviewport.size = Vector2(512, 512)
 		subviewport.size = size * Vector2(512, 512)
 
 
 func _ready() -> void:
 	mesh_instance.mesh.size = size
+	#subviewport.size = Vector2(512, 512)
 	subviewport.size = size * Vector2(512, 512)
 
 

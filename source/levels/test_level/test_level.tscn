@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire.tscn" id="7_y5moh"]
 [ext_resource type="PackedScene" uid="uid://ccag5hjymdcja" path="res://source/rain/rain.tscn" id="8_pophn"]
 [ext_resource type="Texture2D" uid="uid://bpelu7tyeeuxq" path="res://textures/checkerboard.png" id="9_bvpvu"]
-[ext_resource type="PackedScene" uid="uid://dra7qdo2ynnv4" path="res://source/mirror/mirror.tscn" id="10_guw1o"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_bvpvu"]
 vertices = PackedVector3Array(-38.8, 8.1, -24.8, -38.8, 8.1, 24.8, -26.15, 8.1, 24.8, -26.15, 8.1, -24.8, -15.299999, 0.6000001, -11.25, -15.299999, 0.6000001, -23.75, -24.75, 0.6000001, -23.75, -24.75, 0.6000001, -11.25, -14.25, 0.6000001, -10.599999, -14.25, 0.6000001, -10.25, -13.699999, 0.6000001, -10.25, -13.699999, 0.6000001, -10.599999, -14.9, 0.6000001, -11.25, -14.5, 0.6000001, -11.05, -13.449999, 0.6000001, -11.05, -13.049999, 0.6000001, -11.25, -12.65, 0.6000001, -11.25, -12.65, 0.6000001, -23.75, -4.299999, 0.6000001, -11.25, -4.299999, 0.6000001, -23.75, -3.5499992, 0.6000001, -11.05, 3.5499992, 0.6000001, -11.849999, 3.5, 0.6000001, -12.099999, 3.7000008, 0.6000001, -12.5, -3.8999977, 0.6000001, -11.25, 4.1000023, 0.6000001, -12.7, 4.4000015, 0.6000001, -12.7, 4.3500023, 0.6000001, -23.75, 16.3, 0.6000001, -12.7, 16.3, 0.6000001, -23.75, 4.5, 0.90000004, -10.7, 4.5, 0.90000004, -11.3, 4.1000023, 0.65000004, -11.3, 3.9500008, 0.6000001, -10.7, 3.5499992, 0.6000001, -10.5, 3.7000008, 0.6000001, -11.5, -3.25, 0.6000001, -10.599999, 3.2999992, 0.6000001, -10.05, -3.25, 0.6000001, -9.8, 3.2999992, 0.6000001, -9.75, 15.549999, 7.8, -10.7, 15.549999, 7.8, -11.3, 15.950001, 8.05, -10.7, 16.350002, 8.1, -10.5, 16.55, 8.1, -10, 17.3, 8.1, -10, 15.950001, 8.05, -10.9, 17.3, 8.1, -11.3, 16.133331, 8.1, -11.3, 8, 0.6000001, -11.25, 8, 0.6000001, -10.7, 16.3, 0.6000001, -10.7, 16.3, 0.6000001, -11.25, -13.699999, 0.6000001, -9.95, -14.25, 0.6000001, -9.95, -24.75, 0.6000001, 6.3500004, -5.200001, 0.6000001, 6.300001, -14.9, 0.6000001, -9.299999, -24.75, 0.6000001, -9.299999, -13.5, 0.6000001, -9.55, -14.449999, 0.6000001, -9.55, -5.200001, 0.6000001, -9.299999, -13.049999, 0.6000001, -9.299999, 16.350002, 8.1, -9.5, 17.350002, 8.1, 24.8, 15.950001, 8.1, -9.299999, 4.700001, 8.1, -9.299999, 4.700001, 8.1, 24.8, -3.25, 0.6000001, 6.25, 3.2999992, 0.6000001, 6.300001, -3.9500008, 0.6000001, 7.25, -4.25, 0.6000001, 7.25, -4.25, 0.6000001, 7.799999, -3.8999977, 0.6000001, 7.799999, -3.25, 0.6000001, 6.549999, -3.5499992, 0.6000001, 7.049999, -3.5, 0.6000001, 8, -3.25, 0.6000001, 8.450001, -3.25, 0.6000001, 8.75, 3.2999992, 0.6000001, 8.700001, -4.549999, 0.6000001, 7.799999, -4.549999, 0.6000001, 7.25, -5.200001, 0.6000001, 6.6000023, -5, 0.6000001, 8.049999, -5, 0.6000001, 7, -24.75, 0.6000001, 8.700001, -5.200001, 0.6000001, 8.75, -5.200001, 0.6000001, 8.450001, -24.75, 0.6000001, 23.8, -5.200001, 0.6000001, 23.8, -3.25, 0.6000001, 23.8, 3.2999992, 0.6000001, 23.8)
@@ -62,6 +61,30 @@ texture_filter = 2
 [sub_resource type="QuadMesh" id="QuadMesh_pophn"]
 size = Vector2(15, 3)
 
+[sub_resource type="Gradient" id="Gradient_bvpvu"]
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bvpvu"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_guw1o"]
+noise = SubResource("FastNoiseLite_bvpvu")
+color_ramp = SubResource("Gradient_bvpvu")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxmon"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = SubResource("NoiseTexture2D_guw1o")
+uv1_scale = Vector3(0.025, 0.025, 0.025)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bvpvu"]
+size = Vector2(43, 50)
+
 [node name="TestLevel" type="Node3D" unique_id=953601541]
 script = ExtResource("1_bvpvu")
 
@@ -73,87 +96,90 @@ shadow_enabled = true
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=701078279]
 navigation_mesh = SubResource("NavigationMesh_bvpvu")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=491704935]
+[node name="VenlilTemplate" parent="NavigationRegion3D" unique_id=295057403 instance=ExtResource("4_pophn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.1)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="NavigationRegion3D" unique_id=1433389465]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=491704935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, 7.5)
 use_collision = true
 size = Vector3(8.5, 1, 35)
 material = SubResource("StandardMaterial3D_k64hh")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=858035184]
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=858035184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7.5)
 use_collision = true
 size = Vector3(21, 1, 35)
 material = SubResource("StandardMaterial3D_y5moh")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D" unique_id=351831548]
+[node name="CSGBox3D8" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=351831548]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 0, -17.5)
 use_collision = true
 size = Vector3(43.5, 1, 15)
 material = SubResource("StandardMaterial3D_k64hh")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D" unique_id=535555493]
+[node name="CSGBox3D3" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=535555493]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 4.25, 7.75)
 use_collision = true
 size = Vector3(14, 7.5, 35.5)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D" unique_id=275960247]
+[node name="CSGBox3D4" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=275960247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 4.25, 0)
 use_collision = true
 size = Vector3(14, 7.5, 51)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1748324980]
+[node name="CSGBox3D5" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=1748324980]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.25, 2, -25)
 use_collision = true
 size = Vector3(1, 3, 42.5)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D" unique_id=241370683]
+[node name="CSGBox3D11" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=241370683]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17.5, 2, -17.75)
 use_collision = true
 size = Vector3(15.5, 3, 1)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D" unique_id=647197453]
+[node name="CSGBox3D6" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=647197453]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10.75, 2, 25)
 use_collision = true
 size = Vector3(1, 3, 29.5)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D" unique_id=765011671]
+[node name="CSGBox3D7" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=765011671]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20.25, 1, -10.250001)
 use_collision = true
 size = Vector3(0.5, 1, 10.5)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D" unique_id=14245081]
+[node name="CSGBox3D12" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=14245081]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.5, 1, -10.250001)
 use_collision = true
 size = Vector3(0.5, 1, 9)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1999271437]
+[node name="CSGBox3D9" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=1999271437]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.2500005, 1, 16.5)
 use_collision = true
 size = Vector3(16, 1, 0.5)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1814077313]
+[node name="CSGBox3D10" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=1814077313]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.2500005, 1, -1.75)
 use_collision = true
 size = Vector3(16.5, 1, 0.5)
 material = SubResource("StandardMaterial3D_synrt")
 
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="NavigationRegion3D" unique_id=396936394]
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=396936394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.5, -10)
 use_collision = true
 polygon = PackedVector2Array(-12, 0, 0, 7.5, 2, 7.5, 2, 0)
 depth = 2.0
 material = SubResource("StandardMaterial3D_synrt")
-
-[node name="VenlilTemplate" parent="NavigationRegion3D" unique_id=295057403 instance=ExtResource("4_pophn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.1)
 
 [node name="EnvironmentController" parent="." unique_id=1595475654 instance=ExtResource("6_6l7bi")]
 fire_flicker = true
@@ -177,5 +203,7 @@ visible = false
 material_override = SubResource("StandardMaterial3D_guw1o")
 mesh = SubResource("QuadMesh_pophn")
 
-[node name="Mirror" parent="." unique_id=623848460 instance=ExtResource("10_guw1o")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.995, 2, 0)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1554150537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.52, 0)
+material_override = SubResource("StandardMaterial3D_vxmon")
+mesh = SubResource("PlaneMesh_bvpvu")

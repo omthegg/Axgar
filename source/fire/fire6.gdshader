@@ -32,7 +32,7 @@ void fragment() {
 	shape.y = shape_av;
 	shape.z = shape_av;
 
-	ALBEDO = noise.xyz * gradient.xyz * shape_av;
+	ALBEDO = noise.xyz * gradient.xyz * shape_av * 1.5;
 	//ALPHA = noise.x * 3.0;
 	ALPHA = shape.w * noise.x;
 	//if (noise.x < 0.4)

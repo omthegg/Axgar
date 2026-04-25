@@ -8,7 +8,6 @@ background_color = Color(0.03137255, 0.03529412, 0.043137256, 1)
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05
-tonemap_exposure = 2.0
 glow_bloom = 1.0
 
 [node name="EnvironmentController" type="Node3D" unique_id=419151737]
@@ -27,14 +26,15 @@ grow_vertical = 2
 
 [node name="FireFlickerLight" type="OmniLight3D" parent="." unique_id=1782305370]
 visible = false
-layers = 7
+layers = 3
 light_specular = 0.0
 omni_range = 100.0
 omni_attenuation = 0.0
 
 [node name="AmbientLight" type="OmniLight3D" parent="." unique_id=1804340354]
 visible = false
-light_energy = 0.05
+layers = 7
+light_energy = 0.2
 light_specular = 0.0
 omni_range = 100.0
 omni_attenuation = 0.0

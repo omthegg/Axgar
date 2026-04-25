@@ -1,5 +1,7 @@
-BoneAttachment3D
 MeshInstance3D
+StaticBody3D
+CSGCombiner3D
+BoneAttachment3D
 AimModifier3D
 CCDIK3D
 Node3D
@@ -9,6 +11,4 @@ Camera3D
 SubViewport
 SubViewportContainer
 RemoteTransform3D
-CSGCombiner3D
 CollisionShape3D
-Character
