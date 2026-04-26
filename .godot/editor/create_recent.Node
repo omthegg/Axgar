@@ -1,4 +1,5 @@
 MeshInstance3D
+ReflectionProbe
 StaticBody3D
 CSGCombiner3D
 BoneAttachment3D
@@ -11,4 +12,3 @@ Camera3D
 SubViewport
 SubViewportContainer
 RemoteTransform3D
-CollisionShape3D

@@ -34,5 +34,5 @@ func _process(delta: float) -> void:
 
 
 func animate_fire_flicker() -> void:
-	var light_energy:float = 0.15 + abs(fire_noise.get_noise_1d(time * 50.0))/7.0
+	var light_energy:float = 0.3 + abs(fire_noise.get_noise_1d(time * 50.0))/2.0
 	fire_flicker_light.light_energy = light_energy

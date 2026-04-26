@@ -1,9 +1,12 @@
 extends Node3D
 
+@export var snow:bool = false
+
 var camera:Camera3D
 
 func _ready() -> void:
-	pass
+	$SnowParticles.visible = snow
+	$RainParticles.visible = !snow
 
 
 func _physics_process(_delta: float) -> void:

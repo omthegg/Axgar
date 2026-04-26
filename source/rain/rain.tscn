@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccag5hjymdcja"]
+[gd_scene format=3 uid="uid://ccag5hjymdcja"]
 
 [ext_resource type="Script" uid="uid://jxc4bivosbbb" path="res://source/rain/rain.gd" id="1_26j8h"]
 
@@ -25,11 +25,35 @@ billboard_mode = 2
 material = SubResource("StandardMaterial3D_dopfv")
 size = Vector2(0.03, 0.8)
 
-[node name="Rain" type="Node3D"]
+[sub_resource type="Gradient" id="Gradient_f77d6"]
+colors = PackedColorArray(0.03137255, 0.03529412, 0.043137256, 1, 0.56909174, 0.6042209, 0.6744791, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ijg6"]
+gradient = SubResource("Gradient_f77d6")
+width = 16
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uidet"]
+emission_shape = 3
+emission_box_extents = Vector3(20, 0.5, 20)
+color_ramp = SubResource("GradientTexture1D_6ijg6")
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g45u4"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+texture_filter = 2
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_aemc4"]
+material = SubResource("StandardMaterial3D_g45u4")
+size = Vector2(0.1, 0.1)
+
+[node name="Rain" type="Node3D" unique_id=1541915303]
 script = ExtResource("1_26j8h")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="RainParticles" type="GPUParticles3D" parent="." unique_id=98144449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+visible = false
 cast_shadow = 0
 extra_cull_margin = 1000.0
 amount = 256
@@ -38,3 +62,15 @@ preprocess = 2.0
 speed_scale = 1.1
 process_material = SubResource("ParticleProcessMaterial_dopfv")
 draw_pass_1 = SubResource("QuadMesh_26j8h")
+
+[node name="SnowParticles" type="GPUParticles3D" parent="." unique_id=761554703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+visible = false
+cast_shadow = 0
+extra_cull_margin = 1000.0
+amount = 256
+lifetime = 3.0
+preprocess = 2.0
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_uidet")
+draw_pass_1 = SubResource("QuadMesh_aemc4")
