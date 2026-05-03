@@ -1,4 +1,5 @@
 MeshInstance3D
+MultiMeshInstance3D
 ReflectionProbe
 StaticBody3D
 CSGCombiner3D
@@ -11,4 +12,3 @@ ViewmodelAnimator
 Camera3D
 SubViewport
 SubViewportContainer
-RemoteTransform3D
