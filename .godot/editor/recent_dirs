@@ -1,3 +1,5 @@
+res://textures/
+res://source/window/
 res://source/pistol/
 res://source/mirror/
 res://source/venlil_template/
@@ -11,7 +13,6 @@ res://source/console/
 res://fonts/
 res://source/scene_manager/
 res://source/components/flashlight_component/
-res://textures/
 res://source/components/environment_controller/
 res://source/environment/
 res://source/procedural_models/procedural_human/

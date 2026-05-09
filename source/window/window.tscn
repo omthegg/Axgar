@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d07faqb6x3n5l"]
+
+[ext_resource type="Shader" uid="uid://bs615mjxh2x7t" path="res://source/window/window.gdshader" id="1_3fs5e"]
+[ext_resource type="Script" uid="uid://cs2seolhedovb" path="res://source/window/window.gd" id="1_n15t5"]
+[ext_resource type="Texture2D" uid="uid://bftdbw84shav2" path="res://textures/window_frame.png" id="3_100et"]
+[ext_resource type="Texture2D" uid="uid://c0em3cnm5h2m6" path="res://textures/900px_resized.jpg" id="4_100et"]
+
+[sub_resource type="Gradient" id="Gradient_100et"]
+offsets = PackedFloat32Array(0.21839081, 1)
+colors = PackedColorArray(0.4, 0.4, 0.4, 1, 0.7838542, 0.7838542, 0.7838542, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xg55s"]
+gradient = SubResource("Gradient_100et")
+width = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n2sag"]
+render_priority = 0
+shader = ExtResource("1_3fs5e")
+shader_parameter/reflection_texture = ExtResource("4_100et")
+shader_parameter/frame_texture = ExtResource("3_100et")
+shader_parameter/reflection_tint = Color(0.48116052, 0.61040246, 0.7161459, 1)
+shader_parameter/frame_gradient = SubResource("GradientTexture1D_xg55s")
+
+[sub_resource type="QuadMesh" id="QuadMesh_rlsek"]
+resource_local_to_scene = true
+
+[node name="Window" type="Node3D" unique_id=782704420]
+script = ExtResource("1_n15t5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=189222382]
+material_override = SubResource("ShaderMaterial_n2sag")
+mesh = SubResource("QuadMesh_rlsek")

@@ -1,4 +1,9 @@
 MeshInstance3D
+WorldEnvironment
+Label3D
+Camera3D
+SubViewport
+GPUParticlesCollisionBox3D
 MultiMeshInstance3D
 ReflectionProbe
 StaticBody3D
@@ -7,8 +12,3 @@ BoneAttachment3D
 AimModifier3D
 CCDIK3D
 Node3D
-LookAtModifier3D
-ViewmodelAnimator
-Camera3D
-SubViewport
-SubViewportContainer

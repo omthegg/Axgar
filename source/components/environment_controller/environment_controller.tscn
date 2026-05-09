@@ -2,13 +2,23 @@
 
 [ext_resource type="Script" uid="uid://cxuxngslwrlut" path="res://source/components/environment_controller/environment_controller.gd" id="1_jrywv"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_jrywv"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ioude"]
+resource_local_to_scene = true
+panorama = SubResource("ViewportTexture_jrywv")
+
+[sub_resource type="Sky" id="Sky_7u1m5"]
+sky_material = SubResource("PanoramaSkyMaterial_ioude")
+
 [sub_resource type="Environment" id="Environment_ioude"]
-background_mode = 1
-background_color = Color(0.03137255, 0.03529412, 0.043137256, 1)
+background_camera_feed_id = 2
+sky = SubResource("Sky_7u1m5")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.05
-glow_bloom = 1.0
+reflected_light_source = 1
 
 [node name="EnvironmentController" type="Node3D" unique_id=419151737]
 script = ExtResource("1_jrywv")
