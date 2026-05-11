@@ -8,16 +8,23 @@ uniform vec4 reflection_tint: source_color = vec4(1.0, 1.0, 1.0, 1.0);
 
 uniform sampler2D frame_gradient;
 
+uniform sampler2D shatter_atlas: filter_nearest;
+uniform int atlas_frame_count = 0;
+uniform int atlas_dimension = 8;
+uniform int atlas_pixel_dimension = 1024;
+
+uniform int current_shatter_frame = 0;
+
 vec2 rotateUV(vec2 uv, vec2 pivot, float rotation) {
-    float sine = sin(rotation);
-    float cosine = cos(rotation);
-
-    uv -= pivot;
-    uv.x = uv.x * cosine - uv.y * sine;
-    uv.y = uv.x * sine + uv.y * cosine;
-    uv += pivot;
-
-    return uv;
+	float sine = sin(rotation);
+	float cosine = cos(rotation);
+	
+	uv -= pivot;
+	uv.x = uv.x * cosine - uv.y * sine;
+	uv.y = uv.x * sine + uv.y * cosine;
+	uv += pivot;
+	
+	return uv;
 }
 
 vec2 panorama_uv(vec3 dir)
@@ -26,6 +33,23 @@ vec2 panorama_uv(vec3 dir)
 	
 	float u = atan(dir.x, dir.z) / (2.0 * PI) + 0.5;
 	float v = acos(clamp(dir.y, -1.0, 1.0)) / PI;
+	
+	return vec2(u, v);
+}
+
+vec2 get_uv_from_frame_number(vec2 uv)
+{
+	int frames = atlas_frame_count;
+	float n = float(current_shatter_frame + 1);
+	float w = float(atlas_dimension);
+	float h = float(atlas_dimension);
+	
+	float x = mod(n, w) - 1.0;
+	float y = ceil(n/w) - 1.0;
+	
+	float p = float(atlas_pixel_dimension);
+	float u = x/w + uv.x/w;
+	float v = y/h + uv.y/h;
 	
 	return vec2(u, v);
 }
@@ -44,9 +68,14 @@ void fragment() {
 	
 	vec4 gradient_color = texture(frame_gradient, rotateUV(UV, vec2(0.0, 0.0), radians(90.0)));
 	
+	vec4 shatter_color = round(texture(shatter_atlas, get_uv_from_frame_number(UV)));
+	
 	if (frame_color.a == 0.0)
 	{
-		ALBEDO = reflection_color.xyz * reflection_tint.xyz;
+		//ALBEDO = shatter_color.xyz;
+		ALBEDO = reflection_color.xyz * reflection_tint.xyz * shatter_color.xyz;
+		ALPHA_SCISSOR_THRESHOLD = 0.5;
+		ALPHA = shatter_color.r;
 	}
 	else
 	{

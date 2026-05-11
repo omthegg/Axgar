@@ -13,3 +13,12 @@ extends Node3D
 
 func _ready() -> void:
 	mesh_instance.mesh.size = size
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action("jump"):
+		mesh_instance.material_override.set_shader_parameter("current_shatter_frame", 0)
+		var tween:Tween = create_tween()
+		tween.tween_property(mesh_instance, 
+		"material_override:shader_parameter/current_shatter_frame",
+		 21, 1.0)
