@@ -9,9 +9,9 @@ uniform vec4 reflection_tint: source_color = vec4(1.0, 1.0, 1.0, 1.0);
 uniform sampler2D frame_gradient;
 
 uniform sampler2D shatter_atlas: filter_nearest;
-uniform int atlas_frame_count = 0;
+//uniform int atlas_frame_count = 0;
 uniform int atlas_dimension = 8;
-uniform int atlas_pixel_dimension = 1024;
+//uniform int atlas_pixel_dimension = 1024;
 
 uniform int current_shatter_frame = 0;
 
@@ -39,7 +39,7 @@ vec2 panorama_uv(vec3 dir)
 
 vec2 get_uv_from_frame_number(vec2 uv)
 {
-	int frames = atlas_frame_count;
+	//int frames = atlas_frame_count;
 	float n = float(current_shatter_frame + 1);
 	float w = float(atlas_dimension);
 	float h = float(atlas_dimension);
@@ -47,7 +47,7 @@ vec2 get_uv_from_frame_number(vec2 uv)
 	float x = mod(n, w) - 1.0;
 	float y = ceil(n/w) - 1.0;
 	
-	float p = float(atlas_pixel_dimension);
+	//float p = float(atlas_pixel_dimension);
 	float u = x/w + uv.x/w;
 	float v = y/h + uv.y/h;
 	
@@ -58,7 +58,7 @@ void fragment() {
 	vec3 view_dir = normalize(-VIEW);
 	vec3 reflection_vector = reflect(view_dir, NORMAL);
 	vec3 reflection_world = (INV_VIEW_MATRIX * vec4(reflection_vector, 0.0)).xyz;
-	vec3 normal_dir = normalize(NORMAL);
+	//vec3 normal_dir = normalize(NORMAL);
 	
 	vec2 uv = panorama_uv(reflection_world);
 	

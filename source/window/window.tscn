@@ -22,9 +22,7 @@ shader_parameter/frame_texture = ExtResource("3_100et")
 shader_parameter/reflection_tint = Color(0.48116052, 0.61040246, 0.7161459, 1)
 shader_parameter/frame_gradient = SubResource("GradientTexture1D_xg55s")
 shader_parameter/shatter_atlas = ExtResource("5_xg55s")
-shader_parameter/atlas_frame_count = 21
 shader_parameter/atlas_dimension = 8
-shader_parameter/atlas_pixel_dimension = 1024
 shader_parameter/current_shatter_frame = 0
 
 [sub_resource type="QuadMesh" id="QuadMesh_rlsek"]

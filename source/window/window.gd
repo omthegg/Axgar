@@ -21,4 +21,4 @@ func _input(event: InputEvent) -> void:
 		var tween:Tween = create_tween()
 		tween.tween_property(mesh_instance, 
 		"material_override:shader_parameter/current_shatter_frame",
-		 21, 1.0)
+		 43, 1.0)
