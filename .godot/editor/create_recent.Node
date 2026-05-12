@@ -1,3 +1,6 @@
+AudioStreamPlayer3D
+CollisionShape3D
+StaticBody3D
 MeshInstance3D
 WorldEnvironment
 Label3D
@@ -6,9 +9,7 @@ SubViewport
 GPUParticlesCollisionBox3D
 MultiMeshInstance3D
 ReflectionProbe
-StaticBody3D
 CSGCombiner3D
 BoneAttachment3D
 AimModifier3D
 CCDIK3D
-Node3D

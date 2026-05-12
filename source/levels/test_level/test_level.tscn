@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://3xx2ls0a1fxi"]
 
 [ext_resource type="Script" uid="uid://8ifaqgdfxbnl" path="res://source/levels/test_level/test_level.gd" id="1_bvpvu"]
-[ext_resource type="Texture2D" uid="uid://ct26kx0u7par" path="res://textures/Asphalt026C.jpg" id="2_bvpvu"]
+[ext_resource type="Texture2D" uid="uid://bvr7dqmpr3k50" path="res://textures/Road012A.jpg" id="3_guw1o"]
 [ext_resource type="Texture2D" uid="uid://ce4f0602qljsw" path="res://textures/Bricks082A.jpg" id="4_3exnk"]
 [ext_resource type="Texture2D" uid="uid://dpp8wrfslpwb1" path="res://textures/Grass001_grayscale.jpg" id="4_bvpvu"]
 [ext_resource type="PackedScene" uid="uid://buvhqk4tglnl1" path="res://source/venlil_template/venlil_template.tscn" id="4_pophn"]
 [ext_resource type="PackedScene" uid="uid://do8fee4yywcpu" path="res://source/components/environment_controller/environment_controller.tscn" id="6_6l7bi"]
 [ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire.tscn" id="7_y5moh"]
 [ext_resource type="Texture2D" uid="uid://bpelu7tyeeuxq" path="res://textures/checkerboard.png" id="9_bvpvu"]
-[ext_resource type="FontFile" uid="uid://xer7730p3akh" path="res://fonts/VoxelGalactic-Regular.ttf" id="9_guw1o"]
 [ext_resource type="PackedScene" uid="uid://d07faqb6x3n5l" path="res://source/window/window.tscn" id="10_guw1o"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_bvpvu"]
@@ -26,7 +25,7 @@ agent_max_climb = 0.05
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3exnk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k64hh"]
-albedo_texture = ExtResource("2_bvpvu")
+albedo_texture = ExtResource("3_guw1o")
 normal_texture = SubResource("CompressedTexture2D_3exnk")
 ao_texture = SubResource("CompressedTexture2D_synrt")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
@@ -231,14 +230,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.52, 0)
 visible = false
 material_override = SubResource("StandardMaterial3D_vxmon")
 mesh = SubResource("PlaneMesh_bvpvu")
-
-[node name="Label3D" type="Label3D" parent="." unique_id=1945446226]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.95, 5, 0)
-texture_filter = 2
-text = "Look harder, say it's done"
-font = ExtResource("9_guw1o")
-font_size = 64
-outline_size = 0
 
 [node name="Window" parent="." unique_id=782704420 instance=ExtResource("10_guw1o")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.25, 2, -6.5)

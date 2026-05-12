@@ -27,7 +27,6 @@ Global="*res://source/autoload/global.gd"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-window/vsync/vsync_mode=0
 
 [editor_plugins]
 
