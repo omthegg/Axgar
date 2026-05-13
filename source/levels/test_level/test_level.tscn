@@ -211,13 +211,14 @@ fire_flicker = true
 [node name="Fire" parent="." unique_id=1262338812 instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -21.5)
 
+[node name="Fire3" parent="." unique_id=1967366532 instance=ExtResource("7_y5moh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -8.5)
+rect = Rect2(0, 0, 11.5, 10)
+amount = 400
+
 [node name="Fire2" parent="." unique_id=720581520 instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -21.5)
 amount = 200
-
-[node name="Fire3" parent="." unique_id=152306757 instance=ExtResource("7_y5moh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.5, -21.5)
-amount = 300
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=387387194]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11, 2, -17.5)
