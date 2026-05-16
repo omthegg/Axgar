@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dpp8wrfslpwb1" path="res://textures/Grass001_grayscale.jpg" id="4_bvpvu"]
 [ext_resource type="PackedScene" uid="uid://buvhqk4tglnl1" path="res://source/venlil_template/venlil_template.tscn" id="4_pophn"]
 [ext_resource type="PackedScene" uid="uid://do8fee4yywcpu" path="res://source/components/environment_controller/environment_controller.tscn" id="6_6l7bi"]
-[ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire.tscn" id="7_y5moh"]
+[ext_resource type="PackedScene" uid="uid://b66n0ydg70jl3" path="res://source/fire/fire_cluster.tscn" id="7_y5moh"]
 [ext_resource type="Texture2D" uid="uid://bpelu7tyeeuxq" path="res://textures/checkerboard.png" id="9_bvpvu"]
 [ext_resource type="PackedScene" uid="uid://d07faqb6x3n5l" path="res://source/window/window.tscn" id="10_guw1o"]
 

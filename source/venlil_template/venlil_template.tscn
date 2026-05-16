@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://dsisanhqvj0la" path="res://source/pistol/pistol_material.tres" id="6_u11nn"]
 [ext_resource type="Material" uid="uid://cmm35fibc51co" path="res://source/venlil_template/venlil_fur.tres" id="6_wf1hf"]
 [ext_resource type="Script" uid="uid://c6feu3bd8uwhi" path="res://source/components/viewmodel_animator/viewmodel_animator.gd" id="7_qcdkb"]
+[ext_resource type="PackedScene" uid="uid://bp0ce46ui3vc4" path="res://source/pistol/pistol.tscn" id="9_i7giv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xfv5o"]
 resource_local_to_scene = true
@@ -17,6 +18,11 @@ height = 1.5
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qcdkb"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Arm1_L", "Armature/Skeleton3D:Arm1_R", "Armature/Skeleton3D:Arm2_L", "Armature/Skeleton3D:Arm2_R", "Armature/Skeleton3D:Hand_L", "Armature/Skeleton3D:Hand_R"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_u11nn"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i7giv"]
+animation = &"shoot_pistol_m"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kny53"]
 
@@ -37,7 +43,7 @@ states/ShootPistol/node = SubResource("AnimationNodeAnimation_qcdkb")
 states/ShootPistol/position = Vector2(477.8889, 217.66666)
 states/Start/position = Vector2(206, 98.855965)
 transitions = ["Start", "HoldPistol", SubResource("AnimationNodeStateMachineTransition_qcdkb")]
-graph_offset = Vector2(66, 31)
+graph_offset = Vector2(35, 50)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ter2"]
 animation = &"idle"
@@ -46,7 +52,7 @@ animation = &"idle"
 animation = &"run"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_5ter2"]
-graph_offset = Vector2(-319.11258, 298.37244)
+graph_offset = Vector2(-287.19418, 426.48807)
 nodes/output/position = Vector2(866.6667, 320)
 nodes/run/node = SubResource("AnimationNodeAnimation_xfv5o")
 nodes/run/position = Vector2(-346.66666, 386.66666)
@@ -55,10 +61,14 @@ nodes/WalkSpeed/position = Vector2(-66.666664, 226.66667)
 nodes/idle/node = SubResource("AnimationNodeAnimation_5ter2")
 nodes/idle/position = Vector2(-346.66666, 213.33333)
 nodes/WeaponsStateMachine/node = SubResource("AnimationNodeStateMachine_f6pf5")
-nodes/WeaponsStateMachine/position = Vector2(-133.33333, 586.6667)
+nodes/WeaponsStateMachine/position = Vector2(-280, 586.6667)
 nodes/HoldWeapon/node = SubResource("AnimationNodeBlend2_qcdkb")
 nodes/HoldWeapon/position = Vector2(240, 333.33334)
-node_connections = [&"output", 0, &"HoldWeapon", &"WalkSpeed", 0, &"idle", &"WalkSpeed", 1, &"run", &"HoldWeapon", 0, &"WalkSpeed", &"HoldWeapon", 1, &"WeaponsStateMachine"]
+nodes/Shoot/node = SubResource("AnimationNodeOneShot_u11nn")
+nodes/Shoot/position = Vector2(26.666666, 573.3333)
+nodes/ShootPistol/node = SubResource("AnimationNodeAnimation_i7giv")
+nodes/ShootPistol/position = Vector2(-280, 840)
+node_connections = [&"output", 0, &"HoldWeapon", &"WalkSpeed", 0, &"idle", &"WalkSpeed", 1, &"run", &"HoldWeapon", 0, &"WalkSpeed", &"HoldWeapon", 1, &"Shoot", &"Shoot", 0, &"WeaponsStateMachine", &"Shoot", 1, &"ShootPistol"]
 
 [node name="VenlilTemplate" type="CharacterBody3D" unique_id=295057403]
 floor_constant_speed = true
@@ -80,6 +90,9 @@ camera_height = 1.3
 [node name="Camera3D" parent="CharacterControllerComponent/Head" parent_id_path=PackedInt32Array(1610684037, 1612634824) index="0" unique_id=415665129]
 cull_mask = 1048569
 
+[node name="PistolRayCast" type="RayCast3D" parent="CharacterControllerComponent/Head/Camera3D" index="3" unique_id=394136970]
+target_position = Vector3(0, 0, -30)
+
 [node name="Venlil" parent="." unique_id=953485397 instance=ExtResource("1_5ter2")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
 
@@ -92,7 +105,7 @@ bones/6/rotation = Quaternion(-0.08671469, 0.005374138, 0.19418569, 0.97710985)
 bones/7/rotation = Quaternion(0.01135199, -0.0061836476, -0.5627295, 0.82654005)
 bones/8/rotation = Quaternion(-0.30864707, 6.991123e-17, -6.7223354e-17, 0.95117664)
 bones/9/rotation = Quaternion(0.24110788, 5.3536674e-17, -1.1506396e-23, 0.9704983)
-bones/10/rotation = Quaternion(0.08186138, 1.322e-17, 9.691905e-24, 0.9966438)
+bones/10/rotation = Quaternion(0.09696768, 1.8171502e-17, 7.631865e-24, 0.9952876)
 bones/11/rotation = Quaternion(0.054444384, 0.24348617, 0.9682944, -0.012507783)
 bones/12/rotation = Quaternion(0.5216315, -0.013201139, 0.11290933, 0.84556365)
 bones/13/rotation = Quaternion(-0.013653704, 0.0021102554, -0.13354973, 0.9909458)
@@ -140,7 +153,7 @@ transform = Transform3D(-0.017835021, 0.12940727, 0.9914311, 0.13410878, -0.9823
 material_override = ExtResource("6_wf1hf")
 
 [node name="Tail3" parent="Venlil/Armature/Skeleton3D" index="7" unique_id=935685807]
-transform = Transform3D(1, 2.1772136e-16, 2.1213628e-16, -2.2104908e-16, 0.99987483, 0.015814975, -2.0866651e-16, -0.01581487, 0.9998749, 5.952005e-17, 1.1964148, -0.29594544)
+transform = Transform3D(1, 2.246167e-16, 2.153335e-16, -2.2146676e-16, 0.9998945, -0.014518246, -2.1857186e-16, 0.01451838, 0.9998946, 5.952005e-17, 1.1964148, -0.29594544)
 
 [node name="Tail3_m" parent="Venlil/Armature/Skeleton3D/Tail3" index="0" unique_id=892877539]
 material_override = ExtResource("6_wf1hf")
@@ -216,6 +229,9 @@ tree_root = SubResource("AnimationNodeBlendTree_5ter2")
 anim_player = NodePath("../Venlil/AnimationPlayer")
 parameters/WalkSpeed/blend_amount = 0.0
 parameters/HoldWeapon/blend_amount = 1.0
+parameters/Shoot/active = false
+parameters/Shoot/internal_active = false
+parameters/Shoot/request = 0
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1362777592]
 anchors_preset = 15
@@ -309,6 +325,13 @@ metadata/_custom_type_script = "uid://c6feu3bd8uwhi"
 
 [node name="Node3D" type="Node3D" parent="." unique_id=857041034]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.05554214, 0.48063856, -0.8114178)
+
+[node name="Pistol" parent="." unique_id=220901149 node_paths=PackedStringArray("m_animation_tree", "vm_animation_player", "raycast") instance=ExtResource("9_i7giv")]
+m_animation_tree = NodePath("../AnimationTree")
+m_shoot_oneshot_name = &"shoot"
+vm_animation_player = NodePath("../SubViewportContainer/SubViewport/Camera3D/venlil_arms/AnimationPlayer")
+vm_shoot_animation_name = &"shoot_pistol_vm"
+raycast = NodePath("../CharacterControllerComponent/Head/Camera3D/PistolRayCast")
 
 [editable path="CharacterControllerComponent"]
 [editable path="Venlil"]

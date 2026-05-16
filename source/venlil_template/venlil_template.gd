@@ -80,6 +80,15 @@ func _process(_delta: float) -> void:
 	viewmodel_camera.global_transform = character_controller.camera.global_transform
 
 
+func _physics_process(delta: float) -> void:
+	super(delta)
+	
+	if is_player:
+		if Input.is_action_just_pressed("fire"):
+			if current_item == Items.PISTOL:
+				$Pistol.shoot()
+
+
 func animate() -> void:
 	var ratio:float = velocity.length()/run_speed
 	animation_tree["parameters/WalkSpeed/blend_amount"] = ratio
@@ -113,7 +122,7 @@ func set_materials(material:Material) -> void:
 # I only made these into separate functions because I couldn't
 # think of a good name for the function
 func make_models_first_person() -> void:
-	#arms.show()
+	arms.show()
 	for body_part:MeshInstance3D in tp_body_parts:
 		body_part.set_layer_mask_value(1, false)
 		body_part.set_layer_mask_value(3, true)
