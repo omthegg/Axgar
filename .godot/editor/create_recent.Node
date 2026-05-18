@@ -1,3 +1,6 @@
+Node3D
+MultiMeshInstance3D
+Timer
 AudioStreamPlayer3D
 RayCast3D
 CollisionShape3D
@@ -8,7 +11,5 @@ Label3D
 Camera3D
 SubViewport
 GPUParticlesCollisionBox3D
-MultiMeshInstance3D
 ReflectionProbe
 CSGCombiner3D
-BoneAttachment3D

@@ -42,5 +42,4 @@ func shatter() -> void:
 	"material_override:shader_parameter/current_shatter_frame",
 	 43, 0.7)
 	
-	audio_player.pitch_scale = randf_range(0.9, 1.1)
 	audio_player.play()

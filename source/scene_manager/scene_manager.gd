@@ -5,6 +5,8 @@ extends Node3D
 @onready var console_canvas_layer:CanvasLayer = $ConsoleCanvasLayer
 @onready var console_line_edit:LineEdit = $ConsoleCanvasLayer/Console/LineEdit
 
+@onready var decal_manager:Node3D = $DecalManager
+
 #@onready var hushang:Character = $TestLevel/Hushang
 
 func _input(event: InputEvent) -> void:

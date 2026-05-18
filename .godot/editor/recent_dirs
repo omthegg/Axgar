@@ -1,3 +1,4 @@
+res://source/decal_manager/
 res://source/pistol/
 res://textures/
 res://source/window/
@@ -19,4 +20,3 @@ res://source/procedural_models/procedural_human/
 res://source/components/character_controller_component/
 res://source/autoload/
 res://
-res://source/levels/test_level/
