@@ -17,6 +17,8 @@ extends Node3D
 ## The RayCast3D from which the pistol will shoot.
 @export var raycast:RayCast3D
 
+@onready var audio_player:AudioStreamPlayer3D = $AudioStreamPlayer3D
+
 
 func shoot() -> void:
 	if !m_animation_tree:
@@ -40,5 +42,10 @@ func shoot() -> void:
 	vm_animation_player.play(vm_shoot_animation_name)
 	
 	var collider:Node3D = raycast.get_collider()
-	if !collider:
-		return
+	
+	if collider:
+		if collider.is_in_group("glass"):
+			collider.shatter()
+	
+	audio_player.pitch_scale = randf_range(0.9, 1.1)
+	audio_player.play()

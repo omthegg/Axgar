@@ -211,11 +211,6 @@ fire_flicker = true
 [node name="Fire" parent="." unique_id=1262338812 instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -21.5)
 
-[node name="Fire3" parent="." unique_id=1967366532 instance=ExtResource("7_y5moh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -8.5)
-rect = Rect2(0, 0, 11.5, 10)
-amount = 400
-
 [node name="Fire2" parent="." unique_id=720581520 instance=ExtResource("7_y5moh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, -21.5)
 amount = 200
@@ -232,6 +227,6 @@ visible = false
 material_override = SubResource("StandardMaterial3D_vxmon")
 mesh = SubResource("PlaneMesh_bvpvu")
 
-[node name="Window" parent="." unique_id=782704420 instance=ExtResource("10_guw1o")]
+[node name="Window" parent="." unique_id=782704420 groups=["glass"] instance=ExtResource("10_guw1o")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.25, 2, -6.5)
 size = Vector2(3, 2)

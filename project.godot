@@ -40,6 +40,10 @@ import/blender/enabled=false
 
 default_map_settings="res://addons/func_godot/func_godot_default_map_settings.tres"
 
+[global_group]
+
+glass=""
+
 [gui]
 
 theme/custom_font="uid://dhrs3k82t33bh"
