@@ -52,6 +52,14 @@ extends Character
 	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/Arm1_R/Arm1_R_vm
 ]
 
+@onready var tp_weapons:Array = [
+	$Venlil/Armature/Skeleton3D/BoneAttachment3D/pistol/Pistol
+]
+
+@onready var fp_weapons:Array = [
+	$SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/WeaponBoneAttachment/pistol/Pistol
+]
+
 @onready var arms:Node3D = $SubViewportContainer/SubViewport/Camera3D/venlil_arms
 @onready var viewmodel_camera:Camera3D = $SubViewportContainer/SubViewport/Camera3D
 
@@ -70,6 +78,7 @@ func _ready() -> void:
 		set_materials(fur_material)
 	
 	configure_model()
+	make_models_third_person()
 
 
 func _process(_delta: float) -> void:
@@ -117,19 +126,3 @@ func set_materials(material:Material) -> void:
 		body_part.material_override = material
 	
 	#print(fp_material.z_clip_scale)
-
-
-# I only made these into separate functions because I couldn't
-# think of a good name for the function
-func make_models_first_person() -> void:
-	arms.show()
-	for body_part:MeshInstance3D in tp_body_parts:
-		body_part.set_layer_mask_value(1, false)
-		body_part.set_layer_mask_value(3, true)
-
-
-func make_models_third_person() -> void:
-	arms.hide()
-	for body_part:MeshInstance3D in tp_body_parts:
-		body_part.set_layer_mask_value(1, true)
-		body_part.set_layer_mask_value(3, false)

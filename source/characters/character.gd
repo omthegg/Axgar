@@ -25,6 +25,11 @@ class_name Character
 @export var mass:float = 75.0
 @export var jump_speed:float = 5.0
 
+@export var third_person_meshes:Array[MeshInstance3D] = []
+@export var first_person_meshes:Array[MeshInstance3D] = []
+@export var first_person_arms:Node3D
+@export var viewmodel_subviewport_container:SubViewportContainer
+
 var speed:float = walk_speed
 var running:bool = false
 var direction:Vector3 = Vector3.ZERO
@@ -91,3 +96,21 @@ func manage_preset() -> void:
 			run_speed = 7.0
 			mass = 75.0
 			jump_speed = 5.0
+
+
+# I only made these into separate functions because I couldn't
+# think of a good name for the function
+func make_models_first_person() -> void:
+	first_person_arms.show()
+	viewmodel_subviewport_container.show()
+	for body_part:MeshInstance3D in third_person_meshes:
+		body_part.set_layer_mask_value(1, false)
+		body_part.set_layer_mask_value(3, true)
+
+
+func make_models_third_person() -> void:
+	first_person_arms.hide()
+	viewmodel_subviewport_container.hide()
+	for body_part:MeshInstance3D in third_person_meshes:
+		body_part.set_layer_mask_value(1, true)
+		body_part.set_layer_mask_value(3, false)

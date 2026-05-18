@@ -99,7 +99,11 @@ shadow_enabled = true
 navigation_mesh = SubResource("NavigationMesh_bvpvu")
 
 [node name="VenlilTemplate" parent="NavigationRegion3D" unique_id=295057403 instance=ExtResource("4_pophn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5000236, 0.5001271)
+is_exterminator = true
+
+[node name="VenlilTemplate2" parent="NavigationRegion3D" unique_id=156387157 instance=ExtResource("4_pophn")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.25667e-05, 0.49991003, -8.900127)
 is_exterminator = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="NavigationRegion3D" unique_id=1433389465]
