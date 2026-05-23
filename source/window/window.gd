@@ -25,11 +25,6 @@ func _ready() -> void:
 	collision_shape.shape.size.y = size.y
 
 
-func _input(event: InputEvent) -> void:
-	if event.is_action("ui_left"):
-		shatter()
-
-
 func shatter() -> void:
 	if shattered:
 		return

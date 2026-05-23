@@ -17,7 +17,7 @@ var input_dir:Vector2
 
 func _ready() -> void:
 	if character.get("size"):
-		camera_height = 1.3 * character.size
+		camera_height = 1.4 * character.size
 	
 	head.position.y = camera_height
 	camera.fov = fov
