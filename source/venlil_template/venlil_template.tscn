@@ -108,7 +108,7 @@ bones/6/rotation = Quaternion(-0.08671469, 0.005374138, 0.19418569, 0.97710985)
 bones/7/rotation = Quaternion(0.01135199, -0.0061836476, -0.5627295, 0.82654005)
 bones/8/rotation = Quaternion(-0.30864707, 6.991123e-17, -6.7223354e-17, 0.95117664)
 bones/9/rotation = Quaternion(0.24110788, 5.3536674e-17, -1.1506396e-23, 0.9704983)
-bones/10/rotation = Quaternion(0.059766233, 1.504698e-17, 1.4586983e-23, 0.9982124)
+bones/10/rotation = Quaternion(0.07838024, 2.1635184e-17, 9.035045e-24, 0.99692357)
 bones/11/rotation = Quaternion(0.054444384, 0.24348617, 0.9682944, -0.012507783)
 bones/12/rotation = Quaternion(0.5216315, -0.013201139, 0.11290933, 0.84556365)
 bones/13/rotation = Quaternion(-0.013653704, 0.0021102554, -0.13354973, 0.9909458)
@@ -156,7 +156,7 @@ transform = Transform3D(-0.017835021, 0.12940727, 0.9914311, 0.13410878, -0.9823
 material_override = ExtResource("4_i7giv")
 
 [node name="Tail3" parent="Venlil/Armature/Skeleton3D" index="7" unique_id=935685807]
-transform = Transform3D(1, 2.08916e-16, 2.2518945e-16, -2.220684e-16, 0.9981933, 0.060081832, -2.122306e-16, -0.060081713, 0.9981934, 5.952005e-17, 1.1964148, -0.29594544)
+transform = Transform3D(1, 2.1764559e-16, 2.3042332e-16, -2.228423e-16, 0.99973994, 0.02279839, -2.2540148e-16, -0.02279827, 0.99974006, 5.952005e-17, 1.1964148, -0.29594544)
 
 [node name="Tail3_m" parent="Venlil/Armature/Skeleton3D/Tail3" index="0" unique_id=892877539]
 material_override = ExtResource("4_i7giv")
@@ -223,6 +223,11 @@ transform = Transform3D(1, 0, -8.8475645e-09, -7.450581e-09, 1, 1.8626451e-09, 1
 [node name="Pistol" parent="Venlil/Armature/Skeleton3D/BoneAttachment3D/pistol" index="0" unique_id=1195441860]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0.001, 0.031, -0.048)
 material_override = ExtResource("6_u11nn")
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Venlil/Armature/Skeleton3D" index="18" unique_id=1863380384]
+transform = Transform3D(-0.9941523, 0.053841867, -0.09361428, -0.09247477, 0.023283796, 0.9954428, 0.055776186, 0.998278, -0.018168617, -0.0735239, 0.9543672, 0.27777207)
+bone_name = "Hand_R"
+bone_idx = 13
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1462497566]
 editor_description = "If the character is not holding a weapon, set HoldWeapon to 0."

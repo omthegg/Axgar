@@ -1,3 +1,4 @@
+BoneAttachment3D
 Node3D
 MultiMeshInstance3D
 Timer
@@ -12,4 +13,3 @@ Camera3D
 SubViewport
 GPUParticlesCollisionBox3D
 ReflectionProbe
-CSGCombiner3D
