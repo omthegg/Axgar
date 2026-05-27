@@ -74,6 +74,7 @@ func _ready() -> void:
 	super()
 	if is_exterminator:
 		set_materials(exterminator_material)
+		$Pistol.set_active(true)
 	else:
 		set_materials(fur_material)
 	
