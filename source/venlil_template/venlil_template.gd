@@ -53,7 +53,7 @@ extends Character
 ]
 
 @onready var tp_weapons:Array = [
-	$Venlil/Armature/Skeleton3D/BoneAttachment3D/pistol/Pistol
+	$Venlil/Armature/Skeleton3D/WeaponBoneAttachment/pistol/Pistol
 ]
 
 @onready var fp_weapons:Array = [

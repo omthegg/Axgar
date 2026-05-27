@@ -1,0 +1,56 @@
+[gd_resource type="AnimationNodeBlendTree" format=3 uid="uid://cypscsuro2hoo"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qcdkb"]
+filter_enabled = true
+filters = ["Armature/Skeleton3D:Arm1_L", "Armature/Skeleton3D:Arm1_R", "Armature/Skeleton3D:Arm2_L", "Armature/Skeleton3D:Arm2_R", "Armature/Skeleton3D:Hand_L", "Armature/Skeleton3D:Hand_R"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_u11nn"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i7giv"]
+animation = &"shoot_pistol_m"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_kny53"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u11nn"]
+animation = &"hold_pistol_m"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qcdkb"]
+animation = &"shoot_pistol_m"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qcdkb"]
+advance_mode = 2
+advance_expression = "get_parent().current_item == 1"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_f6pf5"]
+states/HoldPistol/node = SubResource("AnimationNodeAnimation_u11nn")
+states/HoldPistol/position = Vector2(477.82715, 99.89809)
+states/ShootPistol/node = SubResource("AnimationNodeAnimation_qcdkb")
+states/ShootPistol/position = Vector2(477.8889, 217.66666)
+states/Start/position = Vector2(206, 98.855965)
+transitions = ["Start", "HoldPistol", SubResource("AnimationNodeStateMachineTransition_qcdkb")]
+graph_offset = Vector2(35, 50)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ter2"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xfv5o"]
+animation = &"run"
+
+[resource]
+graph_offset = Vector2(-376.09253, 54.564953)
+nodes/output/position = Vector2(866.6667, 320)
+nodes/run/node = SubResource("AnimationNodeAnimation_xfv5o")
+nodes/run/position = Vector2(-346.66666, 386.66666)
+nodes/WalkSpeed/node = SubResource("AnimationNodeBlend2_kny53")
+nodes/WalkSpeed/position = Vector2(-66.666664, 226.66667)
+nodes/idle/node = SubResource("AnimationNodeAnimation_5ter2")
+nodes/idle/position = Vector2(-346.66666, 213.33333)
+nodes/WeaponsStateMachine/node = SubResource("AnimationNodeStateMachine_f6pf5")
+nodes/WeaponsStateMachine/position = Vector2(-280, 586.6667)
+nodes/HoldWeapon/node = SubResource("AnimationNodeBlend2_qcdkb")
+nodes/HoldWeapon/position = Vector2(240, 333.33334)
+nodes/Shoot/node = SubResource("AnimationNodeOneShot_u11nn")
+nodes/Shoot/position = Vector2(26.666666, 573.3333)
+nodes/ShootPistol/node = SubResource("AnimationNodeAnimation_i7giv")
+nodes/ShootPistol/position = Vector2(-280, 840)
+node_connections = [&"output", 0, &"HoldWeapon", &"WalkSpeed", 0, &"idle", &"WalkSpeed", 1, &"run", &"HoldWeapon", 0, &"WalkSpeed", &"HoldWeapon", 1, &"Shoot", &"Shoot", 0, &"WeaponsStateMachine", &"Shoot", 1, &"ShootPistol"]
