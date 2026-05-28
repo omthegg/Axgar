@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://c1vskr1s7axqg" path="res://textures/fire_mask.png" id="3_kcvn0"]
 
 [sub_resource type="Curve" id="Curve_l4oyu"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.21336763, 1), 0.0, 0.0, 0, 0, Vector2(0.75321335, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.32133678, 1), 0.0, 0.0, 0, 0, Vector2(0.9074551, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_y730a"]
 curve = SubResource("Curve_l4oyu")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ufxq8"]
-radius = 0.4
+radius = 0.25
 
 [sub_resource type="Gradient" id="Gradient_ve1m3"]
 offsets = PackedFloat32Array(0.15882353, 0.7705882)
@@ -23,8 +23,6 @@ gradient = SubResource("Gradient_ve1m3")
 width = 32
 
 [sub_resource type="Gradient" id="Gradient_l4oyu"]
-offsets = PackedFloat32Array(0, 0.9240924, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_erk61"]
 noise_type = 0
@@ -51,6 +49,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_y730a")
 size_ramp = SubResource("CurveTexture_y730a")
+flame_size = 1.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1982009606]
 shape = SubResource("SphereShape3D_ufxq8")

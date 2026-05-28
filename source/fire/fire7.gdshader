@@ -6,6 +6,14 @@ uniform sampler2D noise_texture: filter_nearest_mipmap;
 uniform sampler2D gradient_texture: filter_nearest_mipmap;
 
 
+float rand3(vec3 p)
+{
+	p = fract(p * 0.1031);
+	p += dot(p, p.zyx + 31.32);
+	return fract((p.x + p.y) * p.z);
+}
+
+
 vec2 rotateUV(vec2 uv, vec2 pivot, float rotation) {
     float sine = sin(rotation);
     float cosine = cos(rotation);
@@ -20,10 +28,13 @@ vec2 rotateUV(vec2 uv, vec2 pivot, float rotation) {
 
 
 void fragment() {
+	ALPHA_SCISSOR_THRESHOLD = 0.3;
+	
 	vec3 world_vertex = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	float randomness = texture(noise_texture, vec2(world_vertex.x, world_vertex.z)).x;
-
-	vec4 noise = texture(noise_texture, UV + vec2(0.0, TIME * 2.0));
+	
+	float r = rand3(FRAGCOORD.xyz);
+	vec4 noise = texture(noise_texture, UV + vec2(0.0, TIME));
 	vec4 gradient = texture(gradient_texture, rotateUV(UV, vec2(0.0, 0.0), radians(90.0)));
 
 	vec4 shape = texture(shape_texture, UV);
@@ -31,10 +42,20 @@ void fragment() {
 	shape.x = shape_av;
 	shape.y = shape_av;
 	shape.z = shape_av;
+	
+	float noise_corrected = noise.x;
+	if (noise_corrected < 0.6)
+	{
+		noise_corrected = 0.0;
+	}
+	//else
+	//{
+	//	noise_corrected = 1.0;
+	//}
 
-	ALBEDO = noise.xyz * gradient.xyz * shape_av * 2.0;
+	ALBEDO = noise.xyz * gradient.xyz * 1.7;
 	//ALPHA = noise.x * 3.0;
-	ALPHA = shape.w * noise.x;
+	ALPHA = shape.w * noise_corrected;
 	//if (noise.x < 0.4)
 	//{
 	//	ALPHA = 0.0;

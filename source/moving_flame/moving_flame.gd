@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var size_ramp:CurveTexture
+@export var flame_size:float = 1.0
 
 @onready var timer:Timer = $Timer
 
@@ -20,13 +21,15 @@ func _process(_delta: float) -> void:
 	if active:
 		var point = (timer.wait_time - timer.time_left) / timer.wait_time
 		var size:float = size_ramp.curve.sample(point)
-		$MeshInstance3D.mesh.size = Vector2.ONE * size
+		$MeshInstance3D.mesh.size = Vector2.ONE * flame_size * size
 
 
 func set_active(value:bool) -> void:
 	active = value
 	visible = active
 	timer.start()
+	$MeshInstance3D.mesh.size = Vector2.ONE * flame_size
+	#$CollisionShape3D.shape.radius = flame_size / 2.0
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

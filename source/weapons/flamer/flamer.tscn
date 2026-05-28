@@ -10,7 +10,7 @@ metadata/_custom_type_script = "uid://cqxqvs0swiud5"
 [node name="Flames" type="Node3D" parent="." unique_id=651572397]
 
 [node name="Timer" type="Timer" parent="." unique_id=1854575234]
-wait_time = 0.05
+wait_time = 0.009999999999999998
 one_shot = true
 
 [connection signal="just_fired" from="." to="." method="_on_just_fired"]

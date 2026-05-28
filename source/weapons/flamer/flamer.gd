@@ -19,12 +19,17 @@ func _ready() -> void:
 
 
 func _on_just_fired() -> void:
-	var flame = flames_list[current_flame]
+	var flame:CharacterBody3D = flames_list[current_flame]
 	
 	flame.set_active(true)
 	var pos:Vector3 = character_head.global_position - character_head.global_basis.z/20.0
 	flame.global_position = pos
-	flame.velocity = -character_head.global_basis.z * 12.0
+	
+	var o:float = 0.12
+	var offset:Vector3 = Vector3(randf_range(-o, o), randf_range(-o, o), 0.0)
+	flame.global_rotation = character_head.global_rotation + offset
+	
+	flame.velocity = -flame.global_basis.z * 12.0
 	
 	current_flame += 1
 	
