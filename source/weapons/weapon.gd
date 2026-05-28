@@ -49,7 +49,7 @@ var active:bool = false
 signal just_fired
 
 
-func shoot() -> void:
+func fire() -> void:
 	if !active:
 		return
 	

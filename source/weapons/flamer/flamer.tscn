@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://bb0cbgg6ow7ye"]
 
-[ext_resource type="Script" uid="uid://cqxqvs0swiud5" path="res://source/weapons/weapon.gd" id="1_4bmdl"]
+[ext_resource type="Script" uid="uid://dmnhp8dhls30k" path="res://source/weapons/flamer/flamer.gd" id="1_4bmdl"]
 
-[node name="Flamer" type="Node3D" unique_id=1333001578]
+[node name="Flamer" type="Node3D" unique_id=1333001578 node_paths=PackedStringArray("cooldown_timer")]
 script = ExtResource("1_4bmdl")
+cooldown_timer = NodePath("Timer")
 metadata/_custom_type_script = "uid://cqxqvs0swiud5"
+
+[node name="Flames" type="Node3D" parent="." unique_id=651572397]
+
+[node name="Timer" type="Timer" parent="." unique_id=1854575234]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="just_fired" from="." to="." method="_on_just_fired"]

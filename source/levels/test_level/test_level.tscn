@@ -108,6 +108,8 @@ is_exterminator = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="NavigationRegion3D" unique_id=1433389465]
 use_collision = true
+collision_layer = 3
+collision_mask = 3
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/CSGCombiner3D" unique_id=491704935]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 0, 7.5)

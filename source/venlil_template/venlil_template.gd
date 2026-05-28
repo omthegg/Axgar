@@ -75,6 +75,7 @@ func _ready() -> void:
 	if is_exterminator:
 		set_materials(exterminator_material)
 		$Flamer.set_active(true)
+		current_item = Items.FLAMER
 	else:
 		set_materials(fur_material)
 	
@@ -96,15 +97,21 @@ func _physics_process(delta: float) -> void:
 	if is_player:
 		if Input.is_action_just_pressed("fire"):
 			if current_item == Items.PISTOL:
-				$Pistol.shoot()
+				$Pistol.fire()
+		
+		if Input.is_action_pressed("fire"):
+			if current_item == Items.FLAMER:
+				$Flamer.fire()
 		
 		if Input.is_action_just_pressed("weapon_1"):
 			$Flamer.set_active(true)
 			$Pistol.set_active(false)
+			current_item = Items.FLAMER
 		
 		if Input.is_action_just_pressed("weapon_2"):
 			$Flamer.set_active(false)
 			$Pistol.set_active(true)
+			current_item = Items.PISTOL
 
 
 func animate() -> void:
