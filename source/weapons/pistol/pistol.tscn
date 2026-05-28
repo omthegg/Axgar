@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bp0ce46ui3vc4"]
 
-[ext_resource type="Script" uid="uid://cqxqvs0swiud5" path="res://source/weapons/weapon.gd" id="1_sbhnq"]
+[ext_resource type="Script" uid="uid://wji18ajofikb" path="res://source/weapons/pistol/pistol.gd" id="1_sbhnq"]
 [ext_resource type="AudioStream" uid="uid://c12ilhcqd2kgt" path="res://sounds/gunshot.wav" id="2_f6swa"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f6swa"]
@@ -21,3 +21,5 @@ bus = &"SFX"
 [node name="ShootTimer" type="Timer" parent="." unique_id=415323913]
 wait_time = 0.2
 one_shot = true
+
+[connection signal="just_fired" from="." to="." method="_on_just_fired"]

@@ -7,10 +7,12 @@ filters = ["Armature/Skeleton3D:Foot_L", "Armature/Skeleton3D:Foot_R", "Armature
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_u11nn"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i7giv"]
+resource_local_to_scene = true
 animation = &"shoot_pistol_m"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_52q3d"]
-animation = &"hold_pistol_m"
+resource_local_to_scene = true
+animation = &"hold_flamer_m"
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_qcdkb"]
 filter_enabled = true
@@ -65,7 +67,8 @@ animation = &"run"
 animation = &"run"
 
 [resource]
-graph_offset = Vector2(-257.43826, 475.15897)
+resource_local_to_scene = true
+graph_offset = Vector2(-157.2806, 70.92493)
 nodes/output/position = Vector2(866.6667, 320)
 nodes/run/node = SubResource("AnimationNodeAnimation_xfv5o")
 nodes/run/position = Vector2(-346.66666, 386.66666)

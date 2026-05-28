@@ -31,13 +31,22 @@ class_name Weapon
 ## The name of the 1st-person firing animation for the weapon
 @export var vm_fire_anim_name:StringName
 
-## The RayCast3D from which the weapon will shoot.
-@export var raycast:RayCast3D
-
 @export var audio_player:AudioStreamPlayer3D
 @export var cooldown_timer:Timer
 
+## The model for the weapon when it's held in 1st-person
+@export var viewmodel:Node3D
+
+## The model for the weapon when it's held in 3rd-person
+@export var handheld_model:Node3D
+
+## The model for the weapon when it's not active and sits on the 
+## character's model. For example, on their belt.
+@export var decoration_model:Node3D
+
 var active:bool = false
+
+signal just_fired
 
 
 func shoot() -> void:
@@ -54,8 +63,13 @@ func shoot() -> void:
 	if !vm_animation_player:
 		return
 	
-	if !raycast:
+	if !viewmodel:
 		return
+	
+	if !handheld_model:
+		return
+	
+	emit_signal("just_fired")
 	
 	if m_fire_anim_name:
 		m_animation_tree.set("parameters/" + m_fire_oneshot_name + "/request"
@@ -63,17 +77,6 @@ func shoot() -> void:
 	
 	if vm_fire_anim_name:
 		vm_animation_player.play(vm_fire_anim_name)
-	
-	if raycast:
-		var collider:Node3D = raycast.get_collider()
-		
-		if collider:
-			if collider.is_in_group("glass"):
-				collider.shatter()
-			else:
-				var p:Vector3 = raycast.get_collision_point()
-				var n:Vector3 = raycast.get_collision_normal()
-				Global.scene_manager.decal_manager.add_bullet_hole(p, n)
 	
 	if audio_player:
 		audio_player.play()
@@ -84,6 +87,13 @@ func shoot() -> void:
 
 func set_active(value:bool) -> void:
 	active = value
+	
+	viewmodel.visible = active
+	handheld_model.visible = active
+	
+	if decoration_model:
+		decoration_model.visible = !active
+	
 	if !active:
 		return
 	

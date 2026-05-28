@@ -66,7 +66,7 @@ extends Character
 var fur_material:StandardMaterial3D = preload("res://source/venlil_template/venlil_fur.tres")
 var exterminator_material:StandardMaterial3D = preload("res://source/venlil_template/exterminator_suit.tres")
 
-enum Items {EMPTY, PISTOL, FLAMER}
+enum Items {EMPTY, FLAMER, PISTOL}
 var current_item:Items = Items.PISTOL
 
 
@@ -74,7 +74,7 @@ func _ready() -> void:
 	super()
 	if is_exterminator:
 		set_materials(exterminator_material)
-		$Pistol.set_active(true)
+		$Flamer.set_active(true)
 	else:
 		set_materials(fur_material)
 	
@@ -97,6 +97,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("fire"):
 			if current_item == Items.PISTOL:
 				$Pistol.shoot()
+		
+		if Input.is_action_just_pressed("weapon_1"):
+			$Flamer.set_active(true)
+			$Pistol.set_active(false)
+		
+		if Input.is_action_just_pressed("weapon_2"):
+			$Flamer.set_active(false)
+			$Pistol.set_active(true)
 
 
 func animate() -> void:

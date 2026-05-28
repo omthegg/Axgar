@@ -12,4 +12,3 @@ WorldEnvironment
 Label3D
 Camera3D
 SubViewport
-GPUParticlesCollisionBox3D

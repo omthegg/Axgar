@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bb0cbgg6ow7ye"]
+
+[ext_resource type="Script" uid="uid://cqxqvs0swiud5" path="res://source/weapons/weapon.gd" id="1_4bmdl"]
+
+[node name="Flamer" type="Node3D" unique_id=1333001578]
+script = ExtResource("1_4bmdl")
+metadata/_custom_type_script = "uid://cqxqvs0swiud5"
