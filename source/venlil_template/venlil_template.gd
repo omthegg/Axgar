@@ -94,6 +94,8 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	super(delta)
 	
+	#$SubViewportContainer/SubViewport/Camera3D.global_transform = character_controller.camera.global_transform
+	
 	if is_player:
 		if Input.is_action_just_pressed("fire"):
 			if current_item == Items.PISTOL:

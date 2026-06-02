@@ -57,6 +57,7 @@ void fragment() {
 
 void vertex()
 {
+	/*
 	if (y_billboard)
 	{
 		// Y billboard
@@ -77,6 +78,7 @@ void vertex()
 			MODEL_MATRIX[3]);
 		MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
 	}
+	*/
 	
 	
 	//VERTEX.y += 1.0;

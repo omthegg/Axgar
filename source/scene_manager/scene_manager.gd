@@ -6,6 +6,7 @@ extends Node3D
 @onready var console_line_edit:LineEdit = $ConsoleCanvasLayer/Console/LineEdit
 
 @onready var decal_manager:Node3D = $DecalManager
+@onready var flame_manager:Node3D = $FlameManager
 
 #@onready var hushang:Character = $TestLevel/Hushang
 

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bb0cbgg6ow7ye"]
+
+[ext_resource type="Script" uid="uid://dmnhp8dhls30k" path="res://source/weapons/flamer/flamer.gd" id="1_4bmdl"]
+[ext_resource type="Shader" uid="uid://bkq56viu2nc4t" path="res://source/weapons/flamer/airborne_fuel.gdshader" id="2_nua7m"]
+[ext_resource type="Texture2D" uid="uid://b3j2m7vmip6nx" path="res://source/weapons/flamer/airborne_flame_noise_texture.tres" id="3_6hc6l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l302i"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_nua7m")
+shader_parameter/points = PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+shader_parameter/rings = 9
+shader_parameter/height = 10.0
+shader_parameter/error_margin = 0.1
+shader_parameter/color = Color(1, 0.3945946, 0, 1)
+shader_parameter/noise_texture = ExtResource("3_6hc6l")
+shader_parameter/uv1_blend_sharpness = 1.0000000475
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nua7m"]
+resource_local_to_scene = true
+height = 10.0
+radial_segments = 6
+rings = 8
+
+[node name="Flamer" type="Node3D" unique_id=1333001578]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_4bmdl")
+cooldown_time = 0.05
+metadata/_custom_type_script = "uid://cqxqvs0swiud5"
+
+[node name="Flames" type="Node3D" parent="." unique_id=651572397]
+
+[node name="AirborneFuelVM" type="MeshInstance3D" parent="." unique_id=1563514551]
+layers = 2
+material_override = SubResource("ShaderMaterial_l302i")
+mesh = SubResource("CylinderMesh_nua7m")
+
+[node name="AirborneFuelM" type="MeshInstance3D" parent="." unique_id=2100857972]
+material_override = SubResource("ShaderMaterial_l302i")
+mesh = SubResource("CylinderMesh_nua7m")
+
+[connection signal="just_fired" from="." to="." method="_on_just_fired"]

@@ -32,7 +32,7 @@ class_name Weapon
 @export var vm_fire_anim_name:StringName
 
 @export var audio_player:AudioStreamPlayer3D
-@export var cooldown_timer:Timer
+#@export var cooldown_timer:Timer
 
 ## The model for the weapon when it's held in 1st-person
 @export var viewmodel:Node3D
@@ -44,18 +44,26 @@ class_name Weapon
 ## character's model. For example, on their belt.
 @export var decoration_model:Node3D
 
+@export var cooldown_time:float = 0.5
+
 var active:bool = false
 
+var cooldown_timer:float = 0.0
+
 signal just_fired
+
+
+func _physics_process(delta: float) -> void:
+	if cooldown_timer < cooldown_time:
+		cooldown_timer += delta
 
 
 func fire() -> void:
 	if !active:
 		return
 	
-	if cooldown_timer:
-		if !cooldown_timer.is_stopped():
-			return
+	if cooldown_timer < cooldown_time:
+		return
 	
 	if !m_animation_tree:
 		return
@@ -81,8 +89,7 @@ func fire() -> void:
 	if audio_player:
 		audio_player.play()
 	
-	if cooldown_timer:
-		cooldown_timer.start()
+	cooldown_timer = 0.0
 
 
 func set_active(value:bool) -> void:

@@ -1,6 +1,6 @@
-res://source/fire/
-res://source/moving_flame/
+res://source/flame_manager/
 res://source/weapons/flamer/
+res://source/fire/
 res://source/venlil_template/
 res://source/decal_manager/
 res://textures/

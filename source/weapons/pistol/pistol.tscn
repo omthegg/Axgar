@@ -8,18 +8,14 @@ random_pitch = 1.122462
 streams_count = 1
 stream_0/stream = ExtResource("2_f6swa")
 
-[node name="Pistol" type="Node3D" unique_id=645398640 node_paths=PackedStringArray("audio_player", "cooldown_timer")]
+[node name="Pistol" type="Node3D" unique_id=645398640 node_paths=PackedStringArray("audio_player")]
 script = ExtResource("1_sbhnq")
 audio_player = NodePath("AudioStreamPlayer3D")
-cooldown_timer = NodePath("ShootTimer")
+cooldown_time = 0.2
 metadata/_custom_type_script = "uid://cqxqvs0swiud5"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1361902383]
 stream = SubResource("AudioStreamRandomizer_f6swa")
 bus = &"SFX"
-
-[node name="ShootTimer" type="Timer" parent="." unique_id=415323913]
-wait_time = 0.2
-one_shot = true
 
 [connection signal="just_fired" from="." to="." method="_on_just_fired"]

@@ -53,4 +53,4 @@ func _input(event) -> void:
 	if event is InputEventMouseMotion:
 		character.rotate_y(-event.relative.x*Global.mouse_sensitivity)
 		head.rotate_x(-event.relative.y*Global.mouse_sensitivity)
-		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -90, 90)
+		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -89, 89)

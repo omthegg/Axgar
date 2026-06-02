@@ -7,7 +7,8 @@ var max_tilt_angle:float = 0.3
 var target_tilt_angle:float = 0.0
 
 func _physics_process(delta:float) -> void:
-	head_tilt(delta)
+	pass
+	#head_tilt(delta)
 
 
 func head_tilt(delta:float) -> void:
