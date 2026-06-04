@@ -10,7 +10,7 @@ class Flame:
 
 var flames:Array[Flame]
 
-var flame_count:int = 256
+var flame_count:int = 128
 var current_flame:int = 0
 
 var gravity:float = -ProjectSettings["physics/3d/default_gravity"]
@@ -43,6 +43,7 @@ func create_flame(pos:Vector3, velocity:Vector3, exception:CollisionObject3D) ->
 	flame.raycast.global_position = pos
 	flame.velocity = velocity
 	flame.raycast.target_position = flame.velocity.normalized()
+	flame.raycast.enabled = false
 	
 	current_flame += 1
 	if current_flame > (flames.size() - 1):
@@ -55,6 +56,8 @@ func update_flames(delta:float) -> void:
 			flame.velocity = Vector3.ZERO
 			continue
 		
+		flame.raycast.enabled = true
+		
 		flame.velocity.y += gravity * delta * 0.05
 		flame.raycast.global_position += flame.velocity
 		flame.raycast.target_position = flame.velocity.normalized() / 2.0
@@ -65,11 +68,11 @@ func display_flames() -> void:
 		var flame:Flame = flames[i]
 		var t:Transform3D = Transform3D()
 		t = t.translated(flame.raycast.global_position)
-		t = t.rotated_local(Vector3.RIGHT, deg_to_rad(90.0))
 		if (flame.velocity.length() > 0.0) and (flame.velocity.normalized() != Vector3.UP) and (flame.velocity.normalized() != Vector3.DOWN):
 			rotation_helper.look_at(flame.velocity)
-			t = t.rotated_local(Vector3.RIGHT, rotation_helper.rotation.x)
+			# Remember, order of euler is YXZ
 			t = t.rotated_local(Vector3.UP, rotation_helper.rotation.y)
+			t = t.rotated_local(Vector3.RIGHT, rotation_helper.rotation.x + deg_to_rad(90.0))
 			t = t.rotated_local(Vector3.BACK, rotation_helper.rotation.z)
 		
 		multimesh_instance.multimesh.set_instance_transform(i, t)
