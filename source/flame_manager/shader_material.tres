@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://tfyf4lwmkt2k"]
+
+[ext_resource type="Shader" uid="uid://cchfad7v7ude6" path="res://source/flame_manager/airborne_fuel.gdshader" id="1_s7g0x"]
+[ext_resource type="Texture2D" uid="uid://bw6b0pvq41uca" path="res://textures/fire_mask2.png" id="2_s7g0x"]
+
+[sub_resource type="Gradient" id="Gradient_vev0h"]
+offsets = PackedFloat32Array(0.15882353, 0.7705882)
+colors = PackedColorArray(0.96862745, 0.24215686, 0, 1, 1, 0.546875, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pt0ci"]
+gradient = SubResource("Gradient_vev0h")
+width = 32
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l30ic"]
+noise_type = 0
+frequency = 0.06
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vev0h"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_l30ic")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_s7g0x")
+shader_parameter/shape_texture = ExtResource("2_s7g0x")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_vev0h")
+shader_parameter/gradient_texture = SubResource("GradientTexture1D_pt0ci")
+shader_parameter/y_billboard = true

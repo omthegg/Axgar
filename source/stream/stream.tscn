@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://5n7p4oc2aajx"]
+
+[ext_resource type="Script" uid="uid://dfnol4s8dj3mf" path="res://source/stream/stream.gd" id="1_yfs08"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q388p"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_q388p"]
+material = SubResource("StandardMaterial3D_q388p")
+radius = 0.02
+height = 0.04
+radial_segments = 6
+rings = 3
+
+[sub_resource type="MultiMesh" id="MultiMesh_yfs08"]
+resource_local_to_scene = true
+transform_format = 1
+mesh = SubResource("SphereMesh_q388p")
+
+[node name="Stream" type="Node3D" unique_id=1770215287]
+script = ExtResource("1_yfs08")
+
+[node name="JointMultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=712601174]
+multimesh = SubResource("MultiMesh_yfs08")

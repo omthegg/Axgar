@@ -1,3 +1,4 @@
+res://source/stream/
 res://source/flame_manager/
 res://source/weapons/flamer/
 res://source/fire/
@@ -19,4 +20,3 @@ res://source/components/environment_controller/
 res://source/environment/
 res://source/procedural_models/procedural_human/
 res://source/components/character_controller_component/
-res://source/autoload/

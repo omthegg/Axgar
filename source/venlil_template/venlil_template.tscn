@@ -59,7 +59,7 @@ bones/6/rotation = Quaternion(-0.08671469, 0.005374138, 0.19418569, 0.97710985)
 bones/7/rotation = Quaternion(0.01135199, -0.0061836476, -0.5627295, 0.82654005)
 bones/8/rotation = Quaternion(-0.30864707, 6.991123e-17, -6.7223354e-17, 0.95117664)
 bones/9/rotation = Quaternion(0.24110788, 5.3536674e-17, -1.1506396e-23, 0.9704983)
-bones/10/rotation = Quaternion(0.07804586, 2.1635184e-17, 9.317431e-24, 0.99694985)
+bones/10/rotation = Quaternion(0.05979517, 1.3217748e-17, 1.4910812e-23, 0.99821067)
 bones/11/rotation = Quaternion(0.008881659, -0.4367796, 0.89625823, 0.07659024)
 bones/12/rotation = Quaternion(0.93154186, -0.0050092232, 0.13335742, 0.33826128)
 bones/13/rotation = Quaternion(-0.30565736, -0.032095864, -0.0828772, 0.9479847)
@@ -107,7 +107,7 @@ transform = Transform3D(-0.017835021, 0.12940727, 0.9914311, 0.13410878, -0.9823
 material_override = ExtResource("4_i7giv")
 
 [node name="Tail3" parent="Venlil/Armature/Skeleton3D" index="7" unique_id=1877050924]
-transform = Transform3D(1, 2.1750543e-16, 2.3056814e-16, -2.2285675e-16, 0.99972445, 0.02346903, -2.2540002e-16, -0.023468912, 0.99972457, 5.952005e-17, 1.1964148, -0.29594544)
+transform = Transform3D(1, 2.0870943e-16, 2.2152548e-16, -2.2162997e-16, 0.9981968, 0.060023963, -2.0859851e-16, -0.060023844, 0.99819684, 5.952005e-17, 1.1964148, -0.29594544)
 
 [node name="Tail3_m" parent="Venlil/Armature/Skeleton3D/Tail3" index="0" unique_id=1167041327]
 material_override = ExtResource("4_i7giv")
@@ -284,6 +284,9 @@ transform = Transform3D(-0.9987589, -0.024344841, -0.043448824, -0.018557126, -0
 [node name="Flamethrower" parent="SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/WeaponBoneAttachment/flamethrower" index="0" unique_id=1710581996]
 layers = 2
 
+[node name="Nozzle" type="Node3D" parent="SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/WeaponBoneAttachment/flamethrower" unique_id=1520510007]
+transform = Transform3D(1, -1.1175871e-08, 4.4703484e-08, -9.313226e-09, 1, 0, 4.4703484e-08, 0, 1, -0.00038164482, 0.14129496, 0.376916)
+
 [node name="ViewmodelAnimator" type="Node3D" parent="." unique_id=2040525839 node_paths=PackedStringArray("character", "arms")]
 script = ExtResource("7_qcdkb")
 character = NodePath("..")
@@ -308,10 +311,11 @@ vm_fire_anim_name = &"shoot_pistol_vm"
 viewmodel = NodePath("../SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/WeaponBoneAttachment/pistol")
 handheld_model = NodePath("../Venlil/Armature/Skeleton3D/WeaponBoneAttachment/pistol")
 
-[node name="Flamer" parent="." unique_id=1333001578 node_paths=PackedStringArray("character_camera", "character_head", "character_arms", "m_animation_tree", "vm_animation_player", "viewmodel", "handheld_model") instance=ExtResource("12_1eqrq")]
+[node name="Flamer" parent="." unique_id=1333001578 node_paths=PackedStringArray("character_camera", "character_head", "character_arms", "nozzle_vm", "m_animation_tree", "vm_animation_player", "viewmodel", "handheld_model") instance=ExtResource("12_1eqrq")]
 character_camera = NodePath("../CharacterControllerComponent/Head/Camera3D")
 character_head = NodePath("../CharacterControllerComponent/Head")
 character_arms = NodePath("../SubViewportContainer/SubViewport/Camera3D/venlil_arms")
+nozzle_vm = NodePath("../SubViewportContainer/SubViewport/Camera3D/venlil_arms/Armature_vm/Skeleton3D/WeaponBoneAttachment/flamethrower/Nozzle")
 m_animation_tree = NodePath("../AnimationTree")
 m_fire_oneshot_name = &"Fire"
 m_hold_anim_node_name = &"HoldAnimation"

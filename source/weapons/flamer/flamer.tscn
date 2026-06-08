@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://bb0cbgg6ow7ye"]
 
 [ext_resource type="Script" uid="uid://dmnhp8dhls30k" path="res://source/weapons/flamer/flamer.gd" id="1_4bmdl"]
+[ext_resource type="PackedScene" uid="uid://cwwr1xpnl5kjk" path="res://source/flame_manager/flame_manager.tscn" id="2_nua7m"]
 
 [node name="Flamer" type="Node3D" unique_id=1333001578]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_4bmdl")
-cooldown_time = 0.1
+cooldown_time = 0.05
 metadata/_custom_type_script = "uid://cqxqvs0swiud5"
 
 [node name="Flames" type="Node3D" parent="." unique_id=651572397]
+
+[node name="FlameManager" parent="." unique_id=1761630350 instance=ExtResource("2_nua7m")]
+top_level = true
 
 [connection signal="just_fired" from="." to="." method="_on_just_fired"]

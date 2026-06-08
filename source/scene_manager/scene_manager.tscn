@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://cfnrscvrx0ci1" path="res://source/debug_info/debug_info.tscn" id="3_7eoyu"]
 [ext_resource type="PackedScene" uid="uid://bjra8vcf7k5gt" path="res://source/console/console.tscn" id="3_ikhl4"]
 [ext_resource type="PackedScene" uid="uid://c4xdj30yh1j14" path="res://source/decal_manager/decal_manager.tscn" id="5_2r2ke"]
-[ext_resource type="PackedScene" uid="uid://cwwr1xpnl5kjk" path="res://source/flame_manager/flame_manager.tscn" id="6_nyf36"]
 
 [node name="SceneManager" type="Node3D" unique_id=574918504]
 script = ExtResource("1_y51ae")
@@ -22,5 +21,3 @@ visible = false
 [node name="Console" parent="ConsoleCanvasLayer" unique_id=1689745594 instance=ExtResource("3_ikhl4")]
 
 [node name="DecalManager" parent="." unique_id=142635427 instance=ExtResource("5_2r2ke")]
-
-[node name="FlameManager" parent="." unique_id=1761630350 instance=ExtResource("6_nyf36")]
