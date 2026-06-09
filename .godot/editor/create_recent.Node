@@ -1,6 +1,7 @@
+MeshInstance3D
+BoneAttachment3D
 Node3D
 MultiMeshInstance3D
-MeshInstance3D
 GPUParticles3D
 RayCast3D
 Camera3D
@@ -10,5 +11,4 @@ CollisionShape3D
 CharacterBody3D
 Character
 Weapon
-BoneAttachment3D
 AudioStreamPlayer3D

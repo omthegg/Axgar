@@ -84,9 +84,8 @@ func update_flames(delta:float) -> void:
 		flame.raycast.target_position = flame.velocity.normalized() / 2.0
 
 
+# This is some of the messiest code I've written for this project
 func display_flames() -> void:
-	#fuel_inbetween_mmi.multimesh.instance_count = 0
-	#fuel_inbetween_mmi.multimesh.instance_count = 1000
 	var inbetweens:PackedVector3Array = []
 	
 	for i in flames.size():
@@ -94,12 +93,6 @@ func display_flames() -> void:
 		var t:Transform3D = Transform3D()
 		t = t.translated(flame.raycast.global_position)
 		if flame.is_active():
-			rotation_helper.look_at(flame.velocity)
-			# Remember, order of euler is YXZ
-			t = t.rotated_local(Vector3.UP, rotation_helper.rotation.y)
-			t = t.rotated_local(Vector3.RIGHT, rotation_helper.rotation.x + deg_to_rad(90.0))
-			t = t.rotated_local(Vector3.BACK, rotation_helper.rotation.z)
-		
 			if i != 0:
 				if flames[i - 1].is_active():
 					var previous:Vector3 = flames[i - 1].raycast.global_position
@@ -110,11 +103,18 @@ func display_flames() -> void:
 							var interp:Vector3 = previous + (j + 1) * (current - previous) / inbetweens_count
 							inbetweens.append(interp)
 		
-		fuel_mmi.multimesh.set_instance_transform(i, t)
+		if flame.raycast.is_colliding():
+			t = t.translated(Vector3(0.0, 0.5, 0.0))
+			fire_multimesh_instance.multimesh.set_instance_transform(i, t)
+			fuel_mmi.multimesh.set_instance_transform(i, Transform3D())
+		else:
+			fuel_mmi.multimesh.set_instance_transform(i, t)
 	
-	fuel_inbetween_mmi.multimesh.visible_instance_count = inbetweens.size()
+	fuel_inbetween_mmi.multimesh.visible_instance_count = clamp(inbetweens.size(), 0, fuel_inbetween_mmi.multimesh.instance_count)
 	for i in inbetweens.size():
-		#print(inbetweens[i])
+		if i > (fuel_inbetween_mmi.multimesh.instance_count - 1):
+			continue
+		
 		var t:Transform3D = Transform3D()
 		t = t.translated(inbetweens[i])
 		fuel_inbetween_mmi.multimesh.set_instance_transform(i, t)

@@ -13,4 +13,6 @@ metadata/_custom_type_script = "uid://cqxqvs0swiud5"
 [node name="FlameManager" parent="." unique_id=1761630350 instance=ExtResource("2_nua7m")]
 top_level = true
 
+[node name="VelocityHelper" type="Node3D" parent="." unique_id=671857300]
+
 [connection signal="just_fired" from="." to="." method="_on_just_fired"]

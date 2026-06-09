@@ -5,26 +5,20 @@ extends Weapon
 @export var character_arms:Node3D
 @export var nozzle_vm:Node3D
 @export var nozzle_m:Node3D
+@export var raycast:RayCast3D
 
 @onready var flame_manager:Node3D = $FlameManager
-
-var previous_head_basis_z:Vector3
-
-#func _physics_process(delta: float) -> void:
-	#super(delta)
-	#
-	#var a:float = character_head.global_basis.z.angle_to(previous_head_basis_z)
-	#
-	#cooldown_time = 0.05 - a
-	#if cooldown_time < 0.01:
-		#cooldown_time = 0.01
-	#
-	#print(a)
-	#
-	#previous_head_basis_z = character_head.global_basis.z
+@onready var velocity_helper:Node3D = $VelocityHelper
 
 
 func _on_just_fired() -> void:
-	var pos:Vector3 = character_head.global_position - character_head.global_basis.z
-	var vel:Vector3 = (-character_head.global_basis.z) * 0.3
+	var pos:Vector3 = nozzle_vm.global_position#character_head.global_position - character_head.global_basis.z
+	var vel:Vector3
+	
+	#if raycast.is_colliding():
+	#	velocity_helper.look_at(raycast.get_collision_point())
+	#	vel = (-velocity_helper.global_basis.z) * 0.3
+	#else:
+	vel = (-character_head.global_basis.z) * 0.3
+	
 	flame_manager.create_flame(pos, vel, get_parent())
