@@ -1,3 +1,4 @@
+res://source/gauge/
 res://source/cable/
 res://source/stream/
 res://source/flame_manager/
@@ -19,4 +20,3 @@ res://source/scene_manager/
 res://source/components/flashlight_component/
 res://source/components/environment_controller/
 res://source/environment/
-res://source/procedural_models/procedural_human/

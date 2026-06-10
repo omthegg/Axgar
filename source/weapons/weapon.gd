@@ -46,11 +46,21 @@ class_name Weapon
 
 @export var cooldown_time:float = 0.5
 
+## Set to 0 for infinite ammo.
+@export var max_ammo:int = 10
+
 var active:bool = false
 
 var cooldown_timer:float = 0.0
 
+var ammo:int = 0
+
 signal just_fired
+signal empty
+
+
+func _ready() -> void:
+	ammo = max_ammo
 
 
 func _physics_process(delta: float) -> void:
@@ -77,7 +87,9 @@ func fire() -> void:
 	if !handheld_model:
 		return
 	
-	emit_signal("just_fired")
+	if (ammo <= 0) and (max_ammo > 0):
+		emit_signal("empty")
+		return
 	
 	if m_fire_anim_name:
 		m_animation_tree.set("parameters/" + m_fire_oneshot_name + "/request"
@@ -90,6 +102,10 @@ func fire() -> void:
 		audio_player.play()
 	
 	cooldown_timer = 0.0
+	
+	ammo -= 1
+	
+	emit_signal("just_fired")
 
 
 func set_active(value:bool) -> void:

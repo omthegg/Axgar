@@ -6,9 +6,15 @@ extends Weapon
 @export var nozzle_vm:Node3D
 @export var nozzle_m:Node3D
 @export var raycast:RayCast3D
+@export var gauge:Node3D
 
 @onready var flame_manager:Node3D = $FlameManager
 @onready var velocity_helper:Node3D = $VelocityHelper
+
+
+func _ready() -> void:
+	super()
+	gauge.progress = 0.0
 
 
 func _on_just_fired() -> void:
@@ -22,3 +28,5 @@ func _on_just_fired() -> void:
 	vel = (-character_head.global_basis.z) * 0.3
 	
 	flame_manager.create_flame(pos, vel, get_parent())
+	
+	gauge.progress = float(abs(max_ammo - ammo)) / float(max_ammo)

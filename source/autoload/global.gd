@@ -2,7 +2,7 @@ extends Node
 
 @onready var scene_manager:Node3D = get_tree().root.get_node("SceneManager")
 
-var mouse_sensitivity:float = 0.005
+var mouse_sensitivity:float = 0.007
 
 var player:Character
 

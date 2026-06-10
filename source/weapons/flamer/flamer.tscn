@@ -6,6 +6,7 @@
 [node name="Flamer" type="Node3D" unique_id=1333001578]
 script = ExtResource("1_4bmdl")
 cooldown_time = 0.05
+max_ammo = 150
 metadata/_custom_type_script = "uid://cqxqvs0swiud5"
 
 [node name="Flames" type="Node3D" parent="." unique_id=651572397]

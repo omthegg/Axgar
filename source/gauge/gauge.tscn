@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cfhdlvwdoxk3m"]
+
+[ext_resource type="PackedScene" uid="uid://dejsob8tyvw1r" path="res://models/gauge/gauge.glb" id="1_1tggh"]
+[ext_resource type="Script" uid="uid://bxr6c7dvacgb2" path="res://source/gauge/gauge.gd" id="1_uwaj0"]
+
+[node name="Gauge" type="Node3D" unique_id=2000119039]
+script = ExtResource("1_uwaj0")
+
+[node name="gauge" parent="." unique_id=1881280969 instance=ExtResource("1_1tggh")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[editable path="gauge"]

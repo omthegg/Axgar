@@ -1,6 +1,7 @@
+MeshInstance3D
+Label3D
 Node3D
 MultiMeshInstance3D
-MeshInstance3D
 Path3D
 CSGPolygon3D
 BoneAttachment3D
@@ -11,4 +12,3 @@ Timer
 Area3D
 CollisionShape3D
 CharacterBody3D
-Character
