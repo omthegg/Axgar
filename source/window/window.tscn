@@ -16,6 +16,7 @@ gradient = SubResource("Gradient_100et")
 width = 16
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n2sag"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_3fs5e")
 shader_parameter/reflection_texture = ExtResource("4_100et")

@@ -1,9 +1,13 @@
+res://source/levels/test_level/
+res://source/lamp_post/
+res://source/environment_materials/
+res://source/foliage/
+res://source/fire/
 res://source/gauge/
 res://source/cable/
 res://source/stream/
 res://source/flame_manager/
 res://source/weapons/flamer/
-res://source/fire/
 res://source/venlil_template/
 res://source/decal_manager/
 res://textures/
@@ -16,7 +20,3 @@ res://models/venlil/
 res://source/debug_info/
 res://source/console/
 res://fonts/
-res://source/scene_manager/
-res://source/components/flashlight_component/
-res://source/components/environment_controller/
-res://source/environment/

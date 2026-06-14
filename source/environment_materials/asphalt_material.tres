@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ix4g6o8qiq7u"]
+
+[ext_resource type="Texture2D" uid="uid://bvr7dqmpr3k50" path="res://textures/Road012A.jpg" id="1_kn14w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_synrt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3exnk"]
+
+[resource]
+albedo_texture = ExtResource("1_kn14w")
+normal_texture = SubResource("CompressedTexture2D_3exnk")
+ao_texture = SubResource("CompressedTexture2D_synrt")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2

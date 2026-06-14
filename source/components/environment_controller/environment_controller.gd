@@ -4,6 +4,7 @@ extends Node3D
 	set(value):
 		#$AmbientLight.visible = !value
 		$FireFlickerLight.visible = value
+		$AmbientLight.visible = !value
 		fire_flicker = value
 
 @onready var world_environment:WorldEnvironment = $WorldEnvironment
@@ -18,7 +19,7 @@ var fire_noise:FastNoiseLite = FastNoiseLite.new()
 func _ready() -> void:
 	world_environment.environment.ambient_light_source = Environment.AmbientSource.AMBIENT_SOURCE_DISABLED
 	fire_flicker_light.light_color = Color.DARK_ORANGE
-	ambient_light.light_color = Color.ORANGE
+	#ambient_light.light_color = Color.LIGHT_STEEL_BLUE
 	#if !fire_flicker:
 	#	ambient_light.show()
 

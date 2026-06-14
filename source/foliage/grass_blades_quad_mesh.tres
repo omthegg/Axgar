@@ -1,0 +1,15 @@
+[gd_resource type="QuadMesh" format=3 uid="uid://cyv3mkkmd6xmp"]
+
+[ext_resource type="Texture2D" uid="uid://deigf7kqkswcf" path="res://textures/grass_blades.png" id="1_npudk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tqn6c"]
+transparency = 2
+alpha_scissor_threshold = 0.6
+alpha_antialiasing_mode = 0
+albedo_color = Color(0, 0.6392157, 0.6392157, 1)
+albedo_texture = ExtResource("1_npudk")
+texture_filter = 2
+billboard_mode = 2
+
+[resource]
+material = SubResource("StandardMaterial3D_tqn6c")
