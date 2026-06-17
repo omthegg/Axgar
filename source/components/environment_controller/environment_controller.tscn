@@ -31,9 +31,16 @@ background_mode = 2
 background_camera_feed_id = 2
 sky = SubResource("Sky_7u1m5")
 ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.05
+ambient_light_color = Color(0.77254903, 0.8666667, 1, 1)
+ambient_light_energy = 0.1
 reflected_light_source = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.105882354, 0.10980392, 0.14901961, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_begin = 0.0
+fog_depth_end = 50.0
 
 [node name="EnvironmentController" type="Node3D" unique_id=419151737]
 script = ExtResource("1_jrywv")

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpln88f75at5m"
-path.s3tc="res://.godot/imported/lamp_post_albedo.jpg-368a120ea5777affc89a71e78eeb992f.s3tc.ctex"
+uid="uid://drv18yyx2wdaw"
+path.s3tc="res://.godot/imported/building1_Bricks082A.jpg-aec3b138671c3a738a10ff7fa3795b7e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f734db1d63db05327f844b7e3f11c329"
+"md5": "263c630b74cc88864fdcb65a89b0495e"
 }
 
 [deps]
 
-source_file="res://models/lamp_post/lamp_post_albedo.jpg"
-dest_files=["res://.godot/imported/lamp_post_albedo.jpg-368a120ea5777affc89a71e78eeb992f.s3tc.ctex"]
+source_file="res://models/building1/building1_Bricks082A.jpg"
+dest_files=["res://.godot/imported/building1_Bricks082A.jpg-aec3b138671c3a738a10ff7fa3795b7e.s3tc.ctex"]
 
 [params]
 

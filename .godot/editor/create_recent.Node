@@ -1,8 +1,8 @@
+OmniLight3D
+MeshInstance3D
 LightmapGI
 StaticBody3D
 CollisionShape3D
-OmniLight3D
-MeshInstance3D
 Label3D
 Node3D
 MultiMeshInstance3D
@@ -12,4 +12,3 @@ BoneAttachment3D
 GPUParticles3D
 RayCast3D
 Camera3D
-Timer

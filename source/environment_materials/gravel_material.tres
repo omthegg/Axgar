@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cm0t3u5fy35q4"]
+
+[ext_resource type="Texture2D" uid="uid://cm832ob5r8jg0" path="res://textures/Gravel040.jpg" id="1_xvw2n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_synrt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3exnk"]
+
+[resource]
+albedo_texture = ExtResource("1_xvw2n")
+normal_texture = SubResource("CompressedTexture2D_3exnk")
+ao_texture = SubResource("CompressedTexture2D_synrt")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 2
