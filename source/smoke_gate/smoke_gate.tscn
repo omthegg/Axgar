@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b1te8pq25wtf7"]
+
+[ext_resource type="Script" uid="uid://p6do5dj1duhw" path="res://source/smoke_gate/smoke_gate.gd" id="1_qddvs"]
+[ext_resource type="Shader" uid="uid://buoj3rir145n5" path="res://source/smoke_gate/smoke_gate.gdshader" id="2_suulv"]
+
+[sub_resource type="Gradient" id="Gradient_suulv"]
+colors = PackedColorArray(0.6015625, 0.6015625, 0.6015625, 0, 0.16927081, 0.16927081, 0.16927081, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_suulv"]
+frequency = 0.08
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_suulv"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_suulv")
+color_ramp = SubResource("Gradient_suulv")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51imu"]
+render_priority = 0
+shader = ExtResource("2_suulv")
+shader_parameter/size = Vector2(2, 2.5)
+shader_parameter/noise = SubResource("NoiseTexture2D_suulv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_suulv"]
+resource_local_to_scene = true
+
+[node name="SmokeGate" type="Node3D" unique_id=1469453759]
+script = ExtResource("1_qddvs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1980931662]
+material_override = SubResource("ShaderMaterial_51imu")
+mesh = SubResource("QuadMesh_suulv")

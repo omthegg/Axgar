@@ -124,6 +124,7 @@ weapon_2={
 3d_render/layer_3="Player 3rd-person model"
 3d_physics/layer_1="World"
 3d_physics/layer_2="NonSolid"
+3d_physics/layer_3="SmokeZone"
 
 [navigation]
 
@@ -144,4 +145,3 @@ shader_compiler/shader_cache/enabled=false
 reflections/reflection_atlas/reflection_size=128
 textures/decals/filter=2
 textures/light_projectors/filter=2
-environment/defaults/default_clear_color=Color(0.03137255, 0.03529412, 0.043137256, 1)

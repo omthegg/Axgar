@@ -12,10 +12,12 @@ script = ExtResource("1_y51ae")
 [node name="TestLevel" parent="." unique_id=953601541 instance=ExtResource("1_ivaf7")]
 
 [node name="DebugCanvasLayer" type="CanvasLayer" parent="." unique_id=458206844]
+layer = 2
 
 [node name="DebugInfo" parent="DebugCanvasLayer" unique_id=617837605 instance=ExtResource("3_7eoyu")]
 
 [node name="ConsoleCanvasLayer" type="CanvasLayer" parent="." unique_id=1381099497]
+layer = 3
 visible = false
 
 [node name="Console" parent="ConsoleCanvasLayer" unique_id=1689745594 instance=ExtResource("3_ikhl4")]

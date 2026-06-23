@@ -1,5 +1,7 @@
+res://source/smoke_gate/
+res://source/screen_effects/
+res://source/city_background/
 res://source/levels/
-C:/Users/Msi/Desktop/game/
 res://source/environment_materials/
 res://source/levels/test_level/
 res://source/lamp_post/
@@ -18,6 +20,3 @@ res://source/mirror/
 res://source/components/navigator/
 res://source/characters/
 res://source/rain/
-res://models/venlil/
-res://source/debug_info/
-res://source/console/

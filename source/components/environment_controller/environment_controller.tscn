@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxuxngslwrlut" path="res://source/components/environment_controller/environment_controller.gd" id="1_jrywv"]
 [ext_resource type="Shader" uid="uid://bkbrvc35po3cf" path="res://source/components/environment_controller/sky.gdshader" id="2_ioude"]
+[ext_resource type="Shader" uid="uid://ckv6vmnc0oug4" path="res://source/screen_effects/smoke.gdshader" id="3_7u1m5"]
 
 [sub_resource type="Gradient" id="Gradient_ioude"]
 colors = PackedColorArray(0.105882354, 0.10980392, 0.14901961, 1, 0.16627334, 0.17057048, 0.21354169, 1)
@@ -42,6 +43,28 @@ fog_sky_affect = 0.0
 fog_depth_begin = 0.0
 fog_depth_end = 50.0
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_ioude"]
+radius = 0.1
+
+[sub_resource type="Gradient" id="Gradient_o172y"]
+offsets = PackedFloat32Array(0, 0.6171617)
+colors = PackedColorArray(0, 0, 0, 0.34100002, 0, 0, 0, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u2h8r"]
+noise_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nyf36"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_u2h8r")
+color_ramp = SubResource("Gradient_o172y")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_waxw1"]
+shader = ExtResource("3_7u1m5")
+shader_parameter/noise = SubResource("NoiseTexture2D_nyf36")
+shader_parameter/alpha = 0.0
+
 [node name="EnvironmentController" type="Node3D" unique_id=419151737]
 script = ExtResource("1_jrywv")
 
@@ -61,7 +84,7 @@ visible = false
 layers = 3
 light_specular = 0.0
 light_bake_mode = 0
-omni_range = 100.0
+omni_range = 50.0
 omni_attenuation = 0.0
 
 [node name="AmbientLight" type="OmniLight3D" parent="." unique_id=1804340354]
@@ -70,5 +93,22 @@ light_color = Color(0.7708333, 0.8656609, 1, 1)
 light_energy = 0.1
 light_specular = 0.0
 light_bake_mode = 0
-omni_range = 100.0
+omni_range = 50.0
 omni_attenuation = 0.0
+
+[node name="SmokeZoneDetector" type="Area3D" parent="." unique_id=347670554]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SmokeZoneDetector" unique_id=975324066]
+shape = SubResource("SphereShape3D_ioude")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=268580555]
+
+[node name="SmokeRect" type="ColorRect" parent="CanvasLayer" unique_id=2069415672]
+material = SubResource("ShaderMaterial_waxw1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
